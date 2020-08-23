@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		01924F2E24DB4B9B0064B9E6 /* myFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01924F2C24DB4B9B0064B9E6 /* myFood.xcdatamodeld */; };
 		01924F3024DB4B9D0064B9E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01924F2F24DB4B9D0064B9E6 /* Assets.xcassets */; };
 		01924F3324DB4B9D0064B9E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01924F3124DB4B9D0064B9E6 /* LaunchScreen.storyboard */; };
+		01B98F8124EAC60600C21494 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 01B98F8024EAC60600C21494 /* FacebookLogin */; };
+		01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,7 @@
 		01924F2F24DB4B9D0064B9E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01924F3224DB4B9D0064B9E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01924F3424DB4B9D0064B9E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B98F8124EAC60600C21494 /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,16 +62,41 @@
 		01924F2224DB4B9B0064B9E6 /* myFood */ = {
 			isa = PBXGroup;
 			children = (
+				01C5E0F024F2764D0047CB11 /* Model */,
+				01C5E0F124F276520047CB11 /* View */,
+				01C5E0F224F276580047CB11 /* Controller */,
 				01924F2324DB4B9B0064B9E6 /* AppDelegate.swift */,
 				01924F2524DB4B9B0064B9E6 /* SceneDelegate.swift */,
-				01924F2724DB4B9B0064B9E6 /* ViewController.swift */,
-				01924F2924DB4B9B0064B9E6 /* Main.storyboard */,
 				01924F2F24DB4B9D0064B9E6 /* Assets.xcassets */,
-				01924F3124DB4B9D0064B9E6 /* LaunchScreen.storyboard */,
 				01924F3424DB4B9D0064B9E6 /* Info.plist */,
 				01924F2C24DB4B9B0064B9E6 /* myFood.xcdatamodeld */,
 			);
 			path = myFood;
+			sourceTree = "<group>";
+		};
+		01C5E0F024F2764D0047CB11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		01C5E0F124F276520047CB11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01924F2924DB4B9B0064B9E6 /* Main.storyboard */,
+				01924F3124DB4B9D0064B9E6 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01C5E0F224F276580047CB11 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				01924F2724DB4B9B0064B9E6 /* ViewController.swift */,
+				01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +115,9 @@
 			dependencies = (
 			);
 			name = myFood;
+			packageProductDependencies = (
+				01B98F8024EAC60600C21494 /* FacebookLogin */,
+			);
 			productName = myFood;
 			productReference = 01924F2024DB4B9B0064B9E6 /* myFood.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 01924F1724DB4B9B0064B9E6;
+			packageReferences = (
+				01B98F7F24EAC60600C21494 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = 01924F2124DB4B9B0064B9E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01924F2824DB4B9B0064B9E6 /* ViewController.swift in Sources */,
+				01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */,
 				01924F2E24DB4B9B0064B9E6 /* myFood.xcdatamodeld in Sources */,
 				01924F2424DB4B9B0064B9E6 /* AppDelegate.swift in Sources */,
 				01924F2624DB4B9B0064B9E6 /* SceneDelegate.swift in Sources */,
@@ -342,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		01B98F7F24EAC60600C21494 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		01B98F8024EAC60600C21494 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01B98F7F24EAC60600C21494 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		01924F2C24DB4B9B0064B9E6 /* myFood.xcdatamodeld */ = {
