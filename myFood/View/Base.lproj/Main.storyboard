@@ -316,7 +316,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EVz-a9-zom"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Diet" id="9iC-Qa-phn"/>
+                    <tabBarItem key="tabBarItem" title="Diet" image="diet" id="9iC-Qa-phn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJQ-6R-0fm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,7 +348,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rZN-Fm-Gtn"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="Ra3-gX-qLK"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="Ra3-gX-qLK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wcn-2F-af2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -380,7 +380,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kpa-lW-mbL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="To buy" id="m86-6Q-0MS"/>
+                    <tabBarItem key="tabBarItem" title="To buy" image="toBuy" id="m86-6Q-0MS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yI-Ug-zIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -433,11 +433,25 @@
                                     <segment title="Pantry"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P95-Tk-qOz">
+                                <rect key="frame" x="326" y="725" width="64" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="IE5-L2-Cu3"/>
+                                    <constraint firstAttribute="width" constant="64" id="jBk-Q4-KKJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ndr-Wq-Ddx" firstAttribute="trailing" secondItem="P95-Tk-qOz" secondAttribute="trailing" constant="24" id="0Qt-N0-pPa"/>
                             <constraint firstItem="uSF-jO-KeG" firstAttribute="leading" secondItem="Ndr-Wq-Ddx" secondAttribute="leading" id="D6D-vP-xHz"/>
                             <constraint firstItem="uSF-jO-KeG" firstAttribute="top" secondItem="ff0-8y-IYN" secondAttribute="bottom" constant="24" id="E7U-hC-qbq"/>
+                            <constraint firstItem="Ndr-Wq-Ddx" firstAttribute="bottom" secondItem="P95-Tk-qOz" secondAttribute="bottom" constant="24" id="QfY-Ts-jdM"/>
                             <constraint firstItem="Mqq-dp-LXi" firstAttribute="trailing" secondItem="Ndr-Wq-Ddx" secondAttribute="trailing" id="UUf-F8-q75"/>
                             <constraint firstItem="Mqq-dp-LXi" firstAttribute="top" secondItem="Ndr-Wq-Ddx" secondAttribute="top" id="WbV-fz-bh5"/>
                             <constraint firstItem="Ndr-Wq-Ddx" firstAttribute="trailing" secondItem="ff0-8y-IYN" secondAttribute="trailing" constant="24" id="c8e-ZU-LFU"/>
@@ -449,7 +463,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ndr-Wq-Ddx"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My food" id="BEa-Z2-2rL"/>
+                    <tabBarItem key="tabBarItem" title="My food" image="home" id="BEa-Z2-2rL"/>
                     <connections>
                         <outlet property="myFoodTableView" destination="uSF-jO-KeG" id="M9U-nH-E3B"/>
                     </connections>
@@ -457,6 +471,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Umj-zS-WJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4296" y="-867"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="lMB-eI-waJ">
+            <objects>
+                <viewController id="HJ2-fF-0yr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C3q-zY-gQn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="dpa-bO-MDe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eII-NW-gXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4972" y="-867"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2oz-0X-igi">
@@ -498,6 +527,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="diet" width="25" height="25"/>
+        <image name="home" width="25" height="25"/>
         <image name="login-image" width="800" height="600"/>
+        <image name="settings" width="25" height="25"/>
+        <image name="toBuy" width="25" height="25"/>
     </resources>
 </document>

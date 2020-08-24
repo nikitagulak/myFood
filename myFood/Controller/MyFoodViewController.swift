@@ -14,6 +14,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         myFoodTableView.dataSource = self
         myFoodTableView.delegate = self
+//        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
     }
     
     @IBOutlet weak var myFoodTableView: UITableView!
@@ -26,4 +27,5 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
         return cell
     }
+    
 }
