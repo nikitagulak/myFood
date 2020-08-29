@@ -14,9 +14,11 @@
 		01924F2E24DB4B9B0064B9E6 /* myFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01924F2C24DB4B9B0064B9E6 /* myFood.xcdatamodeld */; };
 		01924F3024DB4B9D0064B9E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01924F2F24DB4B9D0064B9E6 /* Assets.xcassets */; };
 		01924F3324DB4B9D0064B9E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01924F3124DB4B9D0064B9E6 /* LaunchScreen.storyboard */; };
-		01B98F8124EAC60600C21494 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 01B98F8024EAC60600C21494 /* FacebookLogin */; };
+		01B98F8124EAC60600C21494 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 01B98F8024EAC60600C21494 /* SwiftPackageProductDependency */; };
 		01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */; };
 		01C5E0F524F28D950047CB11 /* MyFoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01C5E0F324F28D950047CB11 /* MyFoodModel.xcdatamodeld */; };
+		01FE408724F5ABC500ED7918 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE408624F5ABC500ED7918 /* ReaderViewController.swift */; };
+		24E80352E9E8816C6A071A3E /* Pods_myFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B761E2F612FC50D07FE444E1 /* Pods_myFood.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		01924F3424DB4B9D0064B9E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodViewController.swift; sourceTree = "<group>"; };
 		01C5E0F424F28D950047CB11 /* MyFoodModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFoodModel.xcdatamodel; sourceTree = "<group>"; };
+		01FE408624F5ABC500ED7918 /* ReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReaderViewController.swift; sourceTree = "<group>"; };
+		5EB36EE59C6C6108A8CC404C /* Pods-myFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myFood.release.xcconfig"; path = "Target Support Files/Pods-myFood/Pods-myFood.release.xcconfig"; sourceTree = "<group>"; };
+		ADB2F92D651F75A8E27F5334 /* Pods-myFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myFood.debug.xcconfig"; path = "Target Support Files/Pods-myFood/Pods-myFood.debug.xcconfig"; sourceTree = "<group>"; };
+		B761E2F612FC50D07FE444E1 /* Pods_myFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B98F8124EAC60600C21494 /* FacebookLogin in Frameworks */,
+				01B98F8124EAC60600C21494 /* BuildFile in Frameworks */,
+				24E80352E9E8816C6A071A3E /* Pods_myFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +57,8 @@
 			children = (
 				01924F2224DB4B9B0064B9E6 /* myFood */,
 				01924F2124DB4B9B0064B9E6 /* Products */,
+				4D009CD56AFECF33E4F9B78A /* Pods */,
+				6B3E6D3B9A3E989D9C6C7DE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +107,27 @@
 			children = (
 				01924F2724DB4B9B0064B9E6 /* ViewController.swift */,
 				01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */,
+				01FE408624F5ABC500ED7918 /* ReaderViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D009CD56AFECF33E4F9B78A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADB2F92D651F75A8E27F5334 /* Pods-myFood.debug.xcconfig */,
+				5EB36EE59C6C6108A8CC404C /* Pods-myFood.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6B3E6D3B9A3E989D9C6C7DE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B761E2F612FC50D07FE444E1 /* Pods_myFood.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,9 +137,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01924F3724DB4B9D0064B9E6 /* Build configuration list for PBXNativeTarget "myFood" */;
 			buildPhases = (
+				0D2C4695007AFE05503D11F4 /* [CP] Check Pods Manifest.lock */,
 				01924F1C24DB4B9B0064B9E6 /* Sources */,
 				01924F1D24DB4B9B0064B9E6 /* Frameworks */,
 				01924F1E24DB4B9B0064B9E6 /* Resources */,
+				7C5742DB2C223BD1A4A1CE65 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -119,7 +149,7 @@
 			);
 			name = myFood;
 			packageProductDependencies = (
-				01B98F8024EAC60600C21494 /* FacebookLogin */,
+				01B98F8024EAC60600C21494 /* SwiftPackageProductDependency */,
 			);
 			productName = myFood;
 			productReference = 01924F2024DB4B9B0064B9E6 /* myFood.app */;
@@ -150,7 +180,7 @@
 			);
 			mainGroup = 01924F1724DB4B9B0064B9E6;
 			packageReferences = (
-				01B98F7F24EAC60600C21494 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				01B98F7F24EAC60600C21494 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 01924F2124DB4B9B0064B9E6 /* Products */;
 			projectDirPath = "";
@@ -174,6 +204,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D2C4695007AFE05503D11F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-myFood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C5742DB2C223BD1A4A1CE65 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myFood/Pods-myFood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-myFood/Pods-myFood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-myFood/Pods-myFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01924F1C24DB4B9B0064B9E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -181,6 +253,7 @@
 			files = (
 				01924F2824DB4B9B0064B9E6 /* ViewController.swift in Sources */,
 				01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */,
+				01FE408724F5ABC500ED7918 /* ReaderViewController.swift in Sources */,
 				01924F2E24DB4B9B0064B9E6 /* myFood.xcdatamodeld in Sources */,
 				01924F2424DB4B9B0064B9E6 /* AppDelegate.swift in Sources */,
 				01924F2624DB4B9B0064B9E6 /* SceneDelegate.swift in Sources */,
@@ -326,6 +399,7 @@
 		};
 		01924F3824DB4B9D0064B9E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB2F92D651F75A8E27F5334 /* Pods-myFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -344,6 +418,7 @@
 		};
 		01924F3924DB4B9D0064B9E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB36EE59C6C6108A8CC404C /* Pods-myFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -384,7 +459,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		01B98F7F24EAC60600C21494 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		01B98F7F24EAC60600C21494 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
@@ -395,9 +470,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		01B98F8024EAC60600C21494 /* FacebookLogin */ = {
+		01B98F8024EAC60600C21494 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 01B98F7F24EAC60600C21494 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 01B98F7F24EAC60600C21494 /* RemoteSwiftPackageReference */;
 			productName = FacebookLogin;
 		};
 /* End XCSwiftPackageProductDependency section */

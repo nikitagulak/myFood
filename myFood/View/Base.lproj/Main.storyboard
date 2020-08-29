@@ -444,6 +444,9 @@
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="HJ2-fF-0yr" kind="show" id="I1N-Ir-Khn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -472,20 +475,21 @@
             </objects>
             <point key="canvasLocation" x="4296" y="-867"/>
         </scene>
-        <!--View Controller-->
+        <!--Reader View Controller-->
         <scene sceneID="lMB-eI-waJ">
             <objects>
-                <viewController id="HJ2-fF-0yr" sceneMemberID="viewController">
+                <viewController id="HJ2-fF-0yr" customClass="ReaderViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C3q-zY-gQn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dpa-bO-MDe"/>
                     </view>
+                    <navigationItem key="navigationItem" id="sdd-SG-b2T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eII-NW-gXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4972" y="-867"/>
+            <point key="canvasLocation" x="5119" y="-867"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2oz-0X-igi">
