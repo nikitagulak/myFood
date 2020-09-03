@@ -7,135 +7,163 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01135A229C056CD1C50708D3861B4DD4 /* SPPermissionsDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6543F6960927E69C3A3786D5C27CEA /* SPPermissionsDraw.swift */; };
+		01135A229C056CD1C50708D3861B4DD4 /* SPPermissionsDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F861E7D140E217C8CC40E753D97E5C /* SPPermissionsDraw.swift */; };
+		04BAEC407D893A6CE7AD88BA270C5120 /* BarcodeEasyScan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1124ECEDA2E74BFACECC605C69F90 /* BarcodeEasyScan-dummy.m */; };
 		0DB8C82EA0C364A4A978422D224ACE7C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		11EDDE504824E9FBEBDE6537A297F14E /* SPPermissionsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D8B8319B9DFA999107CC06E8A3ED7C /* SPPermissionsText.swift */; };
-		1F37E61B342A045F224F827A541EBB87 /* SPMicrophonePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187DB8B6C01044578794CA8B2638416 /* SPMicrophonePermission.swift */; };
-		200365CF803E9C81CE79EC8161C8A96D /* SPPermissionIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCDC0924A82191DC45420F69677BF61 /* SPPermissionIconView.swift */; };
-		2212FDE0D673D93EB68FBF1F70CA40A5 /* SPPermissions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03BDEC83BD8A486E12A6D7B9086E193F /* SPPermissions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		24E8A226D18868756E04B0B916A9991E /* SPPermissionsListFooterCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B6180FEDFAD50C1B6CB7D0C79751C /* SPPermissionsListFooterCommentView.swift */; };
-		30902C85CB1443D7F754CF43950DDBC9 /* SPPermissionActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCEE1753437DCA0EE6A934C2C713BE /* SPPermissionActionButton.swift */; };
-		32B579E900D1FDB4217379B874959DDF /* SPMotionPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC39BC15CC4CA84F8B09892FF04E753 /* SPMotionPermission.swift */; };
-		34F0A1A63E39268008ACEBD77828230C /* SPMediaLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C3BD317AF9C1249DCEA3FC70D17FF0 /* SPMediaLibraryPermission.swift */; };
-		357B390BC0CFCE84369DDCB5FC725230 /* SPPermissionDeniedAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FFF577FA3503198BA8CF4411307F6F /* SPPermissionDeniedAlertData.swift */; };
-		35951BE4BF19EA60D6C2EEC0E54F2720 /* SPCalendarPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB43DFB9AFD1994DC23CB05EED694A6 /* SPCalendarPermission.swift */; };
-		3B1185C908D3721617514C7FC9FAC823 /* SPPermissionsDialogFooterCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A20A5FA087981AA2546CAF7A342902 /* SPPermissionsDialogFooterCommentView.swift */; };
-		4AF5CDFE90E67AA970CD5CA98B443058 /* SPPermissionsDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BA2EE62FE0E4EA5B641E4174CF7B07 /* SPPermissionsDelay.swift */; };
-		4BCE8A550DFAE8D33497B0D0BEC3A160 /* SPPermissionsHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351AA1AE21B04684A7BA2F38F1C2472 /* SPPermissionsHaptic.swift */; };
-		4DB540AB81C49E5129881B96C4741AE3 /* SPPermissionsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDE3143F9E18D01BA3EA8C3753646DE /* SPPermissionsOpener.swift */; };
-		561DDC1C14CCC2B420B929C0E9D66208 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		57A2A2CB94E52EC31A8B367F6A7894FA /* SPPermissionsDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF163CACF2EED4ADE3D5CF14BCB7CA9 /* SPPermissionsDialogController.swift */; };
-		5B1B10E0314204E84157D32D7CD5E6A1 /* SPLocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001B78BCC8D316F1A6FF300FDF26DE0 /* SPLocationPermission.swift */; };
-		5FEBB0D21E32D88CA7A415E72746E84F /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868A57091055B36116C4A0529CA7B15A /* SPPermission.swift */; };
-		627331B772262483CC701AA7A77C5057 /* Pods-myFood-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE3FBA080479E2F19DBC978E3D8BC05B /* Pods-myFood-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D8C10E7454E75C5D47C0BB0D39CFC50 /* SPPermissionsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513576FDDF18F6BF4442A95E1E4BFE76 /* SPPermissionsListHeaderView.swift */; };
-		7274AE00C45FD80640C8FF247D9C770A /* Pods-myFood-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CE15C3792DF5DCE8B72A4EB11E7278 /* Pods-myFood-dummy.m */; };
-		7BFE1E91B8BEE0F8766432D1A3C61FF0 /* SPPermissionsCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40A0B093398BF140188A46DC2573EBA /* SPPermissionsCloseButton.swift */; };
-		7C4572F32E46045017D98655ED6B0B19 /* SPPermissionsControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C150DA4A1DB61A5B191D885C9FA1B70 /* SPPermissionsControllerProtocol.swift */; };
+		11EDDE504824E9FBEBDE6537A297F14E /* SPPermissionsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D55EE19B4140322731B843EFABB80B /* SPPermissionsText.swift */; };
+		1F37E61B342A045F224F827A541EBB87 /* SPMicrophonePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1B5ECA62EFA8F42BA4B7052432C885 /* SPMicrophonePermission.swift */; };
+		200365CF803E9C81CE79EC8161C8A96D /* SPPermissionIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B385047873346987DAA07DE97DC97 /* SPPermissionIconView.swift */; };
+		2212FDE0D673D93EB68FBF1F70CA40A5 /* SPPermissions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AF4E7692CF74B4235C3221B8E80B427 /* SPPermissions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24E8A226D18868756E04B0B916A9991E /* SPPermissionsListFooterCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2BFFB9B736DDF031361E1C3486483E /* SPPermissionsListFooterCommentView.swift */; };
+		30902C85CB1443D7F754CF43950DDBC9 /* SPPermissionActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3C89656F148852B0D59AEB5FAEC887 /* SPPermissionActionButton.swift */; };
+		32B579E900D1FDB4217379B874959DDF /* SPMotionPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E28EBE71BD8AF980165111FD9CCDC /* SPMotionPermission.swift */; };
+		333DE08163DF465E07F5E2F6AF6963CA /* Pods-myFood-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CE15C3792DF5DCE8B72A4EB11E7278 /* Pods-myFood-dummy.m */; };
+		34F0A1A63E39268008ACEBD77828230C /* SPMediaLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5310F546B7934B75E9312E337DBA4450 /* SPMediaLibraryPermission.swift */; };
+		357B390BC0CFCE84369DDCB5FC725230 /* SPPermissionDeniedAlertData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD6D650646A54B10518E05D7775B6DE /* SPPermissionDeniedAlertData.swift */; };
+		35951BE4BF19EA60D6C2EEC0E54F2720 /* SPCalendarPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F41300DCB17DA6006D262F0744DA2 /* SPCalendarPermission.swift */; };
+		3B1185C908D3721617514C7FC9FAC823 /* SPPermissionsDialogFooterCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BED7742EA5DF9E0AF9EC2F0431D113 /* SPPermissionsDialogFooterCommentView.swift */; };
+		4AF5CDFE90E67AA970CD5CA98B443058 /* SPPermissionsDelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEB1179F910F1EF1DB99675438F0D35 /* SPPermissionsDelay.swift */; };
+		4BCE8A550DFAE8D33497B0D0BEC3A160 /* SPPermissionsHaptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C5978086D1702D5F348EE58348B4E /* SPPermissionsHaptic.swift */; };
+		4DB540AB81C49E5129881B96C4741AE3 /* SPPermissionsOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD41D16D50679A9612CDACDDF35D651 /* SPPermissionsOpener.swift */; };
+		57A2A2CB94E52EC31A8B367F6A7894FA /* SPPermissionsDialogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080F3717AAA91CAC7BCF3F6001BDB75 /* SPPermissionsDialogController.swift */; };
+		5B1B10E0314204E84157D32D7CD5E6A1 /* SPLocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874679D6B3339E51BA661201FF938D26 /* SPLocationPermission.swift */; };
+		5CD18E478EB3DFF085FFDCC99269AB6B /* Pods-myFood-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DE3FBA080479E2F19DBC978E3D8BC05B /* Pods-myFood-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FEBB0D21E32D88CA7A415E72746E84F /* SPPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E0BD30B4B4C8FA12C5AD966966692 /* SPPermission.swift */; };
+		6D8C10E7454E75C5D47C0BB0D39CFC50 /* SPPermissionsListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D7BB43CF0386CFDEC80F18D008771D /* SPPermissionsListHeaderView.swift */; };
+		7080046B49A0772CAB9E790CFB1FE41A /* BarcodeEasyScan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B185DB7CA332D10A38C338B2D698011A /* BarcodeEasyScan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BFE1E91B8BEE0F8766432D1A3C61FF0 /* SPPermissionsCloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07581C6CD21D0C9CA17C4749A88FA31F /* SPPermissionsCloseButton.swift */; };
+		7C4572F32E46045017D98655ED6B0B19 /* SPPermissionsControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126E04E7A495B34279C68A4A22D12D4 /* SPPermissionsControllerProtocol.swift */; };
 		7DE34ABD09AF80AAE4F47332649E7BC8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		82CB8C8098FC0C148A8BA30AC9026028 /* SPPermissionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863582E9BBDCE22746464D2E0132AE5F /* SPPermissionProtocol.swift */; };
-		86A56DCEA5BC27C1AECB277CCCFD9936 /* SPPermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3540BE2E3729D9B7EB59617AA90F107D /* SPPermissionTableViewCell.swift */; };
-		8F8E3402E29124231AE5020F847F682B /* SPPermissionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE9472DEB02F0BC1C36C1ABE49A4CA6 /* SPPermissionsDelegate.swift */; };
-		9528A481911A3570CCE9E949A831FC97 /* SPPermissionsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E5F04DB037D2D1BDC01F27A5ACA23C /* SPPermissionsColor.swift */; };
-		9574F885603FAC2595B74DAC7AD05F21 /* SPContactsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68E8419D75E737470B851D6AA74867 /* SPContactsPermission.swift */; };
-		9A96CE910297DB1448AE6DBF27C54C87 /* SPRemindersPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6822E79FEE5A55709932FE2068F94F7C /* SPRemindersPermission.swift */; };
-		A71B743A13A52721C673FA95621874CE /* SPPermissions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB835BC3F6665E3E6C13F194D0439F8 /* SPPermissions-dummy.m */; };
-		AB33F9A9206911789D1933E55657FEC4 /* SPPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3705E63184320099989BE2E3703D24E /* SPPermissionLocationHandler.swift */; };
-		BA1F4811A44043104C091C6220849FA4 /* SPPermissionsGradeBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D6F3863065E39D6CFF2F666C291C5 /* SPPermissionsGradeBlurView.swift */; };
-		BDDE6E80767B93F3940D132BBB2533FE /* SPSpeechPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44B84517B8A189A13F5FBD35DD3DCE3 /* SPSpeechPermission.swift */; };
-		C511036E167A8955E1E66F1C049BB0CD /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85126164EF3F3D4AD4B8304395E637E7 /* SPBluetoothPermission.swift */; };
-		C9F0576D00E78FAEC5988D9DC2B97FD6 /* SPPermissionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E323E4B91475811AF0828D45D1A4C4 /* SPPermissionsListController.swift */; };
-		CF61C876B2C80A4C57EB6FCB57FAEED6 /* SPPermissionsDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EB2854A25BDC8D8E49967D1BD764C5 /* SPPermissionsDialogView.swift */; };
-		D04485EE5ED845100A332731F79C68B8 /* SPPermissionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41391C47D771B1186017715A3A23195A /* SPPermissionsDataSource.swift */; };
-		D576CBE17899F416B3CCEAA28F06C8DB /* SPPhotoLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396B518DAD0E1E8D01AF2024FC13A29 /* SPPhotoLibraryPermission.swift */; };
-		D65FEA3B3DC0D4C4D859AF4A42A4AD0E /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FC51DD0918AA9ADB35C5C122463ACE /* SPPermissions.swift */; };
-		E1A6B13A183A931F7A415F12C699354A /* SPPermissionsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260FC7E5F88D8C74EE0523AC92D17F7 /* SPPermissionsLabel.swift */; };
-		E470845A8A2E695A98B15E4F482A56EB /* SPCameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5577AC9C828840C4B4A942C992ACD170 /* SPCameraPermission.swift */; };
-		E6E9A1348EB88455E12A2520E327C9E4 /* SPNotificationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86644A3162A9DFBD32AF16F172B9F9CB /* SPNotificationPermission.swift */; };
-		ED78268E00653155EAAD9A366452B720 /* SPPermissionsNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5ADE36528D822C8220802655682D2B /* SPPermissionsNativeController.swift */; };
-		F1AF886159D2EFC27B952B81FAF4EEC0 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF20D3E887280EF9FAB3534883C2ED82 /* SPTrackingPermission.swift */; };
+		82CB8C8098FC0C148A8BA30AC9026028 /* SPPermissionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B516194BCB9214AD7C4B5E96E154F /* SPPermissionProtocol.swift */; };
+		86A56DCEA5BC27C1AECB277CCCFD9936 /* SPPermissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436360B0BC36E36B6A251B7812A2CBC9 /* SPPermissionTableViewCell.swift */; };
+		8F8E3402E29124231AE5020F847F682B /* SPPermissionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8F03B3C314A0588B75F278A4071291 /* SPPermissionsDelegate.swift */; };
+		951474460320F4AB32FF3F7EB1B55B91 /* BarcodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B801E6606C2DA75B2B4336AD7B0E4726 /* BarcodeScannerViewController.swift */; };
+		9528A481911A3570CCE9E949A831FC97 /* SPPermissionsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC57FDC025442ED4C9E838C3FD1C528 /* SPPermissionsColor.swift */; };
+		9574F885603FAC2595B74DAC7AD05F21 /* SPContactsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052965E12B358F12AB2AF2532BF88A9B /* SPContactsPermission.swift */; };
+		9A96CE910297DB1448AE6DBF27C54C87 /* SPRemindersPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005B896D3FEFBD91C017FAC197AEBB5E /* SPRemindersPermission.swift */; };
+		9C731C5DA05491DC1BB69E129ACA2393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		A71B743A13A52721C673FA95621874CE /* SPPermissions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE8A753081C379D4E35F13CAD461DF62 /* SPPermissions-dummy.m */; };
+		AB33F9A9206911789D1933E55657FEC4 /* SPPermissionLocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113806BC291FCEB78AAF64E4B2A32851 /* SPPermissionLocationHandler.swift */; };
+		BA1F4811A44043104C091C6220849FA4 /* SPPermissionsGradeBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00CAAE11F9D088C310695867894BD5C /* SPPermissionsGradeBlurView.swift */; };
+		BDDE6E80767B93F3940D132BBB2533FE /* SPSpeechPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F283CEA4BE48CFFE4675556B9A2D81 /* SPSpeechPermission.swift */; };
+		C511036E167A8955E1E66F1C049BB0CD /* SPBluetoothPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A824391B3C3041923364A0E8306141E4 /* SPBluetoothPermission.swift */; };
+		C9F0576D00E78FAEC5988D9DC2B97FD6 /* SPPermissionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABC7615A2EA76EEA813048BF1B3C5C4 /* SPPermissionsListController.swift */; };
+		CF61C876B2C80A4C57EB6FCB57FAEED6 /* SPPermissionsDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F297CF9582B5952A70EE52A06A5D0007 /* SPPermissionsDialogView.swift */; };
+		D04485EE5ED845100A332731F79C68B8 /* SPPermissionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD94772851A1B2739AC07A36E2283C4 /* SPPermissionsDataSource.swift */; };
+		D576CBE17899F416B3CCEAA28F06C8DB /* SPPhotoLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A915B28B48DFB7C52EF3D42F3A299E3 /* SPPhotoLibraryPermission.swift */; };
+		D65FEA3B3DC0D4C4D859AF4A42A4AD0E /* SPPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBCC24A782C15AF20E3AFA83BAA9FD0 /* SPPermissions.swift */; };
+		E1A6B13A183A931F7A415F12C699354A /* SPPermissionsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72017A2EFC34348B858455A5D657D4CA /* SPPermissionsLabel.swift */; };
+		E470845A8A2E695A98B15E4F482A56EB /* SPCameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92263802268CFFB1D086654BF3F27328 /* SPCameraPermission.swift */; };
+		E6E9A1348EB88455E12A2520E327C9E4 /* SPNotificationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA1037AC528C5F7F0E7E04A0462C96 /* SPNotificationPermission.swift */; };
+		E9CB56D2C07B529AB4CFC16A7BBDFBA2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		ED78268E00653155EAAD9A366452B720 /* SPPermissionsNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD90C9E51531FC9BC342E8917B571D4 /* SPPermissionsNativeController.swift */; };
+		F1AF886159D2EFC27B952B81FAF4EEC0 /* SPTrackingPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F29F819CA4B1AD4C2D1704F5CE207 /* SPTrackingPermission.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		54B0337DA51B976403941B61F94EE7AA /* PBXContainerItemProxy */ = {
+		69E5E1D25706934657F2D5F2D8C1DF8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 46887A2B3EC5EA71E0B560973C79F7A6;
 			remoteInfo = SPPermissions;
 		};
+		B9F02E51CD3A10856B8712E225303044 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6A8C50B8CA7327DFD5679548955EBBF;
+			remoteInfo = BarcodeEasyScan;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0001B78BCC8D316F1A6FF300FDF26DE0 /* SPLocationPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPLocationPermission.swift; path = Source/SPPermissions/Permissions/SPLocationPermission.swift; sourceTree = "<group>"; };
-		03BDEC83BD8A486E12A6D7B9086E193F /* SPPermissions-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPPermissions-umbrella.h"; sourceTree = "<group>"; };
+		005B896D3FEFBD91C017FAC197AEBB5E /* SPRemindersPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPRemindersPermission.swift; path = Source/SPPermissions/Permissions/SPRemindersPermission.swift; sourceTree = "<group>"; };
+		052965E12B358F12AB2AF2532BF88A9B /* SPContactsPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPContactsPermission.swift; path = Source/SPPermissions/Permissions/SPContactsPermission.swift; sourceTree = "<group>"; };
 		0585718512C4ED56D33E33C30F91563C /* Pods_myFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_myFood.framework; path = "Pods-myFood.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		12E323E4B91475811AF0828D45D1A4C4 /* SPPermissionsListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsListController.swift; path = Source/SPPermissions/Interface/List/Controllers/SPPermissionsListController.swift; sourceTree = "<group>"; };
-		2260FC7E5F88D8C74EE0523AC92D17F7 /* SPPermissionsLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsLabel.swift; path = Source/SPPermissions/Interface/Shared/Labels/SPPermissionsLabel.swift; sourceTree = "<group>"; };
-		2EB43DFB9AFD1994DC23CB05EED694A6 /* SPCalendarPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPCalendarPermission.swift; path = Source/SPPermissions/Permissions/SPCalendarPermission.swift; sourceTree = "<group>"; };
+		07581C6CD21D0C9CA17C4749A88FA31F /* SPPermissionsCloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsCloseButton.swift; path = Source/SPPermissions/Interface/Shared/Buttons/SPPermissionsCloseButton.swift; sourceTree = "<group>"; };
+		113806BC291FCEB78AAF64E4B2A32851 /* SPPermissionLocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionLocationHandler.swift; path = Source/SPPermissions/Permissions/Handlers/SPPermissionLocationHandler.swift; sourceTree = "<group>"; };
+		19D01BC01DB96BAFDE6A1F497F253664 /* SPPermissions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPPermissions.debug.xcconfig; sourceTree = "<group>"; };
+		1A0F29F819CA4B1AD4C2D1704F5CE207 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPTrackingPermission.swift; path = Source/SPPermissions/Permissions/SPTrackingPermission.swift; sourceTree = "<group>"; };
+		1B1B5ECA62EFA8F42BA4B7052432C885 /* SPMicrophonePermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPMicrophonePermission.swift; path = Source/SPPermissions/Permissions/SPMicrophonePermission.swift; sourceTree = "<group>"; };
+		1C29FFA964DBC10A0D86960925727FEB /* BarcodeEasyScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BarcodeEasyScan.release.xcconfig; sourceTree = "<group>"; };
+		1C9D4A858F36B87DA792F1A1A0448A6F /* SPPermissions.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SPPermissions.modulemap; sourceTree = "<group>"; };
+		238E0BD30B4B4C8FA12C5AD966966692 /* SPPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermission.swift; path = Source/SPPermissions/Models/SPPermission.swift; sourceTree = "<group>"; };
+		25D24CDCBD976E51BF9E94E6BE4C5235 /* BarcodeEasyScan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BarcodeEasyScan.debug.xcconfig; sourceTree = "<group>"; };
+		2BD94772851A1B2739AC07A36E2283C4 /* SPPermissionsDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDataSource.swift; path = Source/SPPermissions/Protocols/SPPermissionsDataSource.swift; sourceTree = "<group>"; };
+		2FC1124ECEDA2E74BFACECC605C69F90 /* BarcodeEasyScan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BarcodeEasyScan-dummy.m"; sourceTree = "<group>"; };
+		3126E04E7A495B34279C68A4A22D12D4 /* SPPermissionsControllerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsControllerProtocol.swift; path = Source/SPPermissions/Protocols/SPPermissionsControllerProtocol.swift; sourceTree = "<group>"; };
 		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		3540BE2E3729D9B7EB59617AA90F107D /* SPPermissionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionTableViewCell.swift; path = Source/SPPermissions/Interface/Shared/Tables/SPPermissionTableViewCell.swift; sourceTree = "<group>"; };
-		35BA2EE62FE0E4EA5B641E4174CF7B07 /* SPPermissionsDelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDelay.swift; path = Source/SPPermissions/Data/SPPermissionsDelay.swift; sourceTree = "<group>"; };
+		31FC80073BB866EB6BEB8B05763BA6E8 /* BarcodeEasyScan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BarcodeEasyScan.framework; path = BarcodeEasyScan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A120FD24E03BF3B2A3D467EC604E39 /* Pods-myFood-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-myFood-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3B5ADE36528D822C8220802655682D2B /* SPPermissionsNativeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsNativeController.swift; path = Source/SPPermissions/Interface/Native/SPPermissionsNativeController.swift; sourceTree = "<group>"; };
-		41391C47D771B1186017715A3A23195A /* SPPermissionsDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDataSource.swift; path = Source/SPPermissions/Protocols/SPPermissionsDataSource.swift; sourceTree = "<group>"; };
+		3AC57FDC025442ED4C9E838C3FD1C528 /* SPPermissionsColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsColor.swift; path = Source/SPPermissions/Data/SPPermissionsColor.swift; sourceTree = "<group>"; };
+		436360B0BC36E36B6A251B7812A2CBC9 /* SPPermissionTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionTableViewCell.swift; path = Source/SPPermissions/Interface/Shared/Tables/SPPermissionTableViewCell.swift; sourceTree = "<group>"; };
 		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4396B518DAD0E1E8D01AF2024FC13A29 /* SPPhotoLibraryPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPhotoLibraryPermission.swift; path = Source/SPPermissions/Permissions/SPPhotoLibraryPermission.swift; sourceTree = "<group>"; };
 		43A8D749614E8797F2DFEFCB958C5338 /* Pods-myFood-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-myFood-frameworks.sh"; sourceTree = "<group>"; };
+		44AA1037AC528C5F7F0E7E04A0462C96 /* SPNotificationPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPNotificationPermission.swift; path = Source/SPPermissions/Permissions/SPNotificationPermission.swift; sourceTree = "<group>"; };
 		461A3C43D1864764D41F4F964032A627 /* Pods-myFood-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-myFood-Info.plist"; sourceTree = "<group>"; };
-		47A20A5FA087981AA2546CAF7A342902 /* SPPermissionsDialogFooterCommentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDialogFooterCommentView.swift; path = Source/SPPermissions/Interface/Dialog/Views/SPPermissionsDialogFooterCommentView.swift; sourceTree = "<group>"; };
-		4FDCEE1753437DCA0EE6A934C2C713BE /* SPPermissionActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionActionButton.swift; path = Source/SPPermissions/Interface/Shared/Buttons/SPPermissionActionButton.swift; sourceTree = "<group>"; };
-		513576FDDF18F6BF4442A95E1E4BFE76 /* SPPermissionsListHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsListHeaderView.swift; path = Source/SPPermissions/Interface/List/Views/SPPermissionsListHeaderView.swift; sourceTree = "<group>"; };
-		51754FA673FB3E487E8FEE102B239AEA /* SPPermissions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPPermissions.release.xcconfig; sourceTree = "<group>"; };
+		4B7C5978086D1702D5F348EE58348B4E /* SPPermissionsHaptic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsHaptic.swift; path = Source/SPPermissions/Data/SPPermissionsHaptic.swift; sourceTree = "<group>"; };
+		52BED7742EA5DF9E0AF9EC2F0431D113 /* SPPermissionsDialogFooterCommentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDialogFooterCommentView.swift; path = Source/SPPermissions/Interface/Dialog/Views/SPPermissionsDialogFooterCommentView.swift; sourceTree = "<group>"; };
+		5310F546B7934B75E9312E337DBA4450 /* SPMediaLibraryPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPMediaLibraryPermission.swift; path = Source/SPPermissions/Permissions/SPMediaLibraryPermission.swift; sourceTree = "<group>"; };
 		54792B18A3DD6516BD27E6C72207CA11 /* Pods-myFood-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-myFood-acknowledgements.plist"; sourceTree = "<group>"; };
-		5577AC9C828840C4B4A942C992ACD170 /* SPCameraPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPCameraPermission.swift; path = Source/SPPermissions/Permissions/SPCameraPermission.swift; sourceTree = "<group>"; };
-		5B1373AF8053E5D69EF05BEF39A89DA5 /* SPPermissions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPPermissions.debug.xcconfig; sourceTree = "<group>"; };
-		5C150DA4A1DB61A5B191D885C9FA1B70 /* SPPermissionsControllerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsControllerProtocol.swift; path = Source/SPPermissions/Protocols/SPPermissionsControllerProtocol.swift; sourceTree = "<group>"; };
+		5A915B28B48DFB7C52EF3D42F3A299E3 /* SPPhotoLibraryPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPhotoLibraryPermission.swift; path = Source/SPPermissions/Permissions/SPPhotoLibraryPermission.swift; sourceTree = "<group>"; };
+		5ABC7615A2EA76EEA813048BF1B3C5C4 /* SPPermissionsListController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsListController.swift; path = Source/SPPermissions/Interface/List/Controllers/SPPermissionsListController.swift; sourceTree = "<group>"; };
+		5B6F41300DCB17DA6006D262F0744DA2 /* SPCalendarPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPCalendarPermission.swift; path = Source/SPPermissions/Permissions/SPCalendarPermission.swift; sourceTree = "<group>"; };
+		5D0B516194BCB9214AD7C4B5E96E154F /* SPPermissionProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionProtocol.swift; path = Source/SPPermissions/Protocols/SPPermissionProtocol.swift; sourceTree = "<group>"; };
+		5DBCC24A782C15AF20E3AFA83BAA9FD0 /* SPPermissions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissions.swift; path = Source/SPPermissions/SPPermissions.swift; sourceTree = "<group>"; };
 		5FD8E4EBA830B51FA0871FEAA75E4DF8 /* SPPermissions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SPPermissions.framework; path = SPPermissions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5FDE3143F9E18D01BA3EA8C3753646DE /* SPPermissionsOpener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsOpener.swift; path = Source/SPPermissions/Data/SPPermissionsOpener.swift; sourceTree = "<group>"; };
-		6822E79FEE5A55709932FE2068F94F7C /* SPRemindersPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPRemindersPermission.swift; path = Source/SPPermissions/Permissions/SPRemindersPermission.swift; sourceTree = "<group>"; };
-		6EE9472DEB02F0BC1C36C1ABE49A4CA6 /* SPPermissionsDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDelegate.swift; path = Source/SPPermissions/Protocols/SPPermissionsDelegate.swift; sourceTree = "<group>"; };
-		7187DB8B6C01044578794CA8B2638416 /* SPMicrophonePermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPMicrophonePermission.swift; path = Source/SPPermissions/Permissions/SPMicrophonePermission.swift; sourceTree = "<group>"; };
-		71D8B8319B9DFA999107CC06E8A3ED7C /* SPPermissionsText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsText.swift; path = Source/SPPermissions/Data/SPPermissionsText.swift; sourceTree = "<group>"; };
-		79D55E3A8382B8E3657BA12E3C2C37A9 /* SPPermissions.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SPPermissions.modulemap; sourceTree = "<group>"; };
-		83E5F04DB037D2D1BDC01F27A5ACA23C /* SPPermissionsColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsColor.swift; path = Source/SPPermissions/Data/SPPermissionsColor.swift; sourceTree = "<group>"; };
-		85126164EF3F3D4AD4B8304395E637E7 /* SPBluetoothPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPBluetoothPermission.swift; path = Source/SPPermissions/Permissions/SPBluetoothPermission.swift; sourceTree = "<group>"; };
-		863582E9BBDCE22746464D2E0132AE5F /* SPPermissionProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionProtocol.swift; path = Source/SPPermissions/Protocols/SPPermissionProtocol.swift; sourceTree = "<group>"; };
-		86644A3162A9DFBD32AF16F172B9F9CB /* SPNotificationPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPNotificationPermission.swift; path = Source/SPPermissions/Permissions/SPNotificationPermission.swift; sourceTree = "<group>"; };
-		868A57091055B36116C4A0529CA7B15A /* SPPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermission.swift; path = Source/SPPermissions/Models/SPPermission.swift; sourceTree = "<group>"; };
-		8CC39BC15CC4CA84F8B09892FF04E753 /* SPMotionPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPMotionPermission.swift; path = Source/SPPermissions/Permissions/SPMotionPermission.swift; sourceTree = "<group>"; };
-		913D6F3863065E39D6CFF2F666C291C5 /* SPPermissionsGradeBlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsGradeBlurView.swift; path = Source/SPPermissions/Interface/Shared/Other/SPPermissionsGradeBlurView.swift; sourceTree = "<group>"; };
+		72017A2EFC34348B858455A5D657D4CA /* SPPermissionsLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsLabel.swift; path = Source/SPPermissions/Interface/Shared/Labels/SPPermissionsLabel.swift; sourceTree = "<group>"; };
+		7613A5FF277271194F831EFC58CC7002 /* BarcodeEasyScan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BarcodeEasyScan.modulemap; sourceTree = "<group>"; };
+		7D8F03B3C314A0588B75F278A4071291 /* SPPermissionsDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDelegate.swift; path = Source/SPPermissions/Protocols/SPPermissionsDelegate.swift; sourceTree = "<group>"; };
+		874679D6B3339E51BA661201FF938D26 /* SPLocationPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPLocationPermission.swift; path = Source/SPPermissions/Permissions/SPLocationPermission.swift; sourceTree = "<group>"; };
+		8AF4E7692CF74B4235C3221B8E80B427 /* SPPermissions-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPPermissions-umbrella.h"; sourceTree = "<group>"; };
+		8CD41D16D50679A9612CDACDDF35D651 /* SPPermissionsOpener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsOpener.swift; path = Source/SPPermissions/Data/SPPermissionsOpener.swift; sourceTree = "<group>"; };
+		9080F3717AAA91CAC7BCF3F6001BDB75 /* SPPermissionsDialogController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDialogController.swift; path = Source/SPPermissions/Interface/Dialog/Controllers/SPPermissionsDialogController.swift; sourceTree = "<group>"; };
 		91DC920DFD57EAD32BF0D6FBF423F76F /* Pods-myFood.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-myFood.modulemap"; sourceTree = "<group>"; };
+		92263802268CFFB1D086654BF3F27328 /* SPCameraPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPCameraPermission.swift; path = Source/SPPermissions/Permissions/SPCameraPermission.swift; sourceTree = "<group>"; };
+		936B385047873346987DAA07DE97DC97 /* SPPermissionIconView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionIconView.swift; path = Source/SPPermissions/Interface/Shared/Other/SPPermissionIconView.swift; sourceTree = "<group>"; };
+		969DED0DDC239140394FCD2AA0265A7B /* BarcodeEasyScan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BarcodeEasyScan-Info.plist"; sourceTree = "<group>"; };
 		9931FF083C76975CF28CD9A8AFFC3749 /* Pods-myFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-myFood.release.xcconfig"; sourceTree = "<group>"; };
-		9C68E8419D75E737470B851D6AA74867 /* SPContactsPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPContactsPermission.swift; path = Source/SPPermissions/Permissions/SPContactsPermission.swift; sourceTree = "<group>"; };
+		9BD90C9E51531FC9BC342E8917B571D4 /* SPPermissionsNativeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsNativeController.swift; path = Source/SPPermissions/Interface/Native/SPPermissionsNativeController.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A44B84517B8A189A13F5FBD35DD3DCE3 /* SPSpeechPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPSpeechPermission.swift; path = Source/SPPermissions/Permissions/SPSpeechPermission.swift; sourceTree = "<group>"; };
-		B794A52EC0ECBF1FD73C2D78D841ABA2 /* SPPermissions-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SPPermissions-Info.plist"; sourceTree = "<group>"; };
-		B8C3BD317AF9C1249DCEA3FC70D17FF0 /* SPMediaLibraryPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPMediaLibraryPermission.swift; path = Source/SPPermissions/Permissions/SPMediaLibraryPermission.swift; sourceTree = "<group>"; };
-		C3FC51DD0918AA9ADB35C5C122463ACE /* SPPermissions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissions.swift; path = Source/SPPermissions/SPPermissions.swift; sourceTree = "<group>"; };
-		C8FFF577FA3503198BA8CF4411307F6F /* SPPermissionDeniedAlertData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionDeniedAlertData.swift; path = Source/SPPermissions/Models/SPPermissionDeniedAlertData.swift; sourceTree = "<group>"; };
-		CD6543F6960927E69C3A3786D5C27CEA /* SPPermissionsDraw.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDraw.swift; path = Source/SPPermissions/Data/SPPermissionsDraw.swift; sourceTree = "<group>"; };
-		CFB835BC3F6665E3E6C13F194D0439F8 /* SPPermissions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPPermissions-dummy.m"; sourceTree = "<group>"; };
-		D351AA1AE21B04684A7BA2F38F1C2472 /* SPPermissionsHaptic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsHaptic.swift; path = Source/SPPermissions/Data/SPPermissionsHaptic.swift; sourceTree = "<group>"; };
-		D40A0B093398BF140188A46DC2573EBA /* SPPermissionsCloseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsCloseButton.swift; path = Source/SPPermissions/Interface/Shared/Buttons/SPPermissionsCloseButton.swift; sourceTree = "<group>"; };
+		A658DEAB09413725ADA65E6629700984 /* BarcodeEasyScan-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BarcodeEasyScan-prefix.pch"; sourceTree = "<group>"; };
+		A808A2E68225288D5BC83FC0D60BF62E /* SPPermissions-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SPPermissions-Info.plist"; sourceTree = "<group>"; };
+		A824391B3C3041923364A0E8306141E4 /* SPBluetoothPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPBluetoothPermission.swift; path = Source/SPPermissions/Permissions/SPBluetoothPermission.swift; sourceTree = "<group>"; };
+		AD6B2BA4B92D4C8475531F43A8017919 /* SPPermissions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPPermissions-prefix.pch"; sourceTree = "<group>"; };
+		AE8A753081C379D4E35F13CAD461DF62 /* SPPermissions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SPPermissions-dummy.m"; sourceTree = "<group>"; };
+		AFEB1179F910F1EF1DB99675438F0D35 /* SPPermissionsDelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDelay.swift; path = Source/SPPermissions/Data/SPPermissionsDelay.swift; sourceTree = "<group>"; };
+		B185DB7CA332D10A38C338B2D698011A /* BarcodeEasyScan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BarcodeEasyScan-umbrella.h"; sourceTree = "<group>"; };
+		B2D7BB43CF0386CFDEC80F18D008771D /* SPPermissionsListHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsListHeaderView.swift; path = Source/SPPermissions/Interface/List/Views/SPPermissionsListHeaderView.swift; sourceTree = "<group>"; };
+		B801E6606C2DA75B2B4336AD7B0E4726 /* BarcodeScannerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BarcodeScannerViewController.swift; path = BarcodeEasyScan/Classes/BarcodeScannerViewController.swift; sourceTree = "<group>"; };
+		BB3C89656F148852B0D59AEB5FAEC887 /* SPPermissionActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionActionButton.swift; path = Source/SPPermissions/Interface/Shared/Buttons/SPPermissionActionButton.swift; sourceTree = "<group>"; };
+		C1D55EE19B4140322731B843EFABB80B /* SPPermissionsText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsText.swift; path = Source/SPPermissions/Data/SPPermissionsText.swift; sourceTree = "<group>"; };
+		C4F861E7D140E217C8CC40E753D97E5C /* SPPermissionsDraw.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDraw.swift; path = Source/SPPermissions/Data/SPPermissionsDraw.swift; sourceTree = "<group>"; };
+		CCD6D650646A54B10518E05D7775B6DE /* SPPermissionDeniedAlertData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionDeniedAlertData.swift; path = Source/SPPermissions/Models/SPPermissionDeniedAlertData.swift; sourceTree = "<group>"; };
 		D4B7E48EB1C23B1EFAA8D6F8B267CE2F /* Pods-myFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-myFood.debug.xcconfig"; sourceTree = "<group>"; };
-		DA1B6180FEDFAD50C1B6CB7D0C79751C /* SPPermissionsListFooterCommentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsListFooterCommentView.swift; path = Source/SPPermissions/Interface/List/Views/SPPermissionsListFooterCommentView.swift; sourceTree = "<group>"; };
+		D779383F82182D861F770804D00492F9 /* SPPermissions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SPPermissions.release.xcconfig; sourceTree = "<group>"; };
+		D78E28EBE71BD8AF980165111FD9CCDC /* SPMotionPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPMotionPermission.swift; path = Source/SPPermissions/Permissions/SPMotionPermission.swift; sourceTree = "<group>"; };
 		DE3FBA080479E2F19DBC978E3D8BC05B /* Pods-myFood-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-myFood-umbrella.h"; sourceTree = "<group>"; };
+		E00CAAE11F9D088C310695867894BD5C /* SPPermissionsGradeBlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsGradeBlurView.swift; path = Source/SPPermissions/Interface/Shared/Other/SPPermissionsGradeBlurView.swift; sourceTree = "<group>"; };
 		E3CE15C3792DF5DCE8B72A4EB11E7278 /* Pods-myFood-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-myFood-dummy.m"; sourceTree = "<group>"; };
-		E4667DE4931CF57CD19D3C6A255F1942 /* SPPermissions-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SPPermissions-prefix.pch"; sourceTree = "<group>"; };
-		EDF163CACF2EED4ADE3D5CF14BCB7CA9 /* SPPermissionsDialogController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDialogController.swift; path = Source/SPPermissions/Interface/Dialog/Controllers/SPPermissionsDialogController.swift; sourceTree = "<group>"; };
-		F3705E63184320099989BE2E3703D24E /* SPPermissionLocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionLocationHandler.swift; path = Source/SPPermissions/Permissions/Handlers/SPPermissionLocationHandler.swift; sourceTree = "<group>"; };
-		F4EB2854A25BDC8D8E49967D1BD764C5 /* SPPermissionsDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDialogView.swift; path = Source/SPPermissions/Interface/Dialog/Views/SPPermissionsDialogView.swift; sourceTree = "<group>"; };
-		FF20D3E887280EF9FAB3534883C2ED82 /* SPTrackingPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPTrackingPermission.swift; path = Source/SPPermissions/Permissions/SPTrackingPermission.swift; sourceTree = "<group>"; };
-		FFCDC0924A82191DC45420F69677BF61 /* SPPermissionIconView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionIconView.swift; path = Source/SPPermissions/Interface/Shared/Other/SPPermissionIconView.swift; sourceTree = "<group>"; };
+		EA2BFFB9B736DDF031361E1C3486483E /* SPPermissionsListFooterCommentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsListFooterCommentView.swift; path = Source/SPPermissions/Interface/List/Views/SPPermissionsListFooterCommentView.swift; sourceTree = "<group>"; };
+		F1F283CEA4BE48CFFE4675556B9A2D81 /* SPSpeechPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPSpeechPermission.swift; path = Source/SPPermissions/Permissions/SPSpeechPermission.swift; sourceTree = "<group>"; };
+		F297CF9582B5952A70EE52A06A5D0007 /* SPPermissionsDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SPPermissionsDialogView.swift; path = Source/SPPermissions/Interface/Dialog/Views/SPPermissionsDialogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AE8D374DC28DF609AC32224BB29F6862 /* Frameworks */ = {
+		9CFDE8AEB537840ECDB8DEBC348FFF18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				561DDC1C14CCC2B420B929C0E9D66208 /* Foundation.framework in Frameworks */,
+				9C731C5DA05491DC1BB69E129ACA2393 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0B45E562974A858E3927DED392DFC0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9CB56D2C07B529AB4CFC16A7BBDFBA2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,27 +187,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		26F17E7390598647D529DFA4EBD4ABB9 /* Support Files */ = {
+		2B02F6429F576D82BD0D0B886788D4B7 /* SPPermissions */ = {
 			isa = PBXGroup;
 			children = (
-				79D55E3A8382B8E3657BA12E3C2C37A9 /* SPPermissions.modulemap */,
-				CFB835BC3F6665E3E6C13F194D0439F8 /* SPPermissions-dummy.m */,
-				B794A52EC0ECBF1FD73C2D78D841ABA2 /* SPPermissions-Info.plist */,
-				E4667DE4931CF57CD19D3C6A255F1942 /* SPPermissions-prefix.pch */,
-				03BDEC83BD8A486E12A6D7B9086E193F /* SPPermissions-umbrella.h */,
-				5B1373AF8053E5D69EF05BEF39A89DA5 /* SPPermissions.debug.xcconfig */,
-				51754FA673FB3E487E8FEE102B239AEA /* SPPermissions.release.xcconfig */,
+				4A0576851FA9FCB630E156ACDF13E7AF /* Core */,
+				C5A2EBACDF320C0BE0348C32D97891A8 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SPPermissions";
-			sourceTree = "<group>";
-		};
-		4492E27E0AB945D6E59DDAAF9FE581DE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A1D51AEB4557AD5C13FE6293B96D961F /* SPPermissions */,
-			);
-			name = Pods;
+			name = SPPermissions;
+			path = SPPermissions;
 			sourceTree = "<group>";
 		};
 		477FD64937F332221CF4B55188977BA1 /* Targets Support Files */ = {
@@ -190,51 +205,60 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4F1B80F98A35FCFDE68A064A10326210 /* Core */ = {
+		4A0576851FA9FCB630E156ACDF13E7AF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				85126164EF3F3D4AD4B8304395E637E7 /* SPBluetoothPermission.swift */,
-				2EB43DFB9AFD1994DC23CB05EED694A6 /* SPCalendarPermission.swift */,
-				5577AC9C828840C4B4A942C992ACD170 /* SPCameraPermission.swift */,
-				9C68E8419D75E737470B851D6AA74867 /* SPContactsPermission.swift */,
-				0001B78BCC8D316F1A6FF300FDF26DE0 /* SPLocationPermission.swift */,
-				B8C3BD317AF9C1249DCEA3FC70D17FF0 /* SPMediaLibraryPermission.swift */,
-				7187DB8B6C01044578794CA8B2638416 /* SPMicrophonePermission.swift */,
-				8CC39BC15CC4CA84F8B09892FF04E753 /* SPMotionPermission.swift */,
-				86644A3162A9DFBD32AF16F172B9F9CB /* SPNotificationPermission.swift */,
-				868A57091055B36116C4A0529CA7B15A /* SPPermission.swift */,
-				4FDCEE1753437DCA0EE6A934C2C713BE /* SPPermissionActionButton.swift */,
-				C8FFF577FA3503198BA8CF4411307F6F /* SPPermissionDeniedAlertData.swift */,
-				FFCDC0924A82191DC45420F69677BF61 /* SPPermissionIconView.swift */,
-				F3705E63184320099989BE2E3703D24E /* SPPermissionLocationHandler.swift */,
-				863582E9BBDCE22746464D2E0132AE5F /* SPPermissionProtocol.swift */,
-				C3FC51DD0918AA9ADB35C5C122463ACE /* SPPermissions.swift */,
-				D40A0B093398BF140188A46DC2573EBA /* SPPermissionsCloseButton.swift */,
-				83E5F04DB037D2D1BDC01F27A5ACA23C /* SPPermissionsColor.swift */,
-				5C150DA4A1DB61A5B191D885C9FA1B70 /* SPPermissionsControllerProtocol.swift */,
-				41391C47D771B1186017715A3A23195A /* SPPermissionsDataSource.swift */,
-				35BA2EE62FE0E4EA5B641E4174CF7B07 /* SPPermissionsDelay.swift */,
-				6EE9472DEB02F0BC1C36C1ABE49A4CA6 /* SPPermissionsDelegate.swift */,
-				EDF163CACF2EED4ADE3D5CF14BCB7CA9 /* SPPermissionsDialogController.swift */,
-				47A20A5FA087981AA2546CAF7A342902 /* SPPermissionsDialogFooterCommentView.swift */,
-				F4EB2854A25BDC8D8E49967D1BD764C5 /* SPPermissionsDialogView.swift */,
-				CD6543F6960927E69C3A3786D5C27CEA /* SPPermissionsDraw.swift */,
-				913D6F3863065E39D6CFF2F666C291C5 /* SPPermissionsGradeBlurView.swift */,
-				D351AA1AE21B04684A7BA2F38F1C2472 /* SPPermissionsHaptic.swift */,
-				2260FC7E5F88D8C74EE0523AC92D17F7 /* SPPermissionsLabel.swift */,
-				12E323E4B91475811AF0828D45D1A4C4 /* SPPermissionsListController.swift */,
-				DA1B6180FEDFAD50C1B6CB7D0C79751C /* SPPermissionsListFooterCommentView.swift */,
-				513576FDDF18F6BF4442A95E1E4BFE76 /* SPPermissionsListHeaderView.swift */,
-				3B5ADE36528D822C8220802655682D2B /* SPPermissionsNativeController.swift */,
-				5FDE3143F9E18D01BA3EA8C3753646DE /* SPPermissionsOpener.swift */,
-				71D8B8319B9DFA999107CC06E8A3ED7C /* SPPermissionsText.swift */,
-				3540BE2E3729D9B7EB59617AA90F107D /* SPPermissionTableViewCell.swift */,
-				4396B518DAD0E1E8D01AF2024FC13A29 /* SPPhotoLibraryPermission.swift */,
-				6822E79FEE5A55709932FE2068F94F7C /* SPRemindersPermission.swift */,
-				A44B84517B8A189A13F5FBD35DD3DCE3 /* SPSpeechPermission.swift */,
-				FF20D3E887280EF9FAB3534883C2ED82 /* SPTrackingPermission.swift */,
+				A824391B3C3041923364A0E8306141E4 /* SPBluetoothPermission.swift */,
+				5B6F41300DCB17DA6006D262F0744DA2 /* SPCalendarPermission.swift */,
+				92263802268CFFB1D086654BF3F27328 /* SPCameraPermission.swift */,
+				052965E12B358F12AB2AF2532BF88A9B /* SPContactsPermission.swift */,
+				874679D6B3339E51BA661201FF938D26 /* SPLocationPermission.swift */,
+				5310F546B7934B75E9312E337DBA4450 /* SPMediaLibraryPermission.swift */,
+				1B1B5ECA62EFA8F42BA4B7052432C885 /* SPMicrophonePermission.swift */,
+				D78E28EBE71BD8AF980165111FD9CCDC /* SPMotionPermission.swift */,
+				44AA1037AC528C5F7F0E7E04A0462C96 /* SPNotificationPermission.swift */,
+				238E0BD30B4B4C8FA12C5AD966966692 /* SPPermission.swift */,
+				BB3C89656F148852B0D59AEB5FAEC887 /* SPPermissionActionButton.swift */,
+				CCD6D650646A54B10518E05D7775B6DE /* SPPermissionDeniedAlertData.swift */,
+				936B385047873346987DAA07DE97DC97 /* SPPermissionIconView.swift */,
+				113806BC291FCEB78AAF64E4B2A32851 /* SPPermissionLocationHandler.swift */,
+				5D0B516194BCB9214AD7C4B5E96E154F /* SPPermissionProtocol.swift */,
+				5DBCC24A782C15AF20E3AFA83BAA9FD0 /* SPPermissions.swift */,
+				07581C6CD21D0C9CA17C4749A88FA31F /* SPPermissionsCloseButton.swift */,
+				3AC57FDC025442ED4C9E838C3FD1C528 /* SPPermissionsColor.swift */,
+				3126E04E7A495B34279C68A4A22D12D4 /* SPPermissionsControllerProtocol.swift */,
+				2BD94772851A1B2739AC07A36E2283C4 /* SPPermissionsDataSource.swift */,
+				AFEB1179F910F1EF1DB99675438F0D35 /* SPPermissionsDelay.swift */,
+				7D8F03B3C314A0588B75F278A4071291 /* SPPermissionsDelegate.swift */,
+				9080F3717AAA91CAC7BCF3F6001BDB75 /* SPPermissionsDialogController.swift */,
+				52BED7742EA5DF9E0AF9EC2F0431D113 /* SPPermissionsDialogFooterCommentView.swift */,
+				F297CF9582B5952A70EE52A06A5D0007 /* SPPermissionsDialogView.swift */,
+				C4F861E7D140E217C8CC40E753D97E5C /* SPPermissionsDraw.swift */,
+				E00CAAE11F9D088C310695867894BD5C /* SPPermissionsGradeBlurView.swift */,
+				4B7C5978086D1702D5F348EE58348B4E /* SPPermissionsHaptic.swift */,
+				72017A2EFC34348B858455A5D657D4CA /* SPPermissionsLabel.swift */,
+				5ABC7615A2EA76EEA813048BF1B3C5C4 /* SPPermissionsListController.swift */,
+				EA2BFFB9B736DDF031361E1C3486483E /* SPPermissionsListFooterCommentView.swift */,
+				B2D7BB43CF0386CFDEC80F18D008771D /* SPPermissionsListHeaderView.swift */,
+				9BD90C9E51531FC9BC342E8917B571D4 /* SPPermissionsNativeController.swift */,
+				8CD41D16D50679A9612CDACDDF35D651 /* SPPermissionsOpener.swift */,
+				C1D55EE19B4140322731B843EFABB80B /* SPPermissionsText.swift */,
+				436360B0BC36E36B6A251B7812A2CBC9 /* SPPermissionTableViewCell.swift */,
+				5A915B28B48DFB7C52EF3D42F3A299E3 /* SPPhotoLibraryPermission.swift */,
+				005B896D3FEFBD91C017FAC197AEBB5E /* SPRemindersPermission.swift */,
+				F1F283CEA4BE48CFFE4675556B9A2D81 /* SPSpeechPermission.swift */,
+				1A0F29F819CA4B1AD4C2D1704F5CE207 /* SPTrackingPermission.swift */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		4F5123AA0B8FD9F3CDBD778A8F47B505 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B14CB19692F2E59D54D77DF95450D94 /* BarcodeEasyScan */,
+				2B02F6429F576D82BD0D0B886788D4B7 /* SPPermissions */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		9782088AB297CD6BB2FAD675C96DC3F0 /* Pods-myFood */ = {
@@ -254,23 +278,29 @@
 			path = "Target Support Files/Pods-myFood";
 			sourceTree = "<group>";
 		};
-		A1D51AEB4557AD5C13FE6293B96D961F /* SPPermissions */ = {
+		9B14CB19692F2E59D54D77DF95450D94 /* BarcodeEasyScan */ = {
 			isa = PBXGroup;
 			children = (
-				4F1B80F98A35FCFDE68A064A10326210 /* Core */,
-				26F17E7390598647D529DFA4EBD4ABB9 /* Support Files */,
+				B801E6606C2DA75B2B4336AD7B0E4726 /* BarcodeScannerViewController.swift */,
+				E9C8814A352BC6D7A5B6F596E7E08EE0 /* Support Files */,
 			);
-			name = SPPermissions;
-			path = SPPermissions;
+			name = BarcodeEasyScan;
+			path = BarcodeEasyScan;
 			sourceTree = "<group>";
 		};
-		B732E867B833BB6D80F29AD49DA6B6DD /* Products */ = {
+		C5A2EBACDF320C0BE0348C32D97891A8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0585718512C4ED56D33E33C30F91563C /* Pods_myFood.framework */,
-				5FD8E4EBA830B51FA0871FEAA75E4DF8 /* SPPermissions.framework */,
+				1C9D4A858F36B87DA792F1A1A0448A6F /* SPPermissions.modulemap */,
+				AE8A753081C379D4E35F13CAD461DF62 /* SPPermissions-dummy.m */,
+				A808A2E68225288D5BC83FC0D60BF62E /* SPPermissions-Info.plist */,
+				AD6B2BA4B92D4C8475531F43A8017919 /* SPPermissions-prefix.pch */,
+				8AF4E7692CF74B4235C3221B8E80B427 /* SPPermissions-umbrella.h */,
+				19D01BC01DB96BAFDE6A1F497F253664 /* SPPermissions.debug.xcconfig */,
+				D779383F82182D861F770804D00492F9 /* SPPermissions.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/SPPermissions";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -278,8 +308,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				4492E27E0AB945D6E59DDAAF9FE581DE /* Pods */,
-				B732E867B833BB6D80F29AD49DA6B6DD /* Products */,
+				4F5123AA0B8FD9F3CDBD778A8F47B505 /* Pods */,
+				F61DB72384BCDB603F3899D29C0CE21F /* Products */,
 				477FD64937F332221CF4B55188977BA1 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -293,9 +323,42 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		E9C8814A352BC6D7A5B6F596E7E08EE0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7613A5FF277271194F831EFC58CC7002 /* BarcodeEasyScan.modulemap */,
+				2FC1124ECEDA2E74BFACECC605C69F90 /* BarcodeEasyScan-dummy.m */,
+				969DED0DDC239140394FCD2AA0265A7B /* BarcodeEasyScan-Info.plist */,
+				A658DEAB09413725ADA65E6629700984 /* BarcodeEasyScan-prefix.pch */,
+				B185DB7CA332D10A38C338B2D698011A /* BarcodeEasyScan-umbrella.h */,
+				25D24CDCBD976E51BF9E94E6BE4C5235 /* BarcodeEasyScan.debug.xcconfig */,
+				1C29FFA964DBC10A0D86960925727FEB /* BarcodeEasyScan.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BarcodeEasyScan";
+			sourceTree = "<group>";
+		};
+		F61DB72384BCDB603F3899D29C0CE21F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31FC80073BB866EB6BEB8B05763BA6E8 /* BarcodeEasyScan.framework */,
+				0585718512C4ED56D33E33C30F91563C /* Pods_myFood.framework */,
+				5FD8E4EBA830B51FA0871FEAA75E4DF8 /* SPPermissions.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		4F098BE50980FA8D14D5C7AF93CBCFE7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7080046B49A0772CAB9E790CFB1FE41A /* BarcodeEasyScan-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		911654E9EB46F015F739D6EE2304A09B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,11 +367,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E51353E8EB989489C356BED0070034D /* Headers */ = {
+		B1E8C96A3B2803CAB86BC30CDCAC566E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627331B772262483CC701AA7A77C5057 /* Pods-myFood-umbrella.h in Headers */,
+				5CD18E478EB3DFF085FFDCC99269AB6B /* Pods-myFood-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,21 +398,40 @@
 		};
 		5DD56039404B55F689A834FF7B5D0E10 /* Pods-myFood */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05D6AB73F0E4A92985A2137CA410B720 /* Build configuration list for PBXNativeTarget "Pods-myFood" */;
+			buildConfigurationList = CF02A7775E1D692983145D42BE03BED8 /* Build configuration list for PBXNativeTarget "Pods-myFood" */;
 			buildPhases = (
-				9E51353E8EB989489C356BED0070034D /* Headers */,
-				50DD5F60786CC16444E44A77373D7823 /* Sources */,
-				AE8D374DC28DF609AC32224BB29F6862 /* Frameworks */,
-				6CCDE0F5465D1C9DE02F7CA7AB692BC8 /* Resources */,
+				B1E8C96A3B2803CAB86BC30CDCAC566E /* Headers */,
+				5034E15563AEC99110BFBA0DFA201AD8 /* Sources */,
+				B0B45E562974A858E3927DED392DFC0E /* Frameworks */,
+				89E1CC6698E90E8E1B2DEB24BDE96002 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EB26B0572504FF94F41D41C255A42BCA /* PBXTargetDependency */,
+				EC59C5C4BE874E4635945994762362D1 /* PBXTargetDependency */,
+				D5B8415AF6938266CE60B86FE1E55A05 /* PBXTargetDependency */,
 			);
 			name = "Pods-myFood";
 			productName = "Pods-myFood";
 			productReference = 0585718512C4ED56D33E33C30F91563C /* Pods_myFood.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E6A8C50B8CA7327DFD5679548955EBBF /* BarcodeEasyScan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6AB95C274CAD041F89CB909FB5114C73 /* Build configuration list for PBXNativeTarget "BarcodeEasyScan" */;
+			buildPhases = (
+				4F098BE50980FA8D14D5C7AF93CBCFE7 /* Headers */,
+				B8D2BA46208753D9E83601A630875717 /* Sources */,
+				9CFDE8AEB537840ECDB8DEBC348FFF18 /* Frameworks */,
+				EC82FE9461EF3E983425090AE34951EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarcodeEasyScan;
+			productName = BarcodeEasyScan;
+			productReference = 31FC80073BB866EB6BEB8B05763BA6E8 /* BarcodeEasyScan.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -370,10 +452,11 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = B732E867B833BB6D80F29AD49DA6B6DD /* Products */;
+			productRefGroup = F61DB72384BCDB603F3899D29C0CE21F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				E6A8C50B8CA7327DFD5679548955EBBF /* BarcodeEasyScan */,
 				5DD56039404B55F689A834FF7B5D0E10 /* Pods-myFood */,
 				46887A2B3EC5EA71E0B560973C79F7A6 /* SPPermissions */,
 			);
@@ -388,7 +471,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CCDE0F5465D1C9DE02F7CA7AB692BC8 /* Resources */ = {
+		89E1CC6698E90E8E1B2DEB24BDE96002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC82FE9461EF3E983425090AE34951EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,11 +488,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		50DD5F60786CC16444E44A77373D7823 /* Sources */ = {
+		5034E15563AEC99110BFBA0DFA201AD8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7274AE00C45FD80640C8FF247D9C770A /* Pods-myFood-dummy.m in Sources */,
+				333DE08163DF465E07F5E2F6AF6963CA /* Pods-myFood-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,21 +544,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B8D2BA46208753D9E83601A630875717 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BAEC407D893A6CE7AD88BA270C5120 /* BarcodeEasyScan-dummy.m in Sources */,
+				951474460320F4AB32FF3F7EB1B55B91 /* BarcodeScannerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EB26B0572504FF94F41D41C255A42BCA /* PBXTargetDependency */ = {
+		D5B8415AF6938266CE60B86FE1E55A05 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SPPermissions;
 			target = 46887A2B3EC5EA71E0B560973C79F7A6 /* SPPermissions */;
-			targetProxy = 54B0337DA51B976403941B61F94EE7AA /* PBXContainerItemProxy */;
+			targetProxy = 69E5E1D25706934657F2D5F2D8C1DF8C /* PBXContainerItemProxy */;
+		};
+		EC59C5C4BE874E4635945994762362D1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BarcodeEasyScan;
+			target = E6A8C50B8CA7327DFD5679548955EBBF /* BarcodeEasyScan */;
+			targetProxy = B9F02E51CD3A10856B8712E225303044 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		17F49681850949637468F91F2A71F1E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B1373AF8053E5D69EF05BEF39A89DA5 /* SPPermissions.debug.xcconfig */;
+			baseConfigurationReference = 19D01BC01DB96BAFDE6A1F497F253664 /* SPPermissions.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -501,11 +606,10 @@
 			};
 			name = Debug;
 		};
-		380BD3407E7A5EF342A8206F240061E4 /* Release */ = {
+		6F70EECE3838191B32F06A8B9AF38326 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9931FF083C76975CF28CD9A8AFFC3749 /* Pods-myFood.release.xcconfig */;
+			baseConfigurationReference = D779383F82182D861F770804D00492F9 /* SPPermissions.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -516,23 +620,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-myFood/Pods-myFood-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SPPermissions/SPPermissions-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SPPermissions/SPPermissions-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-myFood/Pods-myFood.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SPPermissions/SPPermissions.modulemap";
+				PRODUCT_MODULE_NAME = SPPermissions;
+				PRODUCT_NAME = SPPermissions;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -540,7 +642,44 @@
 			};
 			name = Release;
 		};
-		450134B5786CF118A2A680177A3252F5 /* Debug */ = {
+		A63C7B704D1CC8A1D51E55766E88CB4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C29FFA964DBC10A0D86960925727FEB /* BarcodeEasyScan.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BarcodeEasyScan/BarcodeEasyScan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BarcodeEasyScan/BarcodeEasyScan-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BarcodeEasyScan/BarcodeEasyScan.modulemap";
+				PRODUCT_MODULE_NAME = BarcodeEasyScan;
+				PRODUCT_NAME = BarcodeEasyScan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C662239040F8182AB6DAF18A7BC7889A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4B7E48EB1C23B1EFAA8D6F8B267CE2F /* Pods-myFood.debug.xcconfig */;
 			buildSettings = {
@@ -578,10 +717,11 @@
 			};
 			name = Debug;
 		};
-		6F70EECE3838191B32F06A8B9AF38326 /* Release */ = {
+		CF50A552A1E0C1D951727993AC8791C0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51754FA673FB3E487E8FEE102B239AEA /* SPPermissions.release.xcconfig */;
+			baseConfigurationReference = 9931FF083C76975CF28CD9A8AFFC3749 /* Pods-myFood.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -592,21 +732,23 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SPPermissions/SPPermissions-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SPPermissions/SPPermissions-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-myFood/Pods-myFood-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/SPPermissions/SPPermissions.modulemap";
-				PRODUCT_MODULE_NAME = SPPermissions;
-				PRODUCT_NAME = SPPermissions;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-myFood/Pods-myFood.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -678,6 +820,42 @@
 			};
 			name = Debug;
 		};
+		F3A9E8C6B0E3BF8C4D855A7E567C6ABC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D24CDCBD976E51BF9E94E6BE4C5235 /* BarcodeEasyScan.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BarcodeEasyScan/BarcodeEasyScan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BarcodeEasyScan/BarcodeEasyScan-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/BarcodeEasyScan/BarcodeEasyScan.modulemap";
+				PRODUCT_MODULE_NAME = BarcodeEasyScan;
+				PRODUCT_NAME = BarcodeEasyScan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		F5F04600F5626DC980F02790D1ED2C19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -741,15 +919,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		05D6AB73F0E4A92985A2137CA410B720 /* Build configuration list for PBXNativeTarget "Pods-myFood" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				450134B5786CF118A2A680177A3252F5 /* Debug */,
-				380BD3407E7A5EF342A8206F240061E4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0F470F54F1D6A14C94806FE033FE103D /* Build configuration list for PBXNativeTarget "SPPermissions" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -764,6 +933,24 @@
 			buildConfigurations = (
 				DFD9D19FEEBF98DE271D7FBABCB845B5 /* Debug */,
 				F5F04600F5626DC980F02790D1ED2C19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6AB95C274CAD041F89CB909FB5114C73 /* Build configuration list for PBXNativeTarget "BarcodeEasyScan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A9E8C6B0E3BF8C4D855A7E567C6ABC /* Debug */,
+				A63C7B704D1CC8A1D51E55766E88CB4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF02A7775E1D692983145D42BE03BED8 /* Build configuration list for PBXNativeTarget "Pods-myFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C662239040F8182AB6DAF18A7BC7889A /* Debug */,
+				CF50A552A1E0C1D951727993AC8791C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

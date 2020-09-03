@@ -6,5 +6,6 @@ target 'myFood' do
   use_frameworks!
 
   pod 'SPPermissions/Camera'
+  pod 'BarcodeEasyScan'
 
 end

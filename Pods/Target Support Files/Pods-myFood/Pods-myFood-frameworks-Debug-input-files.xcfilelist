@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-myFood/Pods-myFood-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BarcodeEasyScan/BarcodeEasyScan.framework
 ${BUILT_PRODUCTS_DIR}/SPPermissions/SPPermissions.framework

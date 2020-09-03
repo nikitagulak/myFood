@@ -1,18 +1,22 @@
 PODS:
+  - BarcodeEasyScan (0.3.0)
   - SPPermissions/Camera (5.3.5):
     - SPPermissions/Core
   - SPPermissions/Core (5.3.5)
 
 DEPENDENCIES:
+  - BarcodeEasyScan
   - SPPermissions/Camera
 
 SPEC REPOS:
   trunk:
+    - BarcodeEasyScan
     - SPPermissions
 
 SPEC CHECKSUMS:
+  BarcodeEasyScan: 9a7b2ca4c60c6ec93c433e5c14bc18657b8f7deb
   SPPermissions: 5cccac81eea5afa7b78de5846bf3d33fd6adcf57
 
-PODFILE CHECKSUM: 72766d478788a03ea421591d4f6d4fb60755c9df
+PODFILE CHECKSUM: 736520a9648c9b597a6044c3c716bfe5614e30a6
 
 COCOAPODS: 1.9.3

@@ -14,7 +14,6 @@
 		01924F2E24DB4B9B0064B9E6 /* myFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01924F2C24DB4B9B0064B9E6 /* myFood.xcdatamodeld */; };
 		01924F3024DB4B9D0064B9E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01924F2F24DB4B9D0064B9E6 /* Assets.xcassets */; };
 		01924F3324DB4B9D0064B9E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01924F3124DB4B9D0064B9E6 /* LaunchScreen.storyboard */; };
-		01B98F8124EAC60600C21494 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 01B98F8024EAC60600C21494 /* SwiftPackageProductDependency */; };
 		01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */; };
 		01C5E0F524F28D950047CB11 /* MyFoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 01C5E0F324F28D950047CB11 /* MyFoodModel.xcdatamodeld */; };
 		01FE408724F5ABC500ED7918 /* ReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FE408624F5ABC500ED7918 /* ReaderViewController.swift */; };
@@ -44,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B98F8124EAC60600C21494 /* BuildFile in Frameworks */,
 				24E80352E9E8816C6A071A3E /* Pods_myFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +116,6 @@
 				ADB2F92D651F75A8E27F5334 /* Pods-myFood.debug.xcconfig */,
 				5EB36EE59C6C6108A8CC404C /* Pods-myFood.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,7 +146,6 @@
 			);
 			name = myFood;
 			packageProductDependencies = (
-				01B98F8024EAC60600C21494 /* SwiftPackageProductDependency */,
 			);
 			productName = myFood;
 			productReference = 01924F2024DB4B9B0064B9E6 /* myFood.app */;
@@ -180,7 +176,7 @@
 			);
 			mainGroup = 01924F1724DB4B9B0064B9E6;
 			packageReferences = (
-				01B98F7F24EAC60600C21494 /* RemoteSwiftPackageReference */,
+				01A9307E24FAEC9B00723177 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = 01924F2124DB4B9B0064B9E6 /* Products */;
 			projectDirPath = "";
@@ -459,7 +455,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		01B98F7F24EAC60600C21494 /* RemoteSwiftPackageReference */ = {
+		01A9307E24FAEC9B00723177 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
@@ -468,14 +464,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		01B98F8024EAC60600C21494 /* SwiftPackageProductDependency */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 01B98F7F24EAC60600C21494 /* RemoteSwiftPackageReference */;
-			productName = FacebookLogin;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		01924F2C24DB4B9B0064B9E6 /* myFood.xcdatamodeld */ = {
