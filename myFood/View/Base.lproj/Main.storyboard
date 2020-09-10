@@ -357,7 +357,7 @@
         <!--To buy-->
         <scene sceneID="nXR-5h-UNL">
             <objects>
-                <viewController title="To buy" id="iXI-qa-uFj" sceneMemberID="viewController">
+                <viewController title="To buy" id="iXI-qa-uFj" customClass="ShoppingListViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wdT-a0-xeB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,19 +368,46 @@
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="To buy" id="Ipc-tn-8Mi"/>
+                                    <navigationItem title="To buy" id="Ipc-tn-8Mi">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VsQ-vP-sVb">
+                                            <connections>
+                                                <action selector="addShoppingList:" destination="iXI-qa-uFj" id="6a9-jd-L9M"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Yg-cF-8XB">
+                                <rect key="frame" x="0.0" y="166" width="414" height="647"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="shoppingList" id="ads-Je-HV4">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ads-Je-HV4" id="mLO-mU-uAU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="3Yg-cF-8XB" firstAttribute="leading" secondItem="Kpa-lW-mbL" secondAttribute="leading" id="8Tw-4a-Edh"/>
+                            <constraint firstItem="Kpa-lW-mbL" firstAttribute="trailing" secondItem="3Yg-cF-8XB" secondAttribute="trailing" id="JBB-9F-DAd"/>
                             <constraint firstItem="ifQ-mB-Q8z" firstAttribute="leading" secondItem="Kpa-lW-mbL" secondAttribute="leading" id="OPX-Uc-0Nq"/>
+                            <constraint firstItem="Kpa-lW-mbL" firstAttribute="bottom" secondItem="3Yg-cF-8XB" secondAttribute="bottom" id="gf6-JL-BWj"/>
                             <constraint firstItem="ifQ-mB-Q8z" firstAttribute="trailing" secondItem="Kpa-lW-mbL" secondAttribute="trailing" id="hRl-Id-7Er"/>
+                            <constraint firstItem="3Yg-cF-8XB" firstAttribute="top" secondItem="ifQ-mB-Q8z" secondAttribute="bottom" constant="24" id="iEO-Ih-aey"/>
                             <constraint firstItem="ifQ-mB-Q8z" firstAttribute="top" secondItem="Kpa-lW-mbL" secondAttribute="top" id="q7R-lS-se3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kpa-lW-mbL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="To buy" image="toBuy" id="m86-6Q-0MS"/>
+                    <connections>
+                        <outlet property="shoppingListsTableView" destination="3Yg-cF-8XB" id="YK7-6E-K1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9yI-Ug-zIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
