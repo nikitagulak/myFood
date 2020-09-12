@@ -47,7 +47,9 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
     @IBAction func addShoppingList(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Enter a name of a shopping list", message: "e.g. Appartment, Cottage, Camp", preferredStyle: UIAlertController.Style.alert)
         
-        alert.addTextField()
+        alert.addTextField { textField in
+            textField.autocapitalizationType = .sentences
+        }
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
                 //Cancel Action
