@@ -12,11 +12,14 @@ import BarcodeEasyScan
 
 class ReaderViewController: UIViewController, ScanBarcodeDelegate {
      
+    //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
+        attachDoneButtonToKeyboards()
     }
     
+    //MARK: Istances
     @IBOutlet weak var dateOfExpiryField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var weightField: UITextField!
@@ -25,6 +28,29 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
     
     let datepicker = UIDatePicker()
     
+    
+    //MARK: Attaching Done button to keyboards
+    func attachDoneButtonToKeyboards() {
+        // toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        // done button
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(closeKeyboard))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        // assign toolbar
+        dateOfExpiryField.inputAccessoryView = toolbar
+        nameField.inputAccessoryView = toolbar
+        weightField.inputAccessoryView = toolbar
+    }
+    
+    @objc func closeKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    
+    //MARK: Saving product
     @IBAction func saveProduct(_ sender: UIBarButtonItem) {
         // weight type switcher
         var weightMesureTypeSwitcherValue: String = ""
@@ -56,6 +82,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         
     }
     
+    //MARK: Barcode Scanner
     @IBAction func openBarcodeScanner(_ sender: UIButton) {
         let barcodeViewController =  BarcodeScannerViewController()
         barcodeViewController.delegate = self
@@ -67,6 +94,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         print(barcode)
     }
     
+    //MARK: Date-Picker
     func createDatePicker() {
         // toolbar
         let toolbar = UIToolbar()
@@ -122,13 +150,13 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         
 }
 
-extension String {
-  func toDate(withFormat format: String = "yyyy-MM-dd") -> Date {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = format
-    guard let date = dateFormatter.date(from: self) else {
-      preconditionFailure("Take a look to your format")
-    }
-    return date
-  }
-}
+//extension String {
+//  func toDate(withFormat format: String = "yyyy-MM-dd") -> Date {
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.dateFormat = format
+//    guard let date = dateFormatter.date(from: self) else {
+//      preconditionFailure("Take a look to your format")
+//    }
+//    return date
+//  }
+//}
