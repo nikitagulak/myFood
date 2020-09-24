@@ -76,7 +76,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
             storingPlaceSwitcherValue = "Fridge"
         }
         
-        saveNewData(name: nameField.text!, weight: 0.00, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: datepicker.date )
+        saveNewData(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: datepicker.date )
         
         self.dismiss(animated: true, completion: nil)
         
@@ -130,7 +130,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
     }
     
     //MARK: CoreData Saving
-    func saveNewData(name: String, weight: Double, weightMesureType: String, storingPlace: String, expiryDate: Date) {
+    func saveNewData(name: String, weight: Int, weightMesureType: String, storingPlace: String, expiryDate: Date) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 let context = appDelegate.persistentContainer.viewContext
                 let entity = NSEntityDescription.entity(forEntityName: "MyProducts", in: context)

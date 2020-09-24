@@ -14,9 +14,14 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        print(paths[0])
         myFoodTableView.dataSource = self
         myFoodTableView.delegate = self
+        myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
 //        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
+        let date = Date()
+        print(date)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,18 +29,23 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         fetchResults()
     }
     
-    var myProducts: [String] = []
+    var myProducts: [Product] = []
     
     @IBOutlet weak var myFoodTableView: UITableView!
     
     //MARK: TableView set up
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "identifier", for: indexPath)
-        cell.textLabel?.text = myProducts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductTableViewCell
+        cell.productName?.text = myProducts[indexPath.row].name
+        cell.weight?.text = "\(myProducts[indexPath.row].weigth) \(myProducts[indexPath.row].weightMesureType)"
+//        cell.expireDate?.text = formatDate(date: myProducts[indexPath.row].expireDate!)
+        cell.expireDate?.text = "\(Calendar.current.dateComponents([.day], from: Date(), to: myProducts[indexPath.row].expireDate!).day!) days"
+        
         tableView.deselectRow(at: indexPath, animated: true)
         return cell
     }
@@ -53,12 +63,22 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
             do {
                 let result = try context.fetch(request)
                 for data in result as! [NSManagedObject] {
-                    myProducts.append(data.value(forKey: "name") as! String)
+                    myProducts.append(Product(name: data.value(forKey: "name") as! String, weigth: data.value(forKey: "weight") as! Int, weightMesureType: data.value(forKey: "weightMesureType") as! String, storingPlace: data.value(forKey: "storingPlace") as! String, expireDate: data.value(forKey: "expiryDate") as? Date, barcode: data.value(forKey: "barcode") as? String))
                 }
                 
             } catch {
                 print("Failed fetching CoreData")
             }
+    }
+    
+    func formatDate(date: Date) -> String {
+        let datepicker = UIDatePicker()
+        let formatter = DateFormatter()
+        var dateFromCoreData = "\(date)"
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        dateFromCoreData = formatter.string(from: datepicker.date)
+        return dateFromCoreData
     }
     
 }
