@@ -17,6 +17,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         super.viewDidLoad()
         createDatePicker()
         attachDoneButtonToKeyboards()
+        myFoodVC?.myFoodTableView.reloadData()
     }
     
     //MARK: Istances
@@ -142,6 +143,8 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
                 newResult.setValue(expiryDate, forKey: "expiryDate")
                 do {
                     try context.save()
+                    myFoodVC?.fetchResults()
+                    myFoodVC?.myFoodTableView.reloadData()
                 } catch {
                     print("Failed saving")
                 }

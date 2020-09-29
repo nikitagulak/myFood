@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+var myFoodVC: MyFoodViewController?
+
 class MyFoodViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //MARK: Life-cycles
@@ -20,13 +22,13 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         myFoodTableView.delegate = self
         myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
 //        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
-        let date = Date()
-        print(date)
+        myFoodVC = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         myProducts = []
         fetchResults()
+        myFoodTableView.reloadData()
     }
     
     var myProducts: [Product] = []
