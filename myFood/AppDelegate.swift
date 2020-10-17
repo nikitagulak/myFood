@@ -14,10 +14,21 @@
 import UIKit
 //import FBSDKCoreKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    // MARK: Google Firebase
+    var window: UIWindow?
+    
+    func application(_ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions:
+            [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        return true
+    }
+    
     // MARK: Facebook login button
     
 //    func application(

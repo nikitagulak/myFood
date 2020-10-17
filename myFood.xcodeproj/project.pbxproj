@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010B0C9C253B41F300DC9EFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010B0C9B253B41F300DC9EFD /* GoogleService-Info.plist */; };
 		017AA0EF2515FBB600DCBF6E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AA0EE2515FBB600DCBF6E /* Product.swift */; };
 		01924F2424DB4B9B0064B9E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01924F2324DB4B9B0064B9E6 /* AppDelegate.swift */; };
 		01924F2624DB4B9B0064B9E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01924F2524DB4B9B0064B9E6 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010B0C9B253B41F300DC9EFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		017AA0EE2515FBB600DCBF6E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		01924F2024DB4B9B0064B9E6 /* myFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01924F2324DB4B9B0064B9E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		01924F2224DB4B9B0064B9E6 /* myFood */ = {
 			isa = PBXGroup;
 			children = (
+				010B0C9B253B41F300DC9EFD /* GoogleService-Info.plist */,
 				01C5E0F024F2764D0047CB11 /* Model */,
 				01C5E0F124F276520047CB11 /* View */,
 				01C5E0F224F276580047CB11 /* Controller */,
@@ -203,6 +206,7 @@
 			files = (
 				01924F3324DB4B9D0064B9E6 /* LaunchScreen.storyboard in Resources */,
 				01DA04E0251567760093DB10 /* ProductTableViewCell.xib in Resources */,
+				010B0C9C253B41F300DC9EFD /* GoogleService-Info.plist in Resources */,
 				01924F3024DB4B9D0064B9E6 /* Assets.xcassets in Resources */,
 				01924F2B24DB4B9B0064B9E6 /* Main.storyboard in Resources */,
 			);
