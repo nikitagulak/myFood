@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FirebaseDatabase
 
 var myFoodVC: MyFoodViewController?
 
@@ -16,13 +17,45 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        print(paths[0])
         myFoodTableView.dataSource = self
         myFoodTableView.delegate = self
         myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
-//        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 50, height: 50))
         myFoodVC = self
+        
+        // MARK: Google Firebase setup
+        fetchDataFromFireBase()
+//        let ref = Database.database().reference()
+////        ref.childByAutoId().setValue(["name":"Cookies","storingPlace":"Pantry"])
+//        ref.child("myFood").observeSingleEvent(of: .value) { (snapshot) in
+//            guard let data = snapshot.value as? [String:Any] else {
+//                return
+//            }
+//            print("\n\n")
+//            print(data)
+//            print("\n\n")
+////            print(snapshot.value!)
+//            let value = snapshot.value as? NSDictionary
+//            let name = value?["product1"] as? [String:Any] ?? ["":""]
+//            print(name)
+//
+//            for child in snapshot.children {
+////                let value = snapshot.children.value(forKey: "name")
+//                let enumerator = snapshot.children
+//                while let rest = enumerator.nextObject() as? DataSnapshot {
+//                       print(rest.value)
+//                    }
+//            }
+//
+////            for child in snapshot.children {
+////                let value = snapshot.value as? NSDictionary
+////                let name = value?["name"] as? String ?? ""
+////                let storingPlace = value?["storingPlace"] as? String ?? "Pantry"
+////                let weight = value?["weight"] as? Int ?? 0
+////                let weightMesureType = value?["weightMesureType"] as? String ?? "grams"
+////                let productItem = ProductItem(name: name, storingPlace: storingPlace, weight: weight, weightMesureType: weightMesureType)
+////                print(productItem)
+////            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +114,19 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         formatter.timeStyle = .none
         dateFromCoreData = formatter.string(from: datepicker.date)
         return dateFromCoreData
+    }
+    
+    func fetchDataFromFireBase() {
+        let ref = Database.database().reference().child("myFood")
+        
+        ref.observe(.value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                let value = snap.value! as? NSDictionary
+                print(value!["name"]!, value!["weight"]!)
+            }
+        }
     }
     
 }
