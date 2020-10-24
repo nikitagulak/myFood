@@ -26,6 +26,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions:
             [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        /*
+        if UserDefaults.standard.string(forKey: "userID") != nil {
+            
+//            self.window = UIWindow(frame: UIScreen.main.bounds)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            var VC: UIViewController = storyboard.instantiateViewController(identifier: "homescreen") as! UITabBarController
+//            self.window!.rootViewController = VC
+//            self.window!.makeKeyAndVisible()
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            var exampleViewController: MyFoodViewController = mainStoryboard.instantiateViewController(withIdentifier: "myFoodVC") as! MyFoodViewController
+            self.window?.rootViewController = exampleViewController
+            self.window?.makeKeyAndVisible()
+            
+        } else {
+            print("NIE")
+        }
+ 
+ */
+        
         return true
     }
     

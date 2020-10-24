@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import BarcodeEasyScan
+import FirebaseDatabase
 
 class ReaderViewController: UIViewController, ScanBarcodeDelegate {
      
@@ -77,7 +78,8 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
             storingPlaceSwitcherValue = "Fridge"
         }
         
-        saveNewData(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: datepicker.date )
+//        saveNewData(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: datepicker.date )
+        saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue)
         
         self.dismiss(animated: true, completion: nil)
         
@@ -143,11 +145,17 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
                 newResult.setValue(expiryDate, forKey: "expiryDate")
                 do {
                     try context.save()
-                    myFoodVC?.fetchResults()
+                    myFoodVC?.fetchDataFromFireBase()
                     myFoodVC?.myFoodTableView.reloadData()
                 } catch {
                     print("Failed saving")
                 }
+    }
+    
+    func saveDataToFireBase(name: String, weight: Int, weightMesureType: String, storingPlace: String) {
+        let ref = Database.database().reference().child("myFood")
+        
+        ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "weightMesureType":weightMesureType])
     }
     
         

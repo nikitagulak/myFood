@@ -17,6 +17,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("HELLOOOOOOO")
         myFoodTableView.dataSource = self
         myFoodTableView.delegate = self
         myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
@@ -24,47 +25,20 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         
         // MARK: Google Firebase setup
         fetchDataFromFireBase()
-//        let ref = Database.database().reference()
-////        ref.childByAutoId().setValue(["name":"Cookies","storingPlace":"Pantry"])
-//        ref.child("myFood").observeSingleEvent(of: .value) { (snapshot) in
-//            guard let data = snapshot.value as? [String:Any] else {
-//                return
-//            }
-//            print("\n\n")
-//            print(data)
-//            print("\n\n")
-////            print(snapshot.value!)
-//            let value = snapshot.value as? NSDictionary
-//            let name = value?["product1"] as? [String:Any] ?? ["":""]
-//            print(name)
-//
-//            for child in snapshot.children {
-////                let value = snapshot.children.value(forKey: "name")
-//                let enumerator = snapshot.children
-//                while let rest = enumerator.nextObject() as? DataSnapshot {
-//                       print(rest.value)
-//                    }
-//            }
-//
-////            for child in snapshot.children {
-////                let value = snapshot.value as? NSDictionary
-////                let name = value?["name"] as? String ?? ""
-////                let storingPlace = value?["storingPlace"] as? String ?? "Pantry"
-////                let weight = value?["weight"] as? Int ?? 0
-////                let weightMesureType = value?["weightMesureType"] as? String ?? "grams"
-////                let productItem = ProductItem(name: name, storingPlace: storingPlace, weight: weight, weightMesureType: weightMesureType)
-////                print(productItem)
-////            }
-//        }
+        myFoodTableView.reloadData()
+        print("myProducts array: \(myProducts)")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         myProducts = []
-        fetchResults()
+        print("HELLOOOOOOO")
+        print("myProducts array: \(myProducts)")
+        fetchDataFromFireBase()
         myFoodTableView.reloadData()
     }
     
-    var myProducts: [Product] = []
+    var myProducts: [ProductItem] = []
     
     @IBOutlet weak var myFoodTableView: UITableView!
     
@@ -77,9 +51,10 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductTableViewCell
         cell.productName?.text = myProducts[indexPath.row].name
-        cell.weight?.text = "\(myProducts[indexPath.row].weigth) \(myProducts[indexPath.row].weightMesureType)"
+        cell.weight?.text = "\(myProducts[indexPath.row].weight) \(myProducts[indexPath.row].weightMesureType)"
 //        cell.expireDate?.text = formatDate(date: myProducts[indexPath.row].expireDate!)
-        cell.expireDate?.text = "\(Calendar.current.dateComponents([.day], from: Date(), to: myProducts[indexPath.row].expireDate!).day!) days"
+//        cell.expireDate?.text = "\(Calendar.current.dateComponents([.day], from: Date(), to: myProducts[indexPath.row].expireDate!).day!) days"
+        cell.expireDate?.text = "0 days"
         
         tableView.deselectRow(at: indexPath, animated: true)
         return cell
@@ -89,22 +64,6 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    //MARK: CoreData Fetching
-    func fetchResults() {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let context = appDelegate.persistentContainer.viewContext
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MyProducts")
-            request.returnsObjectsAsFaults = false
-            do {
-                let result = try context.fetch(request)
-                for data in result as! [NSManagedObject] {
-                    myProducts.append(Product(name: data.value(forKey: "name") as! String, weigth: data.value(forKey: "weight") as! Int, weightMesureType: data.value(forKey: "weightMesureType") as! String, storingPlace: data.value(forKey: "storingPlace") as! String, expireDate: data.value(forKey: "expiryDate") as? Date, barcode: data.value(forKey: "barcode") as? String))
-                }
-                
-            } catch {
-                print("Failed fetching CoreData")
-            }
-    }
     
     func formatDate(date: Date) -> String {
         let datepicker = UIDatePicker()
@@ -116,15 +75,19 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         return dateFromCoreData
     }
     
+    
+    // MARK: Google Firebase Fetching
     func fetchDataFromFireBase() {
         let ref = Database.database().reference().child("myFood")
         
         ref.observe(.value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
-                let key = snap.key
+//                let key = snap.key
                 let value = snap.value! as? NSDictionary
-                print(value!["name"]!, value!["weight"]!)
+                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, weightMesureType: value!["weightMesureType"]! as! String)
+                self.myProducts.append(productItem)
+//                print(productItem)
             }
         }
     }
