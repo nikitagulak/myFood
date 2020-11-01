@@ -132,29 +132,10 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    //MARK: CoreData Saving
-    func saveNewData(name: String, weight: Int, weightMesureType: String, storingPlace: String, expiryDate: Date) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let context = appDelegate.persistentContainer.viewContext
-                let entity = NSEntityDescription.entity(forEntityName: "MyProducts", in: context)
-                let newResult = NSManagedObject(entity: entity!, insertInto: context)
-                newResult.setValue(name, forKey: "Name")
-                newResult.setValue(weight, forKey: "weight")
-                newResult.setValue(weightMesureType, forKey: "weightMesureType")
-                newResult.setValue(storingPlace, forKey: "storingPlace")
-                newResult.setValue(expiryDate, forKey: "expiryDate")
-                do {
-                    try context.save()
-                    myFoodVC?.fetchDataFromFireBase()
-                    myFoodVC?.myFoodTableView.reloadData()
-                } catch {
-                    print("Failed saving")
-                }
-    }
-    
+    //MARK: Firebase Saving
     func saveDataToFireBase(name: String, weight: Int, weightMesureType: String, storingPlace: String) {
-        let ref = Database.database().reference().child("myFood")
-        
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MyFood"
+        let ref = Database.database().reference().child(databasePath)
         ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "weightMesureType":weightMesureType])
     }
     

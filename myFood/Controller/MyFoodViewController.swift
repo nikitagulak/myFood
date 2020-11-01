@@ -17,33 +17,25 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("HELLOOOOOOO")
-        myFoodTableView.dataSource = self
-        myFoodTableView.delegate = self
-        myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
-        myFoodVC = self
         
         // MARK: Google Firebase setup
         fetchDataFromFireBase()
-        myFoodTableView.reloadData()
-        print("myProducts array: \(myProducts)")
-
+        
+        myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
+        myFoodVC = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        myProducts = []
-        print("HELLOOOOOOO")
-        print("myProducts array: \(myProducts)")
-        fetchDataFromFireBase()
-        myFoodTableView.reloadData()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        myProducts = []
+////        fetchDataFromFireBase()
+//        myFoodTableView.reloadData()
+//    }
     
     var myProducts: [ProductItem] = []
     
     @IBOutlet weak var myFoodTableView: UITableView!
     
     //MARK: TableView set up
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myProducts.count
     }
@@ -87,9 +79,34 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
                 let value = snap.value! as? NSDictionary
                 let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, weightMesureType: value!["weightMesureType"]! as! String)
                 self.myProducts.append(productItem)
-//                print(productItem)
+                DispatchQueue.main.async {
+                    self.myFoodTableView.reloadData()
+                }
             }
         }
     }
+    
+//    func fetchDataFromFirebase2() -> [ProductItem] {
+//        var fetchedProducts: [ProductItem] = []
+//        let ref = Database.database().reference().child("myFood")
+//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            for child in snapshot.children {
+//                let snap = child as! DataSnapshot
+////                let key = snap.key
+//                let value = snap.value! as? NSDictionary
+//                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, weightMesureType: value!["weightMesureType"]! as! String)
+////                self.myProducts.append(productItem)
+//                fetchedProducts.append(productItem)
+//                DispatchQueue.main.async {
+//                    self.myFoodTableView.reloadData()
+//                }
+//            }
+//
+//          }) { (error) in
+//            print(error.localizedDescription)
+//        }
+//        return fetchedProducts
+//    }
     
 }
