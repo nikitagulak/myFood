@@ -29,11 +29,14 @@ struct ProductItem {
     let storingPlace: String
     let weight: Int
     let weightMesureType: String
+    let expiryDate: String
     
-    init(name:String, storingPlace:String, weight:Int, weightMesureType:String) {
+    
+    init(name:String, storingPlace:String, weight:Int, weightMesureType:String, expiryDate:String) {
         self.name = name
         self.weight = weight
         self.weightMesureType = weightMesureType
         self.storingPlace = storingPlace
+        self.expiryDate = expiryDate
     }
 }

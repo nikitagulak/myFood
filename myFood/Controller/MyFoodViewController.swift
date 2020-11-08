@@ -105,7 +105,8 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         cell.weight?.text = "\(products[indexPath.row].weight) \(products[indexPath.row].weightMesureType)"
 //        cell.expireDate?.text = formatDate(date: products[indexPath.row].expireDate!)
 //        cell.expireDate?.text = "\(Calendar.current.dateComponents([.day], from: Date(), to: products[indexPath.row].expireDate!).day!) days"
-        cell.expireDate?.text = "0 days"
+        cell.expireDate?.text = products[indexPath.row].expiryDate
+        cell.clockIcon.isHidden = products[indexPath.row].expiryDate == "" ? true : false
         
         tableView.deselectRow(at: indexPath, animated: true)
         return cell
@@ -136,7 +137,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
                 let snap = child as! DataSnapshot
 //                let key = snap.key
                 let value = snap.value! as? NSDictionary
-                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, weightMesureType: value!["weightMesureType"]! as! String)
+                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, weightMesureType: value!["weightMesureType"]! as! String, expiryDate: value!["expiryDate"] as? String ?? "")
                 self.myProducts.append(productItem)
                 DispatchQueue.main.async {
                     self.myFoodTableView.reloadData()

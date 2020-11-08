@@ -631,20 +631,23 @@
                                     <segment title="Pantry"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of expiry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpR-nl-I31">
-                                <rect key="frame" x="24" y="493.5" width="109" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMG-AA-pRd">
-                                <rect key="frame" x="24" y="522" width="366" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="9ao-fF-0yB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CdS-sO-1Ay">
+                                <rect key="frame" x="24" y="493.5" width="366" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of expiry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpR-nl-I31">
+                                        <rect key="frame" x="0.0" y="5.5" width="317" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9gQ-rR-HG0">
+                                        <rect key="frame" x="317" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="dateOfExpirySwitcherChanged:" destination="HJ2-fF-0yr" eventType="valueChanged" id="Vzo-HA-ItA"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktL-m8-srN">
                                 <rect key="frame" x="24" y="80" width="366" height="72"/>
                                 <constraints>
@@ -658,33 +661,43 @@
                                     <action selector="openBarcodeScanner:" destination="HJ2-fF-0yr" eventType="touchUpInside" id="bf6-D3-0lE"/>
                                 </connections>
                             </button>
+                            <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JWS-Pj-DMP">
+                                <rect key="frame" x="24" y="540.5" width="366" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="ebM-jw-lxU"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="datePickerDateChanged:" destination="HJ2-fF-0yr" eventType="valueChanged" id="ueo-Zg-t2T"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dpa-bO-MDe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="x1P-zv-fA9" firstAttribute="top" secondItem="qUZ-US-byI" secondAttribute="bottom" constant="24" id="0Rv-Ld-B68"/>
                             <constraint firstItem="kt9-YF-MgQ" firstAttribute="top" secondItem="dpa-bO-MDe" secondAttribute="top" id="1CH-PK-7rr"/>
-                            <constraint firstItem="dpa-bO-MDe" firstAttribute="trailing" secondItem="bMG-AA-pRd" secondAttribute="trailing" constant="24" id="2eY-2c-Zga"/>
                             <constraint firstItem="6ga-qk-3ci" firstAttribute="top" secondItem="x1P-zv-fA9" secondAttribute="bottom" constant="8" id="3te-OL-L84"/>
+                            <constraint firstItem="JWS-Pj-DMP" firstAttribute="top" secondItem="CdS-sO-1Ay" secondAttribute="bottom" constant="16" id="67w-sP-33y"/>
                             <constraint firstItem="tfH-cM-zvo" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="6dU-Uy-t2E"/>
                             <constraint firstItem="dpa-bO-MDe" firstAttribute="trailing" secondItem="6ga-qk-3ci" secondAttribute="trailing" constant="24" id="7Ed-Pe-L5Q"/>
-                            <constraint firstItem="bMG-AA-pRd" firstAttribute="top" secondItem="VpR-nl-I31" secondAttribute="bottom" constant="8" id="E5h-sb-q5J"/>
                             <constraint firstItem="kt9-YF-MgQ" firstAttribute="trailing" secondItem="dpa-bO-MDe" secondAttribute="trailing" id="Elh-MF-5Ld"/>
+                            <constraint firstItem="JWS-Pj-DMP" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="GQI-ks-v1I"/>
                             <constraint firstItem="dpa-bO-MDe" firstAttribute="trailing" secondItem="ktL-m8-srN" secondAttribute="trailing" constant="24" id="IB3-su-cS8"/>
-                            <constraint firstItem="bMG-AA-pRd" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="KNE-gh-RDY"/>
                             <constraint firstItem="tfH-cM-zvo" firstAttribute="top" secondItem="9rm-Rf-DVV" secondAttribute="bottom" constant="24" id="MJd-w4-7lV"/>
-                            <constraint firstItem="VpR-nl-I31" firstAttribute="top" secondItem="6ga-qk-3ci" secondAttribute="bottom" constant="24" id="P9g-60-DNq"/>
                             <constraint firstItem="ktL-m8-srN" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="PfG-rf-0kJ"/>
                             <constraint firstItem="kt9-YF-MgQ" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" id="SC2-Rb-ChA"/>
-                            <constraint firstItem="VpR-nl-I31" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="a3c-In-uLM"/>
+                            <constraint firstItem="CdS-sO-1Ay" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="SWA-z8-FJA"/>
                             <constraint firstItem="ktL-m8-srN" firstAttribute="top" secondItem="kt9-YF-MgQ" secondAttribute="bottom" constant="24" id="a3q-pf-98S"/>
                             <constraint firstItem="qUZ-US-byI" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="adD-J7-Ddr"/>
                             <constraint firstItem="x1P-zv-fA9" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="enr-ON-keI"/>
                             <constraint firstItem="0aw-wU-Tl5" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="g5h-ef-Wie"/>
                             <constraint firstItem="0aw-wU-Tl5" firstAttribute="top" secondItem="ktL-m8-srN" secondAttribute="bottom" constant="24" id="i8g-Ia-yCS"/>
                             <constraint firstItem="9rm-Rf-DVV" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="ik5-Nq-KpH"/>
+                            <constraint firstItem="CdS-sO-1Ay" firstAttribute="top" secondItem="6ga-qk-3ci" secondAttribute="bottom" constant="24" id="pHr-do-i3S"/>
                             <constraint firstItem="9rm-Rf-DVV" firstAttribute="top" secondItem="0aw-wU-Tl5" secondAttribute="bottom" constant="8" id="q9k-Er-xNf"/>
+                            <constraint firstItem="dpa-bO-MDe" firstAttribute="trailing" secondItem="JWS-Pj-DMP" secondAttribute="trailing" constant="24" id="qOG-yQ-1dl"/>
                             <constraint firstItem="dpa-bO-MDe" firstAttribute="trailing" secondItem="9rm-Rf-DVV" secondAttribute="trailing" constant="24" id="scY-0M-zgX"/>
+                            <constraint firstItem="dpa-bO-MDe" firstAttribute="trailing" secondItem="CdS-sO-1Ay" secondAttribute="trailing" constant="24" id="tzy-2f-rZg"/>
                             <constraint firstItem="qUZ-US-byI" firstAttribute="top" secondItem="tfH-cM-zvo" secondAttribute="bottom" constant="8" id="vhT-iN-ofg"/>
                             <constraint firstItem="6ga-qk-3ci" firstAttribute="leading" secondItem="dpa-bO-MDe" secondAttribute="leading" constant="24" id="wkf-fm-YQH"/>
                             <constraint firstItem="dpa-bO-MDe" firstAttribute="trailing" secondItem="qUZ-US-byI" secondAttribute="trailing" constant="24" id="yrH-ba-w6z"/>
@@ -692,7 +705,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sdd-SG-b2T"/>
                     <connections>
-                        <outlet property="dateOfExpiryField" destination="bMG-AA-pRd" id="b4L-2P-HY9"/>
+                        <outlet property="datePicker" destination="JWS-Pj-DMP" id="Eqb-8H-7dR"/>
                         <outlet property="nameField" destination="9rm-Rf-DVV" id="Zf0-Xn-9hf"/>
                         <outlet property="storingPlaceSwitcher" destination="6ga-qk-3ci" id="FOX-6c-ZCs"/>
                         <outlet property="weightField" destination="IgW-cC-Kop" id="GkH-Zf-fPf"/>

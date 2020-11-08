@@ -16,19 +16,34 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
     //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        createDatePicker()
         attachDoneButtonToKeyboards()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.minimumDate = Date()
         myFoodVC?.myFoodTableView.reloadData()
     }
     
-    //MARK: Istances
-    @IBOutlet weak var dateOfExpiryField: UITextField!
+    //MARK: Istance variables
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var weightField: UITextField!
     @IBOutlet weak var weightTypeSwitcher: UISegmentedControl!
     @IBOutlet weak var storingPlaceSwitcher: UISegmentedControl!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
-    let datepicker = UIDatePicker()
+    @IBAction func datePickerDateChanged(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        print(datePicker.date)
+        print(formatter.string(from: datePicker.date))
+    }
+    
+    @IBAction func dateOfExpirySwitcherChanged(_ sender: UISwitch) {
+        if sender.isOn == true {
+            datePicker.isHidden = false
+        } else {
+            datePicker.isHidden = true
+        }
+    }
     
     
     //MARK: Attaching Done button to keyboards
@@ -42,7 +57,6 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         toolbar.setItems([doneBtn], animated: true)
         
         // assign toolbar
-        dateOfExpiryField.inputAccessoryView = toolbar
         nameField.inputAccessoryView = toolbar
         weightField.inputAccessoryView = toolbar
     }
@@ -78,8 +92,15 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
             storingPlaceSwitcherValue = "Fridge"
         }
         
-//        saveNewData(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: datepicker.date )
-        saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue)
+        // storing date
+        var expiryDate: String = ""
+        if datePicker.isHidden == false {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY-MM-dd"
+            expiryDate = formatter.string(from: datePicker.date)
+        }
+        
+        saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: expiryDate )
         myFoodVC?.myProducts = []
         myFoodVC?.fetchDataFromFireBase()
         self.dismiss(animated: true, completion: nil)
@@ -98,34 +119,11 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         print(barcode)
     }
     
-    //MARK: Date-Picker
-    func createDatePicker() {
-        // toolbar
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        // done button
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneBtn], animated: true)
-        
-        // assign toolbar
-        dateOfExpiryField.inputAccessoryView = toolbar
-        
-        // assign datepicker to the text field
-        dateOfExpiryField.inputView = datepicker
-        
-        // datepicker mode
-        datepicker.datePickerMode = .date
-    }
-    
     @objc func donePressed() {
         // formatter
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
-        dateOfExpiryField.text = formatter.string(from: datepicker.date)
-        print(formatter.string(from: datepicker.date))
-        print(datepicker.date)
         self.view.endEditing(true)
     }
     
@@ -134,10 +132,10 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
     }
     
     //MARK: Firebase Saving
-    func saveDataToFireBase(name: String, weight: Int, weightMesureType: String, storingPlace: String) {
+    func saveDataToFireBase(name: String, weight: Int, weightMesureType: String, storingPlace: String, expiryDate: String) {
         let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MyFood"
         let ref = Database.database().reference().child(databasePath)
-        ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "weightMesureType":weightMesureType])
+        ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "weightMesureType":weightMesureType, "expiryDate":expiryDate])
     }
     
         
