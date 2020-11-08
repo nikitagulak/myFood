@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 //import FBSDKLoginKit
 
@@ -17,6 +18,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         if UserDefaults.standard.string(forKey: "userID") != nil {
             openHomescreen()
+        }
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        if navigationController?.navigationBar.isHidden == false {
+            self.navigationController?.setNavigationBarHidden(false, animated: false)
+        } else {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
 //        let loginButton = FBLoginButton()
 //        loginButton.center = view.center
@@ -30,11 +38,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var registerPasswordField: UITextField!
     
     @IBAction func signInButton(_ sender: UIButton) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         let signInVC = storyboard!.instantiateViewController(withIdentifier: "signInVC") 
         navigationController?.pushViewController(signInVC, animated: true)
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         let registerVC = storyboard!.instantiateViewController(withIdentifier: "registerVC")
         navigationController?.pushViewController(registerVC, animated: true)
     }
@@ -69,6 +79,7 @@ class ViewController: UIViewController {
             return
         }
         
+        // Creation a user
         FirebaseAuth.Auth.auth().createUser(withEmail: email!, password: pass!) { (result, error) in
             // Registration failed
             guard error == nil else {
@@ -77,8 +88,21 @@ class ViewController: UIViewController {
             }
             // Registration succeed
             UserDefaults.standard.set(result!.user.uid as String, forKey: "userID")
+            
+            DispatchQueue.main.async {
+                UserDefaults.standard.set(result!.user.uid as String, forKey: "userID")
+                let databasePath: String = "Users/" + "\(String(result!.user.uid))"
+                let ref = Database.database().reference().child(databasePath)
+                ref.child("Account").setValue(["Name":name])
+            }
+            
             self.openHomescreen()
         }
+        
+        // Saving user's name
+//        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))"
+//        let ref = Database.database().reference().child(databasePath)
+//        ref.child("Account").setValue(["Name":name])
         
     }
     

@@ -80,7 +80,8 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         
 //        saveNewData(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: datepicker.date )
         saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue)
-        
+        myFoodVC?.myProducts = []
+        myFoodVC?.fetchDataFromFireBase()
         self.dismiss(animated: true, completion: nil)
         
     }

@@ -153,7 +153,7 @@
                                     <constraint firstAttribute="height" constant="64" id="zsK-Ns-8kb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaX-B4-FbO">
                                 <rect key="frame" x="24" y="318" width="366" height="64"/>
@@ -251,7 +251,7 @@
                                     <constraint firstAttribute="height" constant="64" id="WKZ-J0-b9k"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8au-48-0mh">
                                 <rect key="frame" x="24" y="435" width="366" height="64"/>
@@ -487,6 +487,9 @@
                                     <segment title="Freezer"/>
                                     <segment title="Pantry"/>
                                 </segments>
+                                <connections>
+                                    <action selector="storingPlaceSwitcherChanged:" destination="vH1-9z-mKj" eventType="valueChanged" id="ZeK-CQ-DzX"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P95-Tk-qOz">
                                 <rect key="frame" x="326" y="725" width="64" height="64"/>
@@ -530,6 +533,7 @@
                     <tabBarItem key="tabBarItem" title="My food" image="home" id="BEa-Z2-2rL"/>
                     <connections>
                         <outlet property="myFoodTableView" destination="uSF-jO-KeG" id="M9U-nH-E3B"/>
+                        <outlet property="storingPlaceSwitcher" destination="ff0-8y-IYN" id="JIB-9V-FRi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Umj-zS-WJe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import FirebaseDatabase
+import FirebaseAuth
 
 var myFoodVC: MyFoodViewController?
 
@@ -17,6 +18,8 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+//        print("USER ID: \(String(describing: UserDefaults.standard.string(forKey: "userID")!))")
+//        print("USER ID: \(String(describing: Auth.auth().currentUser!.uid))")
         
         // MARK: Google Firebase setup
         fetchDataFromFireBase()
@@ -25,27 +28,83 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         myFoodVC = self
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        myProducts = []
-////        fetchDataFromFireBase()
-//        myFoodTableView.reloadData()
-//    }
-    
+    //MARK: Instance variables
     var myProducts: [ProductItem] = []
+    var dataFilter: Int = 0
     
     @IBOutlet weak var myFoodTableView: UITableView!
+    @IBOutlet weak var storingPlaceSwitcher: UISegmentedControl!
+    
+    //MARK: Filtering products by place of storing
+    @IBAction func storingPlaceSwitcherChanged(_ sender: Any) {
+        switch storingPlaceSwitcher.selectedSegmentIndex {
+        case 0:
+            dataFilter = 0
+            myFoodTableView.reloadData()
+        case 1:
+            dataFilter = 1
+            myFoodTableView.reloadData()
+        case 2:
+            dataFilter = 2
+            myFoodTableView.reloadData()
+        case 3:
+            dataFilter = 3
+            myFoodTableView.reloadData()
+        default:
+            return
+        }
+    }
+    
+    func storingPlaceFilterHandler() -> [ProductItem] {
+        
+        var filteredProducts: [ProductItem] = []
+        
+        switch dataFilter {
+        case 0:
+            return myProducts
+        case 1:
+            for product in myProducts {
+                if product.storingPlace == "Fridge" {
+                    filteredProducts.append(product)
+                }
+            }
+            return filteredProducts
+        case 2:
+            for product in myProducts {
+                if product.storingPlace == "Freezer" {
+                    filteredProducts.append(product)
+                }
+            }
+            return filteredProducts
+        case 3:
+            for product in myProducts {
+                if product.storingPlace == "Pantry" {
+                    filteredProducts.append(product)
+                }
+            }
+            return filteredProducts
+        default:
+            return myProducts
+        }
+    }
+    
     
     //MARK: TableView set up
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myProducts.count
+        
+        let products: [ProductItem] = storingPlaceFilterHandler()
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let products: [ProductItem] = storingPlaceFilterHandler()
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductTableViewCell
-        cell.productName?.text = myProducts[indexPath.row].name
-        cell.weight?.text = "\(myProducts[indexPath.row].weight) \(myProducts[indexPath.row].weightMesureType)"
-//        cell.expireDate?.text = formatDate(date: myProducts[indexPath.row].expireDate!)
-//        cell.expireDate?.text = "\(Calendar.current.dateComponents([.day], from: Date(), to: myProducts[indexPath.row].expireDate!).day!) days"
+        cell.productName?.text = products[indexPath.row].name
+        cell.weight?.text = "\(products[indexPath.row].weight) \(products[indexPath.row].weightMesureType)"
+//        cell.expireDate?.text = formatDate(date: products[indexPath.row].expireDate!)
+//        cell.expireDate?.text = "\(Calendar.current.dateComponents([.day], from: Date(), to: products[indexPath.row].expireDate!).day!) days"
         cell.expireDate?.text = "0 days"
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -70,9 +129,9 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     
     // MARK: Google Firebase Fetching
     func fetchDataFromFireBase() {
-        let ref = Database.database().reference().child("myFood")
+        let ref = Database.database().reference().child("Users").child(String(UserDefaults.standard.string(forKey: "userID")!)).child("MyFood")
         
-        ref.observe(.value) { (snapshot) in
+        ref.observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
 //                let key = snap.key
@@ -85,28 +144,4 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
     }
-    
-//    func fetchDataFromFirebase2() -> [ProductItem] {
-//        var fetchedProducts: [ProductItem] = []
-//        let ref = Database.database().reference().child("myFood")
-//        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-////                let key = snap.key
-//                let value = snap.value! as? NSDictionary
-//                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, weightMesureType: value!["weightMesureType"]! as! String)
-////                self.myProducts.append(productItem)
-//                fetchedProducts.append(productItem)
-//                DispatchQueue.main.async {
-//                    self.myFoodTableView.reloadData()
-//                }
-//            }
-//
-//          }) { (error) in
-//            print(error.localizedDescription)
-//        }
-//        return fetchedProducts
-//    }
-    
 }
