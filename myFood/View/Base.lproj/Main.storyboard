@@ -309,7 +309,7 @@
         <!--Diet-->
         <scene sceneID="NWY-9I-VQS">
             <objects>
-                <viewController title="Diet" id="CPS-ym-py4" sceneMemberID="viewController">
+                <viewController title="Diet" id="CPS-ym-py4" customClass="DietViewController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aOR-HQ-5H8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,13 +323,154 @@
                                     <navigationItem title="Diet" id="mg6-c4-hgV"/>
                                 </items>
                             </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="svh-F3-QPB">
+                                <rect key="frame" x="16" y="166" width="382" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rV-gV-K5N">
+                                        <rect key="frame" x="0.0" y="0.0" width="183" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore recipes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRq-74-1l0">
+                                                <rect key="frame" x="16" y="63.5" width="151" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Recipe" translatesAutoresizingMaskIntoConstraints="NO" id="FUX-d2-3GW">
+                                                <rect key="frame" x="16" y="16" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="dmX-Se-TgD"/>
+                                                    <constraint firstAttribute="height" constant="32" id="m7L-QY-rz9"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="IRq-74-1l0" secondAttribute="bottom" constant="16" id="FuB-gv-zIz"/>
+                                            <constraint firstAttribute="trailing" secondItem="IRq-74-1l0" secondAttribute="trailing" constant="16" id="IjH-HQ-gLz"/>
+                                            <constraint firstAttribute="height" constant="100" id="MZw-t4-rdM"/>
+                                            <constraint firstItem="FUX-d2-3GW" firstAttribute="leading" secondItem="8rV-gV-K5N" secondAttribute="leading" constant="16" id="aQ2-s7-msD"/>
+                                            <constraint firstItem="IRq-74-1l0" firstAttribute="leading" secondItem="8rV-gV-K5N" secondAttribute="leading" constant="16" id="k0V-W9-HcI"/>
+                                            <constraint firstItem="FUX-d2-3GW" firstAttribute="top" secondItem="8rV-gV-K5N" secondAttribute="top" constant="16" id="n7l-lU-Bp2"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounce" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHh-eF-aEW">
+                                        <rect key="frame" x="199" y="0.0" width="183" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get a meal plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQi-Lv-Lxz">
+                                                <rect key="frame" x="16" y="63.5" width="151" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MealPlan" translatesAutoresizingMaskIntoConstraints="NO" id="qgt-7j-iOY">
+                                                <rect key="frame" x="16" y="16" width="28" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="28" id="dQK-pO-aXC"/>
+                                                    <constraint firstAttribute="height" constant="28" id="zoI-UJ-XKN"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstItem="CQi-Lv-Lxz" firstAttribute="leading" secondItem="QHh-eF-aEW" secondAttribute="leading" constant="16" id="4Xf-tY-O0x"/>
+                                            <constraint firstAttribute="height" constant="100" id="FH0-I4-6fv"/>
+                                            <constraint firstAttribute="trailing" secondItem="CQi-Lv-Lxz" secondAttribute="trailing" constant="16" id="SdQ-9R-un9"/>
+                                            <constraint firstItem="qgt-7j-iOY" firstAttribute="top" secondItem="QHh-eF-aEW" secondAttribute="top" constant="16" id="VFN-Cb-cxW"/>
+                                            <constraint firstAttribute="bottom" secondItem="CQi-Lv-Lxz" secondAttribute="bottom" constant="16" id="qsX-ee-chb"/>
+                                            <constraint firstItem="qgt-7j-iOY" firstAttribute="leading" secondItem="QHh-eF-aEW" secondAttribute="leading" constant="16" id="yoD-1L-9jL"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounce" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="106" translatesAutoresizingMaskIntoConstraints="NO" id="zXR-vG-6SG">
+                                <rect key="frame" x="16" y="314" width="382" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My meal plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyT-3K-zvV">
+                                        <rect key="frame" x="0.0" y="0.0" width="236" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MH7-uc-SlV">
+                                        <rect key="frame" x="342" y="0.0" width="40" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4Hq-SF-UrT"/>
+                                            <constraint firstAttribute="width" constant="40" id="G1N-zd-9Sd"/>
+                                        </constraints>
+                                        <state key="normal" image="Edit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounce" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Evq-y8-Ub0">
+                                <rect key="frame" x="16" y="378" width="382" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Czk-ei-VeV"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="M"/>
+                                    <segment title="T"/>
+                                    <segment title="W"/>
+                                    <segment title="T"/>
+                                    <segment title="F"/>
+                                    <segment title="S"/>
+                                    <segment title="S"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EqD-Pc-Gpc">
+                                <rect key="frame" x="0.0" y="442" width="414" height="371"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Vtc-CQ-h4s">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vtc-CQ-h4s" id="0et-9X-x0M">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EVz-a9-zom"/>
                         <color key="backgroundColor" red="0.94509803920000002" green="0.94901960780000005" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="EVz-a9-zom" firstAttribute="trailing" secondItem="EqD-Pc-Gpc" secondAttribute="trailing" id="0LG-sd-6F2"/>
+                            <constraint firstItem="EqD-Pc-Gpc" firstAttribute="bottom" secondItem="EVz-a9-zom" secondAttribute="bottom" id="3Ff-Sd-Jra"/>
                             <constraint firstItem="U9Q-1g-Ipn" firstAttribute="trailing" secondItem="EVz-a9-zom" secondAttribute="trailing" id="4Nu-1w-GNY"/>
+                            <constraint firstItem="EqD-Pc-Gpc" firstAttribute="leading" secondItem="EVz-a9-zom" secondAttribute="leading" id="ItQ-01-asH"/>
+                            <constraint firstItem="EqD-Pc-Gpc" firstAttribute="top" secondItem="Evq-y8-Ub0" secondAttribute="bottom" constant="16" id="OxS-U1-9sl"/>
+                            <constraint firstItem="EVz-a9-zom" firstAttribute="trailing" secondItem="svh-F3-QPB" secondAttribute="trailing" constant="16" id="Ruf-JW-Nt8"/>
+                            <constraint firstItem="zXR-vG-6SG" firstAttribute="top" secondItem="svh-F3-QPB" secondAttribute="bottom" constant="48" id="Ug9-zP-YUp"/>
+                            <constraint firstItem="svh-F3-QPB" firstAttribute="top" secondItem="U9Q-1g-Ipn" secondAttribute="bottom" constant="24" id="UrR-gL-1nb"/>
                             <constraint firstItem="U9Q-1g-Ipn" firstAttribute="top" secondItem="EVz-a9-zom" secondAttribute="top" id="V2J-0e-ikS"/>
+                            <constraint firstItem="EVz-a9-zom" firstAttribute="trailing" secondItem="Evq-y8-Ub0" secondAttribute="trailing" constant="16" id="ddw-QT-Oxo"/>
+                            <constraint firstItem="Evq-y8-Ub0" firstAttribute="top" secondItem="zXR-vG-6SG" secondAttribute="bottom" constant="24" id="fwW-ak-M7J"/>
+                            <constraint firstItem="EVz-a9-zom" firstAttribute="trailing" secondItem="zXR-vG-6SG" secondAttribute="trailing" constant="16" id="kzB-1j-uT1"/>
+                            <constraint firstItem="Evq-y8-Ub0" firstAttribute="leading" secondItem="EVz-a9-zom" secondAttribute="leading" constant="16" id="qNH-8C-qxP"/>
+                            <constraint firstItem="zXR-vG-6SG" firstAttribute="leading" secondItem="EVz-a9-zom" secondAttribute="leading" constant="16" id="qd2-bl-wCA"/>
                             <constraint firstItem="U9Q-1g-Ipn" firstAttribute="leading" secondItem="EVz-a9-zom" secondAttribute="leading" id="uQU-ed-16Z"/>
+                            <constraint firstItem="svh-F3-QPB" firstAttribute="leading" secondItem="EVz-a9-zom" secondAttribute="leading" constant="16" id="wca-sL-bA4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Diet" image="diet" id="9iC-Qa-phn"/>
@@ -492,7 +633,7 @@
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P95-Tk-qOz">
                                 <rect key="frame" x="326" y="725" width="64" height="64"/>
-                                <color key="backgroundColor" red="0.29411764705882354" green="0.84705882352941175" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="IE5-L2-Cu3"/>
                                     <constraint firstAttribute="width" constant="64" id="jBk-Q4-KKJ"/>
@@ -552,13 +693,13 @@
                                 <items>
                                     <navigationItem title="Add product" id="SNG-sU-bSj">
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="BhF-xX-3jr">
-                                            <color key="tintColor" red="0.2784313725" green="0.82352941180000006" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" systemColor="systemGreenColor"/>
                                             <connections>
                                                 <action selector="closeWindow:" destination="HJ2-fF-0yr" id="4uC-Vo-zoc"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="MeX-eQ-oF7">
-                                            <color key="tintColor" red="0.29411764705882354" green="0.84705882352941175" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" systemColor="systemGreenColor"/>
                                             <connections>
                                                 <action selector="saveProduct:" destination="HJ2-fF-0yr" id="vOc-x9-8JK"/>
                                             </connections>
@@ -724,7 +865,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" red="0.29411764709999999" green="0.84705882349999995" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" red="0.6705882352941176" green="0.72156862745098038" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
@@ -762,6 +903,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Edit" width="40" height="40"/>
+        <image name="MealPlan" width="30" height="30"/>
+        <image name="Recipe" width="33" height="32"/>
         <image name="ScanBarcode" width="327" height="64"/>
         <image name="diet" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
@@ -771,8 +915,17 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

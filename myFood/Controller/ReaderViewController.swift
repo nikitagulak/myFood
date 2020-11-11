@@ -11,11 +11,11 @@ import CoreData
 import BarcodeEasyScan
 import FirebaseDatabase
 
-enum unit: String {
-    case grams = "grams";
-    case ml = "ml";
-    case peaces = "peaces"
-}
+//enum unit: String {
+//    case grams = "grams";
+//    case ml = "ml";
+//    case peaces = "peaces"
+//}
 
 class ReaderViewController: UIViewController, ScanBarcodeDelegate {
      
