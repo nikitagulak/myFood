@@ -16,16 +16,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Checking if user is authorized
         if UserDefaults.standard.string(forKey: "userID") != nil {
             openHomescreen()
         }
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
+        // Hide NavBar on welcome screen
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         if navigationController?.navigationBar.isHidden == false {
             self.navigationController?.setNavigationBarHidden(false, animated: false)
         } else {
             self.navigationController?.setNavigationBarHidden(true, animated: false)
         }
+        
+        // Setting font size of Tab Bar items
+        let appearance = UITabBarItem.appearance()
+        let attributes = [NSAttributedString.Key.font:UIFont(name: "System Font Bold", size: 11)!]
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+        
 //        let loginButton = FBLoginButton()
 //        loginButton.center = view.center
 //        view.addSubview(loginButton)

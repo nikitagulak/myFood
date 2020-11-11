@@ -11,6 +11,12 @@ import CoreData
 import BarcodeEasyScan
 import FirebaseDatabase
 
+enum unit: String {
+    case grams = "grams";
+    case ml = "ml";
+    case peaces = "peaces"
+}
+
 class ReaderViewController: UIViewController, ScanBarcodeDelegate {
      
     //MARK: Life-cycles
@@ -74,6 +80,8 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         case 0:
             weightMesureTypeSwitcherValue = "grams"
         case 1:
+            weightMesureTypeSwitcherValue = "ml"
+        case 2:
             weightMesureTypeSwitcherValue = "peaces"
         default:
             weightMesureTypeSwitcherValue = "grams"
