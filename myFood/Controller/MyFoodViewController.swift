@@ -21,7 +21,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
 //        print("USER ID: \(String(describing: UserDefaults.standard.string(forKey: "userID")!))")
 //        print("USER ID: \(String(describing: Auth.auth().currentUser!.uid))")
         
-        // MARK: Google Firebase setup
+        // Google Firebase setup
         fetchDataFromFireBase()
         
         myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
@@ -103,9 +103,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductTableViewCell
         cell.productName?.text = products[indexPath.row].name
         cell.weight?.text = "\(products[indexPath.row].weight) \(products[indexPath.row].weightMesureType)"
-//        cell.expireDate?.text = formatDate(date: products[indexPath.row].expireDate!)
-//        cell.expireDate?.text = "\(Calendar.current.dateComponents([.day], from: Date(), to: products[indexPath.row].expireDate!).day!) days"
-        cell.expireDate?.text = products[indexPath.row].expiryDate
+        cell.expiryDate?.text = expiringToString(expiryDate: products[indexPath.row].expiryDate)
         cell.clockIcon.isHidden = products[indexPath.row].expiryDate == "" ? true : false
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -117,16 +115,32 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-    func formatDate(date: Date) -> String {
-        let datepicker = UIDatePicker()
-        let formatter = DateFormatter()
-        var dateFromCoreData = "\(date)"
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        dateFromCoreData = formatter.string(from: datepicker.date)
-        return dateFromCoreData
+    //MARK: Displaying Expiry Date
+    func expiringToString(expiryDate: String) -> String {
+        if expiryDate != "" {
+            let stringDate = stringToDate(stringDate: expiryDate)
+            let calendar = Calendar.current
+            let years = calendar.dateComponents([.year], from: calendar.startOfDay(for: Date()), to: calendar.startOfDay(for: stringDate)).year!
+            let months = calendar.dateComponents([.month], from: calendar.startOfDay(for: Date()), to: calendar.startOfDay(for: stringDate)).month!
+            let days = calendar.dateComponents([.day], from: calendar.startOfDay(for: Date()), to: calendar.startOfDay(for: stringDate)).day!
+            
+            if years > 0 {
+                return "Expires in \(years) years"
+            } else if months > 0{
+                return "Expires in \(months) months"
+            } else {
+                return "Expires in \(days) days"
+            }
+        } else {
+            return ""
+        }
     }
-    
+    func stringToDate(stringDate: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd HH:mm"
+        guard let dateObject = formatter.date(from: "\(stringDate) 01:00") else { return Date() }
+        return dateObject
+    }
     
     // MARK: Google Firebase Fetching
     func fetchDataFromFireBase() {

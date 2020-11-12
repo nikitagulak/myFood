@@ -16,7 +16,7 @@ class ProductTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var weight: UILabel!
-    @IBOutlet weak var expireDate: UILabel!
+    @IBOutlet weak var expiryDate: UILabel!
     @IBOutlet weak var clockIcon: UIImageView!
     
     
