@@ -102,7 +102,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "productCell") as! ProductTableViewCell
         cell.productName?.text = products[indexPath.row].name
-        cell.weight?.text = "\(products[indexPath.row].weight) \(products[indexPath.row].weightMesureType)"
+        cell.weight?.text = "\(products[indexPath.row].weight) \(products[indexPath.row].unit)"
         cell.expiryDate?.text = expiringToString(expiryDate: products[indexPath.row].expiryDate)
         cell.clockIcon.isHidden = products[indexPath.row].expiryDate == "" ? true : false
         
@@ -151,7 +151,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
                 let snap = child as! DataSnapshot
 //                let key = snap.key
                 let value = snap.value! as? NSDictionary
-                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, weightMesureType: value!["weightMesureType"]! as! String, expiryDate: value!["expiryDate"] as? String ?? "")
+                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, unit: value!["unit"]! as! String, expiryDate: value!["expiryDate"] as? String ?? "")
                 self.myProducts.append(productItem)
                 DispatchQueue.main.async {
                     self.myFoodTableView.reloadData()

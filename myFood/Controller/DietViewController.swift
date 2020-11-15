@@ -16,6 +16,9 @@ class DietViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func generateMealPlan(_ sender: UITapGestureRecognizer) {
+        print("BUTTON PRESSED")
+    }
     
 
 }

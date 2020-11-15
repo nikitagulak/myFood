@@ -74,6 +74,7 @@ class ViewController: UIViewController {
             // Login succeed
             print(result!.user.uid as String)
             UserDefaults.standard.set(result!.user.uid as String, forKey: "userID")
+            self.getUserName()
             self.openHomescreen()
         }
     }
@@ -103,7 +104,7 @@ class ViewController: UIViewController {
                 let ref = Database.database().reference().child(databasePath)
                 ref.child("Account").setValue(["Name":name])
             }
-            
+            self.getUserName()
             self.openHomescreen()
         }
         
@@ -134,6 +135,20 @@ class ViewController: UIViewController {
         let nextViewController = storyboard?.instantiateViewController(identifier: "homescreen") as! UITabBarController
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: false, completion: nil)
+    }
+    
+    // MARK: Google Firebase Fetching
+    func getUserName() {
+        let ref = Database.database().reference().child("Users").child(String(UserDefaults.standard.string(forKey: "userID")!)).child("Account")
+        
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            let value = snapshot.value! as? NSDictionary
+            let userName = value!["Name"]! as! String
+            UserDefaults.standard.set(userName as String, forKey: "userName")
+            DispatchQueue.main.async {
+                UserDefaults.standard.set(userName as String, forKey: "userName")
+            }
+        }
     }
     
 }

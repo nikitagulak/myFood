@@ -108,7 +108,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
             expiryDate = formatter.string(from: datePicker.date)
         }
         
-        saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, weightMesureType: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: expiryDate )
+        saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, unit: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: expiryDate )
         myFoodVC?.myProducts = []
         myFoodVC?.fetchDataFromFireBase()
         self.dismiss(animated: true, completion: nil)
@@ -140,10 +140,10 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
     }
     
     //MARK: Firebase Saving
-    func saveDataToFireBase(name: String, weight: Int, weightMesureType: String, storingPlace: String, expiryDate: String) {
+    func saveDataToFireBase(name: String, weight: Int, unit: String, storingPlace: String, expiryDate: String) {
         let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MyFood"
         let ref = Database.database().reference().child(databasePath)
-        ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "weightMesureType":weightMesureType, "expiryDate":expiryDate])
+        ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "unit":unit, "expiryDate":expiryDate])
     }
     
         
