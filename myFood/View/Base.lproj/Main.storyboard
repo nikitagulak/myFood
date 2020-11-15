@@ -628,6 +628,7 @@
                                                 <constraint firstItem="s2M-G7-LlS" firstAttribute="centerY" secondItem="KTD-Or-ffk" secondAttribute="centerY" id="IeK-Ia-hKa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -646,10 +647,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qks-ND-3Re">
+                                                    <rect key="frame" x="330" y="11.5" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ygd-u9-2Rw" firstAttribute="leading" secondItem="Lgo-98-8n5" secondAttribute="leadingMargin" id="3Fn-RX-LOW"/>
+                                                <constraint firstItem="Qks-ND-3Re" firstAttribute="trailing" secondItem="Lgo-98-8n5" secondAttribute="trailingMargin" id="GTs-cw-UNm"/>
                                                 <constraint firstItem="ygd-u9-2Rw" firstAttribute="centerY" secondItem="Lgo-98-8n5" secondAttribute="centerY" id="TNC-sM-PqR"/>
+                                                <constraint firstItem="Qks-ND-3Re" firstAttribute="centerY" secondItem="Lgo-98-8n5" secondAttribute="centerY" id="beO-dp-SI5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -670,9 +679,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date added (ASC)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMg-mb-LtV">
+                                                    <rect key="frame" x="236.5" y="11.5" width="138.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="aQC-Eq-2WL" firstAttribute="leading" secondItem="W24-H7-mmT" secondAttribute="leadingMargin" id="Gix-B4-XAa"/>
+                                                <constraint firstItem="gMg-mb-LtV" firstAttribute="centerY" secondItem="W24-H7-mmT" secondAttribute="centerY" id="XAM-d7-DJH"/>
+                                                <constraint firstItem="gMg-mb-LtV" firstAttribute="trailing" secondItem="W24-H7-mmT" secondAttribute="trailingMargin" id="gSn-py-wzX"/>
                                                 <constraint firstItem="aQC-Eq-2WL" firstAttribute="centerY" secondItem="W24-H7-mmT" secondAttribute="centerY" id="xSJ-Yu-dNg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -684,15 +701,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7T-7N-ejW">
-                                                    <rect key="frame" x="20" y="11.5" width="56" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soon expiry term" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7T-7N-ejW">
+                                                    <rect key="frame" x="20" y="11.5" width="129.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 days" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivs-Ug-dBd">
+                                                    <rect key="frame" x="324" y="11.5" width="51" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="H7T-7N-ejW" firstAttribute="leading" secondItem="w6c-NI-wyj" secondAttribute="leadingMargin" id="3kR-0E-4rR"/>
+                                                <constraint firstItem="ivs-Ug-dBd" firstAttribute="trailing" secondItem="w6c-NI-wyj" secondAttribute="trailingMargin" id="7Yp-eu-aJK"/>
+                                                <constraint firstItem="ivs-Ug-dBd" firstAttribute="centerY" secondItem="w6c-NI-wyj" secondAttribute="centerY" id="iCf-an-FLk"/>
                                                 <constraint firstItem="H7T-7N-ejW" firstAttribute="centerY" secondItem="w6c-NI-wyj" secondAttribute="centerY" id="v1k-rR-lFd"/>
                                             </constraints>
                                         </tableViewCellContentView>

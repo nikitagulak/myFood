@@ -17,8 +17,30 @@ class DietViewController: UIViewController {
     }
     
     @IBAction func generateMealPlan(_ sender: UITapGestureRecognizer) {
-        print("BUTTON PRESSED")
+        getDataFromServer(url: URL(string: "http://localhost:3000")!)
     }
+    
+    func getDataFromServer(url: URL) {
+        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+            guard let data = data else { return }
+            print(String(data: data, encoding: .utf8)!)
+            
+        }
+        
+        task.resume()
+    }
+    
+//    public func getDataFromServer(fromURL url: URL, completion: @escaping (_ data: Data?) -> Void) {
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            let sessionConfiguration = URLSessionConfiguration.default
+//            let session = URLSession(configuration: sessionConfiguration)
+//            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+//                guard let data = data else { completion(nil); return }
+//                completion(data)
+//            })
+//            task.resume()
+//        }
+//    }
     
 
 }
