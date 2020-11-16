@@ -67,6 +67,10 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         view.tintColor = UIColor(red: 0.96, green: 0.96, blue: 0.97, alpha: 1.00)
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.tintColor = UIColor(red: 0.96, green: 0.96, blue: 0.97, alpha: 1.00)
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
