@@ -10,32 +10,34 @@ import UIKit
 //import CoreData
 import FirebaseDatabase
 
-class ShoppingListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ShoppingListsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //MARK: Life-cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        shoppingListsTableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView()
         fetchShoppingListsFromFireBase()
         print("ARRAY: \(shoppingLists)")
     }
     
     
     //MARK: Istances
-    var newShoppingListName = ""
+//    var newShoppingListName = ""
     var shoppingLists: [String] = []
     
-    @IBOutlet weak var shoppingListsTableView: UITableView!
-
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cellLabel: UILabel!
+    
     
     //MARK: TableView set up
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return shoppingLists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell =  shoppingListsTableView.dequeueReusableCell(withIdentifier: "ShoppingListCell", for: indexPath)
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "ShoppingListCell", for: indexPath) as! ShoppingListCell
 //        cell.textLabel?.text = shoppingLists[indexPath.row]
+        cell.listNameLabel?.text = shoppingLists[indexPath.row]
         return cell
     }
     
@@ -43,6 +45,28 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            self.deleteFromDatabase(listToDelete: self.shoppingLists[indexPath.row])
+            DispatchQueue.main.async {
+                self.shoppingLists = []
+            }
+            self.fetchShoppingListsFromFireBase()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            completionHandler(true)
+        }
+        action.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! SingleShoppingListController
+        let cell = sender as! ShoppingListCell
+        destinationVC.navigationItem.title = cell.listNameLabel?.text
+    }
     
     //MARK: Creating a shopping list
     @IBAction func addShoppingList(_ sender: UIButton) {
@@ -62,8 +86,7 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
                 self.saveShoppingListToFireBase(listName: alert.textFields![0].text!)
                 self.shoppingLists = []
                 self.fetchShoppingListsFromFireBase()
-                print("ARRAY: \(self.shoppingLists)")
-                self.shoppingListsTableView.reloadData()
+                self.tableView.reloadData()
 //                self.dismiss(animated: true, completion: nil)
             }
         }))
@@ -88,46 +111,21 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
         ref.observeSingleEvent(of: .value) { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
-                print("SNAP is: \(snap.key)")
-                let shoppingList = snap.key
-                self.shoppingLists.append(shoppingList)
-                DispatchQueue.main.async {
-                    self.shoppingListsTableView.reloadData()
-                    print("ARRAY: \(self.shoppingLists)")
-                }
+                self.shoppingLists.append(snap.key)
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
         
     }
     
-    //MARK: CoreData Saving
-//    func saveNewData(name: String) {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//                let context = appDelegate.persistentContainer.viewContext
-//                let entity = NSEntityDescription.entity(forEntityName: "ShoppingLists", in: context)
-//                let newResult = NSManagedObject(entity: entity!, insertInto: context)
-//                newResult.setValue(name, forKey: "Name")
-//                do {
-//                    try context.save()
-//                } catch {
-//                    print("Failed saving")
-//                }
-//    }
     
-    //MARK: CoreData Fetching
-//    func fetchResults() {
-//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//            let context = appDelegate.persistentContainer.viewContext
-//            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ShoppingLists")
-//            request.returnsObjectsAsFaults = false
-//            do {
-//                let result = try context.fetch(request)
-//                for data in result as! [NSManagedObject] {
-//                    shoppingLists.append(data.value(forKey: "name") as! String)
-//                }
-//
-//            } catch {
-//                print("Failed fetching CoreData")
-//            }
-//    }
+    //MARK: Deleting from database
+    func deleteFromDatabase(listToDelete: String) {
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "ShoppingLists/" + listToDelete
+        let ref = Database.database().reference().child(databasePath)
+        ref.removeValue()
+    }
+
 }

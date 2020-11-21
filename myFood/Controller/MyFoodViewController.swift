@@ -155,9 +155,9 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
                 let value = snap.value! as? NSDictionary
                 let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, unit: value!["unit"]! as! String, expiryDate: value!["expiryDate"] as? String ?? "")
                 self.myProducts.append(productItem)
-                DispatchQueue.main.async {
-                    self.myFoodTableView.reloadData()
-                }
+            }
+            DispatchQueue.main.async {
+                self.myFoodTableView.reloadData()
             }
         }
     }
