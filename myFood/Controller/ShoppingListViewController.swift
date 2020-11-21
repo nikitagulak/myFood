@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import CoreData
+//import CoreData
+import FirebaseDatabase
 
 class ShoppingListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -15,7 +16,8 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         shoppingListsTableView.tableFooterView = UIView()
-//        fetchResults()
+        fetchShoppingListsFromFireBase()
+        print("ARRAY: \(shoppingLists)")
     }
     
     
@@ -43,29 +45,58 @@ class ShoppingListViewController: UIViewController, UITableViewDataSource, UITab
     
     
     //MARK: Creating a shopping list
-    @IBAction func addShoppingList(_ sender: UIBarButtonItem) {
-//        let alert = UIAlertController(title: "Enter a name of a shopping list", message: "e.g. Appartment, Cottage, Camp", preferredStyle: UIAlertController.Style.alert)
-//        
-//        alert.addTextField { textField in
-//            textField.autocapitalizationType = .sentences
-//        }
-//        
-//        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
-//                //Cancel Action
-//        }))
-//        
-//        alert.addAction(UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: {(_: UIAlertAction!) in
-//                //Save action
-//            if !alert.textFields![0].text!.isEmpty {
-//                self.saveNewData(name: alert.textFields![0].text!)
-//                self.shoppingLists = []
-//                self.fetchResults()
-//                self.shoppingListsTableView.reloadData()
+    @IBAction func addShoppingList(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Enter a name of a shopping list", message: "e.g. Appartment, Cottage, Camp", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addTextField { textField in
+            textField.autocapitalizationType = .sentences
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+                //Cancel Action
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: {(_: UIAlertAction!) in
+                //Save action
+            if !alert.textFields![0].text!.isEmpty {
+                self.saveShoppingListToFireBase(listName: alert.textFields![0].text!)
+                self.shoppingLists = []
+                self.fetchShoppingListsFromFireBase()
+                print("ARRAY: \(self.shoppingLists)")
+                self.shoppingListsTableView.reloadData()
 //                self.dismiss(animated: true, completion: nil)
-//            }
-//        }))
-//        
-//        self.present(alert, animated: true, completion: nil)
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    //MARK: Firebase Saving
+    func saveShoppingListToFireBase(listName: String) {
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "ShoppingLists/"
+        let ref = Database.database().reference().child(databasePath)
+        ref.child(listName).setValue("\(listName)")
+//        ref.childByAutoId().setValue(["listNname":listName])
+    }
+    
+    
+    // MARK: Google Firebase Fetching
+    func fetchShoppingListsFromFireBase() {
+        let ref = Database.database().reference().child("Users").child(String(UserDefaults.standard.string(forKey: "userID")!)).child("ShoppingLists")
+        
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                print("SNAP is: \(snap.key)")
+                let shoppingList = snap.key
+                self.shoppingLists.append(shoppingList)
+                DispatchQueue.main.async {
+                    self.shoppingListsTableView.reloadData()
+                    print("ARRAY: \(self.shoppingLists)")
+                }
+            }
+        }
         
     }
     

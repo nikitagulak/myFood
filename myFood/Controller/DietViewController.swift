@@ -17,7 +17,7 @@ class DietViewController: UIViewController {
     }
     
     @IBAction func generateMealPlan(_ sender: UITapGestureRecognizer) {
-        getDataFromServer(url: URL(string: "http://localhost:3000")!)
+        getDataFromServer(url: URL(string: "http://192.168.1.64:3000")!)
     }
     
     func getDataFromServer(url: URL) {

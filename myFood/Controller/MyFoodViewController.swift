@@ -128,8 +128,10 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
                 return "Expires in \(years) years"
             } else if months > 0{
                 return "Expires in \(months) months"
-            } else {
+            } else if days > 0 {
                 return "Expires in \(days) days"
+            } else {
+                return "Expired"
             }
         } else {
             return ""

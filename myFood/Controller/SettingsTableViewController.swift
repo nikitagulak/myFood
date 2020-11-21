@@ -41,6 +41,12 @@ class SettingsTableViewController: UITableViewController {
     @objc public func logout(sender: UIBarButtonItem) {
         UserDefaults.standard.removeObject(forKey: "userID")
         UserDefaults.standard.removeObject(forKey: "userName")
+        do {
+            try FirebaseAuth.Auth.auth().signOut()
+        } catch {
+            print("Failed logging out")
+        }
+        
         let nextViewController = storyboard?.instantiateViewController(identifier: "welcome") as! UINavigationController
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: false, completion: nil)
