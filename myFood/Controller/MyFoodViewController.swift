@@ -114,6 +114,23 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            self.deleteFromDatabase(productIdToDelete: self.myProducts[indexPath.row].id)
+            DispatchQueue.main.async {
+                self.myProducts = []
+            }
+            self.fetchDataFromFireBase()
+            DispatchQueue.main.async {
+                self.myFoodTableView.reloadData()
+            }
+            
+            completionHandler(true)
+        }
+        action.backgroundColor = .systemRed
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
     
     //MARK: Displaying Expiry Date
     func expiringToString(expiryDate: String) -> String {
@@ -153,12 +170,20 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
                 let snap = child as! DataSnapshot
 //                let key = snap.key
                 let value = snap.value! as? NSDictionary
-                let productItem = ProductItem(name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, unit: value!["unit"]! as! String, expiryDate: value!["expiryDate"] as? String ?? "")
+                let productItem = ProductItem(id: snap.key, name: value!["name"]! as! String, storingPlace: value!["storingPlace"]! as! String, weight: value!["weight"]! as! Int, unit: value!["unit"]! as! String, expiryDate: value!["expiryDate"] as? String ?? "")
                 self.myProducts.append(productItem)
             }
             DispatchQueue.main.async {
                 self.myFoodTableView.reloadData()
             }
         }
+    }
+    
+    //MARK: Deleting from database
+    func deleteFromDatabase(productIdToDelete: String) {
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MyFood/" + productIdToDelete
+        print(databasePath)
+        let ref = Database.database().reference().child(databasePath)
+        ref.removeValue()
     }
 }

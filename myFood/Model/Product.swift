@@ -25,13 +25,15 @@ struct ProductItemCollection {
 
 // MARK: - Product
 struct ProductItem {
+    let id: String
     let name: String
     let storingPlace: String
     let weight: Int
     let unit: String
     let expiryDate: String
     
-    init(name:String, storingPlace:String, weight:Int, unit:String, expiryDate:String) {
+    init(id:String, name:String, storingPlace:String, weight:Int, unit:String, expiryDate:String) {
+        self.id = id
         self.name = name
         self.weight = weight
         self.unit = unit
