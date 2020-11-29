@@ -40,4 +40,13 @@ struct ProductItem {
         self.storingPlace = storingPlace
         self.expiryDate = expiryDate
     }
+    
+    init(name:String, storingPlace:String, weight:Int, unit:String, expiryDate:String) {
+        self.id = ""
+        self.name = name
+        self.weight = weight
+        self.unit = unit
+        self.storingPlace = storingPlace
+        self.expiryDate = expiryDate
+    }
 }

@@ -112,6 +112,9 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let destinationVC = storyboard!.instantiateViewController(withIdentifier: "ProductDetails") as! ProductDetailsController
+        destinationVC.product = ProductItem(name: myProducts[indexPath.row].name, storingPlace: myProducts[indexPath.row].storingPlace, weight: myProducts[indexPath.row].weight, unit: myProducts[indexPath.row].unit, expiryDate: myProducts[indexPath.row].expiryDate)
+        navigationController?.showDetailViewController(destinationVC, sender: self)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -161,6 +164,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         return dateObject
     }
     
+    
     // MARK: Google Firebase Fetching
     func fetchDataFromFireBase() {
         let ref = Database.database().reference().child("Users").child(String(UserDefaults.standard.string(forKey: "userID")!)).child("MyFood")
@@ -179,10 +183,10 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    
     //MARK: Deleting from database
     func deleteFromDatabase(productIdToDelete: String) {
         let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MyFood/" + productIdToDelete
-        print(databasePath)
         let ref = Database.database().reference().child(databasePath)
         ref.removeValue()
     }

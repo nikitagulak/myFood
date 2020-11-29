@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		010B0C9C253B41F300DC9EFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010B0C9B253B41F300DC9EFD /* GoogleService-Info.plist */; };
+		013056E82572C27700E7DF1E /* AddMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013056E72572C27700E7DF1E /* AddMealController.swift */; };
+		013056EF2572F4C500E7DF1E /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013056EE2572F4C500E7DF1E /* MealCell.swift */; };
+		013056F22572F6C400E7DF1E /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013056F12572F6C400E7DF1E /* Meal.swift */; };
 		0133DB20255C2FEC00659B50 /* DietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133DB1F255C2FEC00659B50 /* DietViewController.swift */; };
 		0133DB23256158F900659B50 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133DB22256158F900659B50 /* SettingsTableViewController.swift */; };
 		01510713256970F5002C8506 /* ShoppingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01510712256970F5002C8506 /* ShoppingListCell.swift */; };
 		0151071725698775002C8506 /* SingleShoppingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0151071625698775002C8506 /* SingleShoppingListController.swift */; };
 		0151071C256989E9002C8506 /* ProductToBuyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0151071B256989E9002C8506 /* ProductToBuyCell.swift */; };
+		0162A3A0256D2BBD003E3875 /* ProductDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0162A39F256D2BBD003E3875 /* ProductDetailsController.swift */; };
 		017AA0EF2515FBB600DCBF6E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017AA0EE2515FBB600DCBF6E /* Product.swift */; };
 		01924F2424DB4B9B0064B9E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01924F2324DB4B9B0064B9E6 /* AppDelegate.swift */; };
 		01924F2624DB4B9B0064B9E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01924F2524DB4B9B0064B9E6 /* SceneDelegate.swift */; };
@@ -31,11 +35,15 @@
 
 /* Begin PBXFileReference section */
 		010B0C9B253B41F300DC9EFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		013056E72572C27700E7DF1E /* AddMealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealController.swift; sourceTree = "<group>"; };
+		013056EE2572F4C500E7DF1E /* MealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
+		013056F12572F6C400E7DF1E /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		0133DB1F255C2FEC00659B50 /* DietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietViewController.swift; sourceTree = "<group>"; };
 		0133DB22256158F900659B50 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		01510712256970F5002C8506 /* ShoppingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingListCell.swift; path = myFood/Controller/ShoppingListCell.swift; sourceTree = SOURCE_ROOT; };
 		0151071625698775002C8506 /* SingleShoppingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleShoppingListController.swift; sourceTree = "<group>"; };
 		0151071B256989E9002C8506 /* ProductToBuyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductToBuyCell.swift; sourceTree = "<group>"; };
+		0162A39F256D2BBD003E3875 /* ProductDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsController.swift; sourceTree = "<group>"; };
 		017AA0EE2515FBB600DCBF6E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		01924F2024DB4B9B0064B9E6 /* myFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01924F2324DB4B9B0064B9E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 			children = (
 				01924F2C24DB4B9B0064B9E6 /* myFood.xcdatamodeld */,
 				017AA0EE2515FBB600DCBF6E /* Product.swift */,
+				013056F12572F6C400E7DF1E /* Meal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +125,7 @@
 				01924F2924DB4B9B0064B9E6 /* Main.storyboard */,
 				01924F3124DB4B9D0064B9E6 /* LaunchScreen.storyboard */,
 				01DA04DE251567760093DB10 /* ProductTableViewCell.xib */,
+				013056EE2572F4C500E7DF1E /* MealCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,6 +143,8 @@
 				0133DB22256158F900659B50 /* SettingsTableViewController.swift */,
 				0151071625698775002C8506 /* SingleShoppingListController.swift */,
 				0151071B256989E9002C8506 /* ProductToBuyCell.swift */,
+				0162A39F256D2BBD003E3875 /* ProductDetailsController.swift */,
+				013056E72572C27700E7DF1E /* AddMealController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -277,7 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				01510713256970F5002C8506 /* ShoppingListCell.swift in Sources */,
+				0162A3A0256D2BBD003E3875 /* ProductDetailsController.swift in Sources */,
 				0151071C256989E9002C8506 /* ProductToBuyCell.swift in Sources */,
+				013056EF2572F4C500E7DF1E /* MealCell.swift in Sources */,
+				013056F22572F6C400E7DF1E /* Meal.swift in Sources */,
 				01924F2824DB4B9B0064B9E6 /* ViewController.swift in Sources */,
 				01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */,
 				01DA04DF251567760093DB10 /* ProductTableViewCell.swift in Sources */,
@@ -289,6 +304,7 @@
 				0133DB23256158F900659B50 /* SettingsTableViewController.swift in Sources */,
 				01B32EBC250A3D35007ACC27 /* ShoppingListsController.swift in Sources */,
 				01924F2424DB4B9B0064B9E6 /* AppDelegate.swift in Sources */,
+				013056E82572C27700E7DF1E /* AddMealController.swift in Sources */,
 				01924F2624DB4B9B0064B9E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
