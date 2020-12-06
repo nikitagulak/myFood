@@ -26,6 +26,9 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         
         myFoodTableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "productCell")
         myFoodVC = self
+        
+        // Spinner
+        spinner.startAnimating()
     }
     
     //MARK: Instance variables
@@ -34,6 +37,8 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var myFoodTableView: UITableView!
     @IBOutlet weak var storingPlaceSwitcher: UISegmentedControl!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     
     //MARK: Filtering products by place of storing
     @IBAction func storingPlaceSwitcherChanged(_ sender: Any) {
@@ -135,6 +140,12 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
+    //MARK: Spinner
+//    func spinnerIsAnimating(value: Bool) {
+//
+//    }
+    
+    
     //MARK: Displaying Expiry Date
     func expiringToString(expiryDate: String) -> String {
         if expiryDate != "" {
@@ -179,6 +190,8 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
             }
             DispatchQueue.main.async {
                 self.myFoodTableView.reloadData()
+                self.spinner.stopAnimating()
+                self.spinner.isHidden = true
             }
         }
     }

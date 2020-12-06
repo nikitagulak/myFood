@@ -17,6 +17,7 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         dietVC = self
+        spinner.startAnimating()
         fetchMealPlanFromFirebase()
         weekDayInitialSetup()
     }
@@ -25,20 +26,16 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //MARK: Instance variables
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var weekDaySwitcher: UISegmentedControl!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var mealPlan: [String:[Meal]] = [:]
-//    var mondayMealPlan: [Meal] = []
-//    var tuesdayMealPlan: [Meal] = []
-//    var wednesdayMealPlan: [Meal] = []
-//    var thursdayMealPlan: [Meal] = []
-//    var fridayMealPlan: [Meal] = []
-//    var saturdayMealPlan: [Meal] = []
-    var sundayMealPlan: [Meal] = []
     var selectedDayOfWeek: String?
+    
     
     //MARK: Actions
     @IBAction func generateMealPlan(_ sender: UITapGestureRecognizer) {
-        getDataFromServer(url: URL(string: "http://192.168.1.64:3000")!)
+//        getDataFromServer(url: URL(string: "http://192.168.1.64:3000")!)
+        getDataFromServer(url: URL(string: "http://localhost:3000")!)
     }
     
     @IBAction func weekDaySwitcherChanged(_ sender: UISegmentedControl) {
@@ -71,37 +68,30 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
         case "Monday":
             selectedDayOfWeek = "Monday"
             weekDaySwitcher.selectedSegmentIndex = 0
-//            myFoodTableView.reloadData()
         case "Tuesday":
             selectedDayOfWeek = "Tuesday"
             weekDaySwitcher.selectedSegmentIndex = 1
-//            myFoodTableView.reloadData()
         case "Wednesday":
             selectedDayOfWeek = "Wednesday"
             weekDaySwitcher.selectedSegmentIndex = 2
-//            myFoodTableView.reloadData()
         case "Thursday":
             selectedDayOfWeek = "Thursday"
             weekDaySwitcher.selectedSegmentIndex = 3
-//            myFoodTableView.reloadData()
         case "Friday":
             selectedDayOfWeek = "Friday"
             weekDaySwitcher.selectedSegmentIndex = 4
-//            myFoodTableView.reloadData()
         case "Saturday":
             selectedDayOfWeek = "Saturday"
             weekDaySwitcher.selectedSegmentIndex = 5
-//            myFoodTableView.reloadData()
         case "Sunday":
             selectedDayOfWeek = "Sunday"
             weekDaySwitcher.selectedSegmentIndex = 6
-//            myFoodTableView.reloadData()
         default:
             return
         }
     }
     
-    
+
     func getDataFromServer(url: URL) {
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             guard let data = data else { return }
@@ -172,8 +162,6 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         let snap = child as! DataSnapshot
                         let value = snap.value! as? NSDictionary
                         let mealItem = Meal(id: snap.key, mealType: value!["mealType"] as! String, dish: value!["dish"] as! String, time: value!["time"] as! String)
-                        self.sundayMealPlan.append(mealItem)
-                        
                         MealsForDay.array.append(mealItem)
                         self.mealPlan.updateValue(MealsForDay.array, forKey: day)
                     }
@@ -181,6 +169,8 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     MealsForDay.array = []
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden = true
                     }
                 }
             }
@@ -190,7 +180,7 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: Deleting from database
     func deleteFromDatabase(mealIdToDelete: String) {
-        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MealPlan/\(selectedDayOfWeek)/" + mealIdToDelete
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MealPlan/\(selectedDayOfWeek!)/" + mealIdToDelete
         let ref = Database.database().reference().child(databasePath)
         ref.removeValue()
     }

@@ -17,16 +17,16 @@ class ShoppingListsController: UIViewController, UITableViewDataSource, UITableV
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         fetchShoppingListsFromFireBase()
-        print("ARRAY: \(shoppingLists)")
+        spinner.startAnimating()
     }
     
     
     //MARK: Istances
-//    var newShoppingListName = ""
     var shoppingLists: [String] = []
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     
     //MARK: TableView set up
@@ -115,6 +115,8 @@ class ShoppingListsController: UIViewController, UITableViewDataSource, UITableV
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.spinner.stopAnimating()
+                self.spinner.isHidden = true
             }
         }
         
