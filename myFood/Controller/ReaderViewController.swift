@@ -125,6 +125,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
     
     func userDidScanWith(barcode: String) {
         print(barcode)
+        getDataFromBarcode(barcode: barcode)
     }
     
     @objc func donePressed() {
@@ -146,6 +147,28 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "unit":unit, "expiryDate":expiryDate])
     }
     
+    // MARK: Get data from OpenFoodFacts API
+    func getDataFromBarcode(barcode: String) {
+        let url = "https://world.openfoodfacts.org/api/v0/product/\(barcode)"
+        if let urlObj = URL(string: url) {
+          URLSession.shared.dataTask(with: urlObj) {(data, response, error) in
+            do {
+              let foodFactsObject = try JSONDecoder().decode(FoodFactsEntryPoint.self, from: data!)
+                print("https://world.openfoodfacts.org/api/v0/product/\(barcode)")
+                print("FOOD FACTS: \(foodFactsObject.product?.productNamePl ?? foodFactsObject.product?.productName ?? ""), \(foodFactsObject.product?.quantity ?? "")")
+                DispatchQueue.main.async {
+                    self.nameField.text = foodFactsObject.product?.productNamePl ?? foodFactsObject.product?.productName ?? ""
+                    if foodFactsObject.product?.productQuantity != nil {
+                        self.weightField.text = "\(foodFactsObject.product!.productQuantity!)"
+                    }
+                }
+                
+            } catch {
+              print("Error of decoding JSON: \(error)")
+            }
+          }.resume()
+        }
+    }
         
 }
 

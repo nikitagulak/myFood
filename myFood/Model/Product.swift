@@ -8,16 +8,6 @@
 
 import Foundation
 
-struct Product {
-    let name: String
-    let weigth: Int
-    let weightMesureType: String
-    let storingPlace: String
-    let expireDate: Date?
-    let barcode: String?
-}
-
-
 // MARK: - Welcome
 struct ProductItemCollection {
     let product1, product2, product3, product4: ProductItem

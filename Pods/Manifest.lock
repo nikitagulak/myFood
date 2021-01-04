@@ -1,4 +1,5 @@
 PODS:
+  - AnyCodable (1.2.0)
   - BarcodeEasyScan (0.3.0)
   - Firebase/Auth (6.34.0):
     - Firebase/CoreOnly
@@ -82,6 +83,7 @@ PODS:
   - SPPermissions/Core (5.3.5)
 
 DEPENDENCIES:
+  - AnyCodable (~> 1.2)
   - BarcodeEasyScan
   - Firebase/Auth
   - Firebase/Core
@@ -90,6 +92,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - AnyCodable
     - BarcodeEasyScan
     - Firebase
     - FirebaseAnalytics
@@ -108,6 +111,7 @@ SPEC REPOS:
     - SPPermissions
 
 SPEC CHECKSUMS:
+  AnyCodable: bb05e19c676899e0fd511652f2d83bfa044e2503
   BarcodeEasyScan: 9a7b2ca4c60c6ec93c433e5c14bc18657b8f7deb
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
@@ -125,6 +129,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SPPermissions: 5cccac81eea5afa7b78de5846bf3d33fd6adcf57
 
-PODFILE CHECKSUM: f0ee3e9b1c0bed726164ac62d8684580ac8c6852
+PODFILE CHECKSUM: 081f1704bdf08eb2d69ad98918edbb714d65fe40
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

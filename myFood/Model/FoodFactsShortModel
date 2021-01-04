@@ -1,0 +1,282 @@
+{
+"status": 1,
+"status_verbose": "product found",
+"code": "7622300444181",
+"product": {
+"brands": "Oreo",
+
+"ingredients_text_pl": "Mąka _PSZENNA_, cukier, olej palmowy, olej rzepakowy, kakao w proszku o obniżonej zawartości tłuszczu 4,5 %, skrobia _PSZENNA_, syrop glukozowo-fruktozowy substancje spulchniające (węglany potasu, węglany amonu, węglany sodu), sól emulgatory (lecytyna _SOJOWA_, lecytyna słonecznikowa), aromat",
+
+"image_small_url": "https://static.openfoodfacts.org/images/products/762/230/044/4181/front_en.4.200.jpg",
+
+"quantity": "176 g",
+"additives_tags": [
+"en:e322",
+"en:e501",
+"en:e501i",
+"en:e503",
+"en:e503ii"
+],
+"ingredients_analysis_tags": [
+"en:palm-oil-content-unknown",
+"en:non-vegan",
+"en:vegetarian-status-unknown"
+],
+"image_front_url": "https://static.openfoodfacts.org/images/products/762/230/044/4181/front_en.4.400.jpg",
+
+"nutrient_levels": {
+"fat": "moderate",
+"sugars": "high",
+"salt": "moderate",
+"saturated-fat": "high"
+},
+"product_name_pl": "Oreo",
+
+"allergens": "",
+
+"nutriments": {
+"carbohydrates_value": 68,
+"carbon-footprint-from-known-ingredients_serving": 13.2,
+"nutrition-score-fr_serving": 19,
+"energy-kcal_100g": 474,
+"nutrition-score-fr_100g": 19,
+"carbon-footprint-from-known-ingredients_100g": 120,
+"sugars_serving": 4.18,
+"fiber_serving": 0.297,
+"energy": 1983,
+"proteins_100g": 5.4,
+"energy-kcal_unit": "kcal",
+"energy_serving": 218,
+"nutrition-score-fr": 19,
+"carbon-footprint-from-known-ingredients_product": 211,
+"proteins_serving": 0.594,
+"energy-kcal_value": 474,
+"fat_unit": "g",
+"energy_value": 474,
+"sugars_100g": 38,
+"sugars_unit": "g",
+"proteins": 5.4,
+"carbohydrates_100g": 68,
+"fiber_unit": "g",
+"salt_100g": 0.74,
+"saturated-fat": 5.2,
+"carbohydrates_unit": "g",
+"sodium_serving": 0.0326,
+"salt_unit": "g",
+"fat": 19,
+"carbohydrates_serving": 7.48,
+"sodium_value": 0.296,
+"sugars_value": 38,
+"sodium": 0.296,
+"salt_value": 0.74,
+"fiber": 2.7,
+"fiber_100g": 2.7,
+"fat_value": 19,
+"nova-group_100g": 4,
+"salt": 0.74,
+"carbohydrates": 68,
+"fat_serving": 2.09,
+"fat_100g": 19,
+"saturated-fat_value": 5.2,
+"energy_100g": 1983,
+"sugars": 38,
+"saturated-fat_100g": 5.2,
+"proteins_value": 5.4,
+"nova-group": 4,
+"saturated-fat_serving": 0.572,
+"proteins_unit": "g",
+"energy_unit": "kcal",
+"energy-kcal_serving": 52.1,
+"energy-kcal": 474,
+"nova-group_serving": 4,
+"saturated-fat_unit": "g",
+"sodium_unit": "g",
+"sodium_100g": 0.296,
+"fiber_value": 2.7,
+"salt_serving": 0.0814,
+"fruits-vegetables-nuts-estimate-from-ingredients_100g": 0
+},
+"image_front_small_url": "https://static.openfoodfacts.org/images/products/762/230/044/4181/front_en.4.200.jpg",
+
+"ingredients": [
+{
+"rank": 1,
+"text": "Weizenmehl",
+"id": "en:wheat-flour",
+"vegetarian": "yes",
+"vegan": "yes"
+},
+{
+"vegetarian": "yes",
+"id": "en:sugar",
+"text": "Zucker",
+"rank": 2,
+"vegan": "yes"
+},
+{
+"text": "Palmol",
+"rank": 3,
+"id": "de:Palmol"
+},
+{
+"rank": 4,
+"text": "fettarmes Kakaopulver",
+"id": "en:fat-reduced-cocoa-powder",
+"vegetarian": "yes",
+"vegan": "yes",
+"percent": "4.6"
+},
+{
+"text": "Weizenstarke Glukose-Fruktose-Sirup",
+"rank": 5,
+"id": "de:Weizenstarke Glukose-Fruktose-Sirup"
+},
+{
+"id": "en:raising-agent",
+"text": "Backtriebmittel",
+"rank": 6,
+"has_sub_ingredients": "yes"
+},
+{
+"vegan": "yes",
+"id": "en:e501i",
+"vegetarian": "yes",
+"rank": 7,
+"text": "e501i"
+},
+{
+"text": "e503ii",
+"rank": 8,
+"vegetarian": "yes",
+"id": "en:e503ii",
+"vegan": "yes"
+},
+{
+"vegan": "yes",
+"rank": 9,
+"text": "Speisesalz",
+"id": "en:salt",
+"vegetarian": "yes"
+},
+{
+"text": "Emulgatoren",
+"rank": 10,
+"id": "en:emulsifier",
+"has_sub_ingredients": "yes"
+},
+{
+"id": "en:flavouring",
+"vegetarian": "maybe",
+"rank": 11,
+"text": "Aroma",
+"has_sub_ingredients": "yes",
+"vegan": "maybe"
+},
+{
+"has_sub_ingredients": "yes",
+"text": "Kann Nahrwertdeklaration per",
+"rank": 12,
+"id": "de:Kann Nahrwertdeklaration per"
+},
+{
+"has_sub_ingredients": "yes",
+"text": "Naringsdeklaration per Ravintoarvoilmoituksella per",
+"rank": 13,
+"id": "de:Naringsdeklaration per Ravintoarvoilmoituksella per"
+},
+{
+"rank": 14,
+"text": "Toitumisalane teave kohta",
+"id": "de:Toitumisalane teave kohta"
+},
+{
+"percent": "100",
+"vegan": "no",
+"vegetarian": "yes",
+"id": "en:milk",
+"text": "Milch enthalten",
+"rank": 15
+},
+{
+"rank": 16,
+"text": "Trocken und vor Warme geschutzt lagern",
+"id": "de:Trocken und vor Warme geschutzt lagern"
+},
+{
+"text": "Energie",
+"rank": 17,
+"id": "de:Energie"
+},
+{
+"id": "de:Energie",
+"rank": 18,
+"text": "Energie"
+},
+{
+"id": "de:Energie",
+"text": "Energie",
+"rank": 19
+},
+{
+"id": "de:Energi",
+"rank": 20,
+"text": "Energi"
+},
+{
+"id": "de:Energia",
+"text": "Energia",
+"rank": 21
+},
+{
+"rank": 22,
+"text": "2010k",
+"id": "de:2010k"
+},
+{
+"id": "de:ES00i",
+"text": "ES00i"
+},
+{
+"vegan": "maybe",
+"has_sub_ingredients": "yes",
+"vegetarian": "maybe",
+"id": "en:e322",
+"text": "e322"
+},
+{
+"text": "Vanillin",
+"id": "en:vanillin"
+},
+{
+"text": "Déclaration nutritionnelle pour Voedingswaardevermelding per",
+"id": "de:Déclaration nutritionnelle pour Voedingswaardevermelding per"
+},
+{
+"id": "de:Uzturvertibas markejums lidz",
+"text": "Uzturvertibas markejums lidz"
+},
+{
+"vegetarian": "yes",
+"id": "en:soya",
+"text": "Soja",
+"vegan": "yes"
+}
+],
+"allergens_from_ingredients": "Weizenmehl, Soja",
+"allergens_tags": [
+"en:gluten",
+"en:soybeans"
+],
+"traces": "en:milk",
+"nutrition_data_per": "100g",
+"product_name": "",
+"product_quantity": 176,
+
+"image_url": "https://static.openfoodfacts.org/images/products/762/230/044/4181/front_en.4.400.jpg",
+
+"allergens_hierarchy": [
+"en:gluten",
+"en:soybeans"
+]
+}
+}
