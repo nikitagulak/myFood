@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import AnyCodable
 
 var dietVC: DietViewController?
 
@@ -37,9 +38,17 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        getDataFromServer(url: URL(string: "http://192.168.1.64:3000")!)
 //        getDataFromServer(url: URL(string: "http://localhost:3000")!)
         let destinationVC = storyboard!.instantiateViewController(withIdentifier: "GenerateMealPlan") as! GenerateMealController
+        
         navigationController?.showDetailViewController(destinationVC, sender: self)
         
     }
+    
+    @IBAction func exploreRecipes(_ sender: UITapGestureRecognizer) {
+        let destinationVC = storyboard!.instantiateViewController(withIdentifier: "exploreRecipesCV") as! ExploreRecipesController
+        destinationVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
+    
     
     @IBAction func weekDaySwitcherChanged(_ sender: UISegmentedControl) {
         switch weekDaySwitcher.selectedSegmentIndex {
@@ -164,7 +173,7 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         
                         let snap = child as! DataSnapshot
                         let value = snap.value! as? NSDictionary
-                        let mealItem = Meal(id: snap.key, mealType: value!["mealType"] as! String, dish: value!["dish"] as! String, time: value!["time"] as! String)
+                        let mealItem = Meal(id: AnyCodable(snap.key), mealType: value!["mealType"] as! String, dish: value!["dish"] as! String, time: value!["time"] as! String)
                         MealsForDay.array.append(mealItem)
                         self.mealPlan.updateValue(MealsForDay.array, forKey: day)
                     }
@@ -182,8 +191,9 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     //MARK: Deleting from database
-    func deleteFromDatabase(mealIdToDelete: String) {
-        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MealPlan/\(selectedDayOfWeek!)/" + mealIdToDelete
+    func deleteFromDatabase(mealIdToDelete: AnyCodable) {
+        let mealIdToDeleteString: String = "\(mealIdToDelete)"
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MealPlan/\(selectedDayOfWeek!)/" + mealIdToDeleteString
         let ref = Database.database().reference().child(databasePath)
         ref.removeValue()
     }

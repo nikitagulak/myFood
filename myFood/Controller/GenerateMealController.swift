@@ -32,6 +32,7 @@ class GenerateMealController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func generateBtn(_ sender: UIButton) {
         getDataFromServer(url: URL(string: "http://169.254.153.221:3000")!)
 //        getDataFromServer(url: URL(string: "http://localhost:3000")!)
+        generateMealPlanRequest(targetCalories: targetCaloriesField.text ?? "", diet: dietField.text ?? "", exclude: excludeField.text ?? "")
     }
     
     @IBAction func cancelBtn(_ sender: UIBarButtonItem) {
@@ -64,6 +65,24 @@ class GenerateMealController: UIViewController, UIPickerViewDataSource, UIPicker
             print(String(data: data, encoding: .utf8)!)
         }
         task.resume()
+    }
+    
+    // MARK: Get data from Spoonacular API
+    func generateMealPlanRequest(targetCalories: String, diet: String, exclude: String) {
+        let apiKey = "c9048153061a4a4fa5d14861e1740e74"
+        let url = "https://api.spoonacular.com/mealplanner/generate?apiKey=\(apiKey)&timeFrame=week&targetCalories=\(targetCalories)&diet=\(diet)&exclude=\(exclude)"
+        if let urlObj = URL(string: url) {
+          URLSession.shared.dataTask(with: urlObj) {(data, response, error) in
+            do {
+//              var mealPlan = try JSONDecoder().decode(Users.self, from: data!)
+                let mealPlan = try JSONDecoder().decode(MealPlan.self, from: data!)
+                print(url)
+                print(mealPlan.week!.monday?.meals![0])
+            } catch {
+              print("Error of decoding JSON: \(error)")
+            }
+          }.resume()
+        }
     }
     
     

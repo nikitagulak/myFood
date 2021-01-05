@@ -18,7 +18,6 @@ class ProductDetailsController: UIViewController, UITableViewDataSource, UITable
         productValues.append(["Weight", String(product!.weight) + " " + product!.unit])
         productValues.append(["Place of storing", product?.storingPlace ?? ""])
         productValues.append(["Date of expiry", product?.expiryDate ?? ""])
-        
     }
     
     //MARK: Instance variables

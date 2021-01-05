@@ -26,7 +26,7 @@ class SingleShoppingListController: UIViewController, UITableViewDelegate, UITab
     
     //MARK: Actions
     @IBAction func addProduct(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Enter a name of a shopping list", message: "e.g. Appartment, Cottage, Camp", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Enter product name", message: "e.g. Avocado, Cheese, Cookies", preferredStyle: UIAlertController.Style.alert)
         
         alert.addTextField { textField in
             textField.autocapitalizationType = .sentences
@@ -99,6 +99,25 @@ class SingleShoppingListController: UIViewController, UITableViewDelegate, UITab
         
         // Action when checkbox is tapped
         cell.actionBlock = {
+            
+            /*
+            let alert = UIAlertController(title: "Add product to MyFood list?", message: "", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: { _ in
+                
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Add", style: UIAlertAction.Style.default, handler: {(_: UIAlertAction!) in
+//                self.dismiss(animated: true, completion: nil)
+//                self.navigationController?.popViewController(animated: false)
+//                self.navigationController?.popToRootViewController(animated: false)
+                let nameVC = self.storyboard!.instantiateViewController(withIdentifier: "readerViewController") as! ReaderViewController
+                self.navigationController?.pushViewController(nameVC, animated: true)
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            */
+            
             self.deleteFromDatabase(childToDelete: cell.productName!.text!)
             DispatchQueue.main.async {
                 self.products = []

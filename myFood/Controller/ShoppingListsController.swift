@@ -70,7 +70,7 @@ class ShoppingListsController: UIViewController, UITableViewDataSource, UITableV
     
     //MARK: Creating a shopping list
     @IBAction func addShoppingList(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Enter a name of a shopping list", message: "e.g. Appartment, Cottage, Camp", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Enter shopping list name", message: "e.g. Appartment, Cottage, Camp", preferredStyle: UIAlertController.Style.alert)
         
         alert.addTextField { textField in
             textField.autocapitalizationType = .sentences
