@@ -131,6 +131,11 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let url = URL(string: (mealPlan[selectedDayOfWeek!]?[indexPath.row].link)!) {
+            UIApplication.shared.open(url)
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -174,7 +179,7 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         
                         let snap = child as! DataSnapshot
                         let value = snap.value! as? NSDictionary
-                        let mealItem = Meal(id: AnyCodable(snap.key), mealType: value!["mealType"] as! String, dish: value!["dish"] as! String, time: value!["time"] as! String, link: value?["link"] as? String)
+                        let mealItem = Meal(id: AnyCodable(snap.key), mealType: value?["mealType"] as? String ?? "", dish: value!["dish"] as! String, time: value?["time"] as? String ?? "", link: value?["link"] as? String)
                         MealsForDay.array.append(mealItem)
                         self.mealPlan.updateValue(MealsForDay.array, forKey: day)
                     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class MealPlanResponseController: UITableViewController {
 
@@ -22,7 +23,6 @@ class MealPlanResponseController: UITableViewController {
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         
-        print(parameters)
         generateMealPlanRequest(targetCalories: parameters["targetCalories"] ?? "", diet: parameters["diet"] ?? "", exclude: parameters["exclude"] ?? "")
     }
     
@@ -35,6 +35,14 @@ class MealPlanResponseController: UITableViewController {
     @objc public func savePlan(sender: UIBarButtonItem) {
 //        let nextViewController = storyboard?.instantiateViewController(identifier: "dietCV") as! DietViewController
 //        self.present(nextViewController, animated: true, completion: nil)
+        
+        if let mealPlan = mealPlan {
+            saveToFirebase(mealPlan: mealPlan)
+        }
+        
+        dietVC?.mealPlan = [:]
+        dietVC?.fetchMealPlanFromFirebase()
+        
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -55,9 +63,92 @@ class MealPlanResponseController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MealPlanResponseCell", for: indexPath) as! MealResponseCell
 
 //        cell.title.text = "Hello World Hello World Hello World Hello World Hello World"
-        cell.title.text = mealPlan?.week?.monday?.meals?[indexPath.row].title
+//        cell.title.text = mealPlan?.week?.monday?.meals?[indexPath.row].title
         cell.title.numberOfLines = 0
         cell.title.lineBreakMode = .byWordWrapping
+//        print(indexPath.row)
+        
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+                case 0:
+                    cell.title.text = mealPlan?.week?.monday?.meals?[0].title
+                case 1:
+                    cell.title.text = mealPlan?.week?.monday?.meals?[1].title
+                case 2:
+                    cell.title.text = mealPlan?.week?.monday?.meals?[2].title
+                default:
+                    cell.title.text = ""
+            }
+        case 1:
+            switch indexPath.row {
+                case 0:
+                    cell.title.text = mealPlan?.week?.tuesday?.meals?[0].title
+                case 1:
+                    cell.title.text = mealPlan?.week?.tuesday?.meals?[1].title
+                case 2:
+                    cell.title.text = mealPlan?.week?.tuesday?.meals?[2].title
+                default:
+                    cell.title.text = ""
+            }
+        case 2:
+            switch indexPath.row {
+            case 0:
+                cell.title.text = mealPlan?.week?.wednesday?.meals?[0].title
+            case 1:
+                cell.title.text = mealPlan?.week?.wednesday?.meals?[1].title
+            case 2:
+                cell.title.text = mealPlan?.week?.wednesday?.meals?[2].title
+            default:
+                cell.title.text = ""
+            }
+        case 3:
+            switch indexPath.row {
+            case 0:
+                cell.title.text = mealPlan?.week?.thursday?.meals?[0].title
+            case 1:
+                cell.title.text = mealPlan?.week?.thursday?.meals?[1].title
+            case 2:
+                cell.title.text = mealPlan?.week?.thursday?.meals?[2].title
+            default:
+                cell.title.text = ""
+            }
+        case 4:
+            switch indexPath.row {
+            case 0:
+                cell.title.text = mealPlan?.week?.friday?.meals?[0].title
+            case 1:
+                cell.title.text = mealPlan?.week?.friday?.meals?[1].title
+            case 2:
+                cell.title.text = mealPlan?.week?.friday?.meals?[2].title
+            default:
+                cell.title.text = ""
+            }
+        case 5:
+            switch indexPath.row {
+            case 0:
+                cell.title.text = mealPlan?.week?.saturday?.meals?[0].title
+            case 1:
+                cell.title.text = mealPlan?.week?.saturday?.meals?[1].title
+            case 2:
+                cell.title.text = mealPlan?.week?.saturday?.meals?[2].title
+            default:
+                cell.title.text = ""
+            }
+        case 6:
+            switch indexPath.row {
+            case 0:
+                cell.title.text = mealPlan?.week?.sunday?.meals?[0].title
+            case 1:
+                cell.title.text = mealPlan?.week?.sunday?.meals?[1].title
+            case 2:
+                cell.title.text = mealPlan?.week?.sunday?.meals?[2].title
+            default:
+                cell.title.text = ""
+            }
+        default:
+            cell.title.text = ""
+        }
         
         return cell
     }
@@ -93,7 +184,6 @@ class MealPlanResponseController: UITableViewController {
           URLSession.shared.dataTask(with: urlObj) {(data, response, error) in
             do {
                 let decodedMealPlan = try JSONDecoder().decode(MealPlan.self, from: data!)
-//                print(decodedMealPlan.week?.monday?.meals?[0])
                 self.mealPlan = decodedMealPlan
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -135,6 +225,56 @@ class MealPlanResponseController: UITableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: Saving to database
+    func saveToFirebase(mealPlan: MealPlan) {
+        
+        // Removing previous existing meal plan
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MealPlan"
+        let ref = Database.database().reference().child(databasePath)
+        ref.removeValue()
+        
+        
+        let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        
+        for day in days {
+            let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MealPlan/" + day
+            let ref = Database.database().reference().child(databasePath)
+            
+            switch day {
+                case "Monday":
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.monday?.meals?[0].title, "link":mealPlan.week?.monday?.meals?[0].sourceURL, "mealType":"Breakfast"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.monday?.meals?[1].title, "link":mealPlan.week?.monday?.meals?[1].sourceURL, "mealType":"Lunch"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.monday?.meals?[2].title, "link":mealPlan.week?.monday?.meals?[2].sourceURL, "mealType":"Dinner"])
+                case "Tuesday":
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.tuesday?.meals?[0].title, "link":mealPlan.week?.tuesday?.meals?[0].sourceURL, "mealType":"Breakfast"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.tuesday?.meals?[1].title, "link":mealPlan.week?.tuesday?.meals?[1].sourceURL, "mealType":"Lunch"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.tuesday?.meals?[2].title, "link":mealPlan.week?.tuesday?.meals?[2].sourceURL, "mealType":"Dinner"])
+                case "Wednesday":
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.wednesday?.meals?[0].title, "link":mealPlan.week?.wednesday?.meals?[0].sourceURL, "mealType":"Breakfast"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.wednesday?.meals?[1].title, "link":mealPlan.week?.wednesday?.meals?[1].sourceURL, "mealType":"Lunch"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.wednesday?.meals?[2].title, "link":mealPlan.week?.wednesday?.meals?[2].sourceURL, "mealType":"Dinner"])
+                case "Thursday":
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.thursday?.meals?[0].title, "link":mealPlan.week?.thursday?.meals?[0].sourceURL, "mealType":"Breakfast"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.thursday?.meals?[1].title, "link":mealPlan.week?.thursday?.meals?[1].sourceURL, "mealType":"Lunch"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.thursday?.meals?[2].title, "link":mealPlan.week?.thursday?.meals?[2].sourceURL, "mealType":"Dinner"])
+                case "Friday":
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.friday?.meals?[0].title, "link":mealPlan.week?.friday?.meals?[0].sourceURL, "mealType":"Breakfast"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.friday?.meals?[1].title, "link":mealPlan.week?.friday?.meals?[1].sourceURL, "mealType":"Lunch"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.friday?.meals?[2].title, "link":mealPlan.week?.friday?.meals?[2].sourceURL, "mealType":"Dinner"])
+                case "Saturday":
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.saturday?.meals?[0].title, "link":mealPlan.week?.saturday?.meals?[0].sourceURL, "mealType":"Breakfast"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.saturday?.meals?[1].title, "link":mealPlan.week?.saturday?.meals?[1].sourceURL, "mealType":"Lunch"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.saturday?.meals?[2].title, "link":mealPlan.week?.saturday?.meals?[2].sourceURL, "mealType":"Dinner"])
+                case "Sunday":
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.sunday?.meals?[0].title, "link":mealPlan.week?.sunday?.meals?[0].sourceURL, "mealType":"Breakfast"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.sunday?.meals?[1].title, "link":mealPlan.week?.sunday?.meals?[1].sourceURL, "mealType":"Lunch"])
+                    ref.childByAutoId().setValue(["dish":mealPlan.week?.sunday?.meals?[2].title, "link":mealPlan.week?.sunday?.meals?[2].sourceURL, "mealType":"Dinner"])
+                default:
+                    return
+            }
+        }
     }
 
     /*

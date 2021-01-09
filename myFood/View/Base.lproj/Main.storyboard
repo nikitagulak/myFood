@@ -466,7 +466,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwe-OM-THz">
-                                                            <rect key="frame" x="16" y="35.5" width="41.5" height="20.5"/>
+                                                            <rect key="frame" x="16" y="35.5" width="350" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -480,6 +480,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Hwe-OM-THz" secondAttribute="trailing" constant="16" id="3eo-sG-0Gd"/>
                                                         <constraint firstAttribute="bottom" secondItem="Hwe-OM-THz" secondAttribute="bottom" constant="8" id="6N6-wl-qPa"/>
                                                         <constraint firstAttribute="trailing" secondItem="PlC-B2-B8s" secondAttribute="trailing" constant="16" id="NG9-cB-BIC"/>
                                                         <constraint firstItem="AvX-AV-P7s" firstAttribute="leading" secondItem="Nhk-GA-5EF" secondAttribute="leading" constant="16" id="T8c-WR-iQD"/>
@@ -2064,7 +2065,7 @@
         <scene sceneID="ldg-H8-6h4">
             <objects>
                 <tableViewController storyboardIdentifier="MealPlanResponseVC" title="Suggested meal plan" id="9df-rb-fYk" customClass="MealPlanResponseController" customModule="myFood" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="epc-6C-eYd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="132" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="epc-6C-eYd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>

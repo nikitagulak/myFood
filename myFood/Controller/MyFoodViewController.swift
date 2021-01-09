@@ -109,6 +109,9 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         cell.productName?.text = products[indexPath.row].name
         cell.weight?.text = "\(products[indexPath.row].weight) \(products[indexPath.row].unit)"
         cell.expiryDate?.text = expiringToString(expiryDate: products[indexPath.row].expiryDate)
+        if cell.expiryDate?.text == "Expired" {
+            cell.expiryDate.textColor = UIColor.systemRed
+        }
         cell.clockIcon.isHidden = products[indexPath.row].expiryDate == "" ? true : false
         
         tableView.deselectRow(at: indexPath, animated: true)
