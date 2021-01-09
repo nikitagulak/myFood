@@ -11,15 +11,23 @@ import AnyCodable
 
 struct Meal {
     let id: AnyCodable
-    let mealType: String
+    var mealType: String?
     let dish: String
-    let time: String
+    var time: String?
+    var link: String?
     
-    init(id:AnyCodable, mealType:String, dish:String, time:String) {
+    init(id:AnyCodable, mealType:String, dish:String, time:String, link:String?) {
         self.id = id
         self.mealType = mealType
         self.dish = dish
         self.time = time
+        self.link = link
+    }
+    
+    init(id:AnyCodable, dish:String, link:String?) {
+        self.id = id
+        self.dish = dish
+        self.link = link
     }
 }
 

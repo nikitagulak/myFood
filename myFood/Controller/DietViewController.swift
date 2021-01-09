@@ -39,7 +39,8 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        getDataFromServer(url: URL(string: "http://localhost:3000")!)
         let destinationVC = storyboard!.instantiateViewController(withIdentifier: "GenerateMealPlan") as! GenerateMealController
         
-        navigationController?.showDetailViewController(destinationVC, sender: self)
+//        navigationController?.showDetailViewController(destinationVC, sender: self)
+        navigationController?.pushViewController(destinationVC, animated: true)
         
     }
     
@@ -173,7 +174,7 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         
                         let snap = child as! DataSnapshot
                         let value = snap.value! as? NSDictionary
-                        let mealItem = Meal(id: AnyCodable(snap.key), mealType: value!["mealType"] as! String, dish: value!["dish"] as! String, time: value!["time"] as! String)
+                        let mealItem = Meal(id: AnyCodable(snap.key), mealType: value!["mealType"] as! String, dish: value!["dish"] as! String, time: value!["time"] as! String, link: value?["link"] as? String)
                         MealsForDay.array.append(mealItem)
                         self.mealPlan.updateValue(MealsForDay.array, forKey: day)
                     }

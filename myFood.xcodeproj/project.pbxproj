@@ -32,6 +32,8 @@
 		01B32EBC250A3D35007ACC27 /* ShoppingListsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B32EBB250A3D35007ACC27 /* ShoppingListsController.swift */; };
 		01C1F44E257D4BF800BFA787 /* ChangeNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C1F44D257D4BF800BFA787 /* ChangeNameController.swift */; };
 		01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */; };
+		01D1297625A9DFFC00690952 /* MealPlanResponseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1297525A9DFFC00690952 /* MealPlanResponseController.swift */; };
+		01D1297D25A9EC9E00690952 /* MealResponseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1297C25A9EC9E00690952 /* MealResponseCell.swift */; };
 		01DA04DF251567760093DB10 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA04DD251567760093DB10 /* ProductTableViewCell.swift */; };
 		01DA04E0251567760093DB10 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DA04DE251567760093DB10 /* ProductTableViewCell.xib */; };
 		01FD64542584EEC700BC18B2 /* GenerateMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FD64532584EEC700BC18B2 /* GenerateMealController.swift */; };
@@ -67,6 +69,8 @@
 		01B32EBB250A3D35007ACC27 /* ShoppingListsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListsController.swift; sourceTree = "<group>"; };
 		01C1F44D257D4BF800BFA787 /* ChangeNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameController.swift; sourceTree = "<group>"; };
 		01C5E0EE24F274100047CB11 /* MyFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodViewController.swift; sourceTree = "<group>"; };
+		01D1297525A9DFFC00690952 /* MealPlanResponseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanResponseController.swift; sourceTree = "<group>"; };
+		01D1297C25A9EC9E00690952 /* MealResponseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealResponseCell.swift; sourceTree = "<group>"; };
 		01DA04DD251567760093DB10 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		01DA04DE251567760093DB10 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		01FD64532584EEC700BC18B2 /* GenerateMealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateMealController.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				01924F3124DB4B9D0064B9E6 /* LaunchScreen.storyboard */,
 				01DA04DE251567760093DB10 /* ProductTableViewCell.xib */,
 				013056EE2572F4C500E7DF1E /* MealCell.swift */,
+				01D1297C25A9EC9E00690952 /* MealResponseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +168,7 @@
 				01C1F44D257D4BF800BFA787 /* ChangeNameController.swift */,
 				01FD64532584EEC700BC18B2 /* GenerateMealController.swift */,
 				016AF67E25A46C220064EEB3 /* ExploreRecipesController.swift */,
+				01D1297525A9DFFC00690952 /* MealPlanResponseController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -314,7 +320,9 @@
 				013056EF2572F4C500E7DF1E /* MealCell.swift in Sources */,
 				013056F22572F6C400E7DF1E /* Meal.swift in Sources */,
 				01924F2824DB4B9B0064B9E6 /* ViewController.swift in Sources */,
+				01D1297D25A9EC9E00690952 /* MealResponseCell.swift in Sources */,
 				01C5E0EF24F274100047CB11 /* MyFoodViewController.swift in Sources */,
+				01D1297625A9DFFC00690952 /* MealPlanResponseController.swift in Sources */,
 				01DA04DF251567760093DB10 /* ProductTableViewCell.swift in Sources */,
 				0151071725698775002C8506 /* SingleShoppingListController.swift in Sources */,
 				0133DB20255C2FEC00659B50 /* DietViewController.swift in Sources */,
