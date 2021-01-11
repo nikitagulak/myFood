@@ -21,6 +21,11 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
         spinner.startAnimating()
         fetchMealPlanFromFirebase()
         weekDayInitialSetup()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     
@@ -40,12 +45,13 @@ class DietViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let destinationVC = storyboard!.instantiateViewController(withIdentifier: "GenerateMealPlan") as! GenerateMealController
         
 //        navigationController?.showDetailViewController(destinationVC, sender: self)
+        destinationVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(destinationVC, animated: true)
         
     }
     
     @IBAction func exploreRecipes(_ sender: UITapGestureRecognizer) {
-        let destinationVC = storyboard!.instantiateViewController(withIdentifier: "exploreRecipesCV") as! ExploreRecipesController
+        let destinationVC = storyboard!.instantiateViewController(withIdentifier: "searchRecipesVC") as! SearchRecipesController
         destinationVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(destinationVC, animated: true)
     }

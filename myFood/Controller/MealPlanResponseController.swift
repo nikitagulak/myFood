@@ -26,11 +26,12 @@ class MealPlanResponseController: UITableViewController {
         generateMealPlanRequest(targetCalories: parameters["targetCalories"] ?? "", diet: parameters["diet"] ?? "", exclude: parameters["exclude"] ?? "")
     }
     
-    // MARK: Instances
+    // MARK: Instance variables
     @IBOutlet weak var nameCellLabel: UILabel!
     
     var parameters = [String:String]()
     var mealPlan: MealPlan?
+    
     
     @objc public func savePlan(sender: UIBarButtonItem) {
 //        let nextViewController = storyboard?.instantiateViewController(identifier: "dietCV") as! DietViewController

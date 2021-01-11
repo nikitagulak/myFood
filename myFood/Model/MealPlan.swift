@@ -42,6 +42,7 @@ struct MealItem: Codable {
 enum ImageType: String, Codable {
     case jpeg = "jpeg"
     case jpg = "jpg"
+    case png = "png"
 }
 
 // MARK: - Nutrients

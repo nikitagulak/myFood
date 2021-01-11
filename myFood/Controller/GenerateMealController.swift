@@ -31,6 +31,7 @@ class GenerateMealController: UIViewController, UIPickerViewDataSource, UIPicker
     var selectedDiet: String?
     var mealPlanToPass: MealPlan?
     
+    
     // MARK: Actions
     @IBAction func generateBtn(_ sender: UIButton) {
 //        getDataFromServer(url: URL(string: "http://169.254.153.221:3000")!)
@@ -77,6 +78,7 @@ class GenerateMealController: UIViewController, UIPickerViewDataSource, UIPicker
         }
         task.resume()
     }
+    
     
     // MARK: Get data from Spoonacular API
     func generateMealPlanRequest(targetCalories: String, diet: String, exclude: String) {

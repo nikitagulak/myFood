@@ -7,13 +7,19 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class ExploreRecipesController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        generateRecipes()
     }
 
+    // MARK: Instance variables
+    var ingredients: String?
+    var recipes: Recipes?
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -28,11 +34,44 @@ class ExploreRecipesController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeCell
 
-        cell.textLabel?.text = "test"
-
+        if recipes != nil {
+            // Number of ingredients
+            cell.ingredientsAmount.text = "\(recipes![indexPath.row].missedIngredientCount! + recipes![indexPath.row].usedIngredientCount!)"
+            
+            // Recipe's name
+            cell.recipeName.text = recipes?[indexPath.row].title
+            
+            // Recipe's picture
+            let url = URL(string: recipes![indexPath.row].image!)
+            if let image = try? Data(contentsOf: url!) {
+                cell.picture.image = UIImage(data: image)
+            }
+            
+        }
+        
+        
         return cell
+    }
+    
+    
+    // MARK: Get data from Spoonacular API
+    func generateRecipes() {
+        let apiKey = "c9048153061a4a4fa5d14861e1740e74"
+        let url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=\(apiKey)&number=10&ingredients=\(ingredients!)"
+//        print(url)
+        if let urlObj = URL(string: url) {
+          URLSession.shared.dataTask(with: urlObj) {(data, response, error) in
+            do {
+                let decodedRecipes = try JSONDecoder().decode(Recipes.self, from: data!)
+                self.recipes = decodedRecipes
+                self.tableView.reloadData()
+            } catch {
+              print("Error of decoding JSON: \(error)")
+            }
+          }.resume()
+        }
     }
     
 
