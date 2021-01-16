@@ -17,6 +17,7 @@ struct Recipe: Codable {
     let usedIngredientCount, missedIngredientCount: Int?
     let missedIngredients, usedIngredients, unusedIngredients: [SedIngredient]?
     let likes: Int?
+    let link: String?
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01064FCC25B387A9008F10BB /* RecipeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01064FCB25B387A9008F10BB /* RecipeInfo.swift */; };
 		010B0C9C253B41F300DC9EFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 010B0C9B253B41F300DC9EFD /* GoogleService-Info.plist */; };
 		013056E82572C27700E7DF1E /* AddMealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013056E72572C27700E7DF1E /* AddMealController.swift */; };
 		013056EF2572F4C500E7DF1E /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013056EE2572F4C500E7DF1E /* MealCell.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01064FCB25B387A9008F10BB /* RecipeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInfo.swift; sourceTree = "<group>"; };
 		010B0C9B253B41F300DC9EFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		013056E72572C27700E7DF1E /* AddMealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealController.swift; sourceTree = "<group>"; };
 		013056EE2572F4C500E7DF1E /* MealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				019065B52591FEDC00DC2052 /* FoodFactsShortModel */,
 				01AF1D6325A33547009F6385 /* MealPlan.swift */,
 				0184E52125AB531800A660B7 /* Recipe.swift */,
+				01064FCB25B387A9008F10BB /* RecipeInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				0151071C256989E9002C8506 /* ProductToBuyCell.swift in Sources */,
 				013056EF2572F4C500E7DF1E /* MealCell.swift in Sources */,
 				0184E51F25AB3CFF00A660B7 /* SearchRecipesController.swift in Sources */,
+				01064FCC25B387A9008F10BB /* RecipeInfo.swift in Sources */,
 				013056F22572F6C400E7DF1E /* Meal.swift in Sources */,
 				01924F2824DB4B9B0064B9E6 /* ViewController.swift in Sources */,
 				01D1297D25A9EC9E00690952 /* MealResponseCell.swift in Sources */,

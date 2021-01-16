@@ -20,6 +20,7 @@ class ExploreRecipesController: UITableViewController {
     var ingredients: String?
     var recipes: Recipes?
     
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +39,7 @@ class ExploreRecipesController: UITableViewController {
 
         if recipes != nil {
             // Number of ingredients
-            cell.ingredientsAmount.text = "\(recipes![indexPath.row].missedIngredientCount! + recipes![indexPath.row].usedIngredientCount!)"
+            cell.ingredientsAmount.text = "\(recipes![indexPath.row].missedIngredientCount! + recipes![indexPath.row].usedIngredientCount!) ingredients"
             
             // Recipe's name
             cell.recipeName.text = recipes?[indexPath.row].title
@@ -50,7 +51,6 @@ class ExploreRecipesController: UITableViewController {
             }
             
         }
-        
         
         return cell
     }
@@ -72,6 +72,36 @@ class ExploreRecipesController: UITableViewController {
             }
           }.resume()
         }
+    }
+    
+    
+    func getInformationByRecipeId(id: Int) {
+        let apiKey = "c9048153061a4a4fa5d14861e1740e74"
+        let url = "https://api.spoonacular.com/recipes/\(id)/information?apiKey=\(apiKey)&includeNutrition=false"
+        print(url)
+        if let urlObj = URL(string: url) {
+          URLSession.shared.dataTask(with: urlObj) {(data, response, error) in
+            do {
+                let decodedInfo = try JSONDecoder().decode(RecipeInfo.self, from: data!)
+                
+                if let url = URL(string: decodedInfo.sourceURL!) {
+                    UIApplication.shared.open(url)
+                }
+                
+                self.tableView.reloadData()
+            } catch {
+              print("Error of decoding JSON: \(error)")
+            }
+          }.resume()
+        }
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        getInformationByRecipeId(id: recipes![indexPath.row].id!)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 
