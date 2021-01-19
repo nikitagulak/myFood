@@ -24,11 +24,17 @@ class MealPlanResponseController: UITableViewController {
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         
         generateMealPlanRequest(targetCalories: parameters["targetCalories"] ?? "", diet: parameters["diet"] ?? "", exclude: parameters["exclude"] ?? "")
+        
+        // Spinner
+        spinner.center = self.view.center
+        self.view.addSubview(spinner)
+        spinner.startAnimating()
     }
     
     // MARK: Instance variables
     @IBOutlet weak var nameCellLabel: UILabel!
     
+    var spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     var parameters = [String:String]()
     var mealPlan: MealPlan?
     
@@ -188,6 +194,7 @@ class MealPlanResponseController: UITableViewController {
                 self.mealPlan = decodedMealPlan
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.spinner.removeFromSuperview()
                 }
             } catch {
               print("Error of decoding JSON: \(error)")

@@ -14,9 +14,16 @@ class ExploreRecipesController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         generateRecipes()
+        
+        // Spinner
+        spinner.center = self.view.center
+        self.view.addSubview(spinner)
+        spinner.startAnimating()
     }
+    
 
     // MARK: Instance variables
+    var spinner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     var ingredients: String?
     var recipes: Recipes?
     
@@ -67,6 +74,7 @@ class ExploreRecipesController: UITableViewController {
                 let decodedRecipes = try JSONDecoder().decode(Recipes.self, from: data!)
                 self.recipes = decodedRecipes
                 self.tableView.reloadData()
+                self.spinner.removeFromSuperview()
             } catch {
               print("Error of decoding JSON: \(error)")
             }
