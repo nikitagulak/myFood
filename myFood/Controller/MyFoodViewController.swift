@@ -121,7 +121,7 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let destinationVC = storyboard!.instantiateViewController(withIdentifier: "ProductDetails") as! ProductDetailsController
-        destinationVC.product = ProductItem(name: myProducts[indexPath.row].name, storingPlace: myProducts[indexPath.row].storingPlace, weight: myProducts[indexPath.row].weight, unit: myProducts[indexPath.row].unit, expiryDate: myProducts[indexPath.row].expiryDate)
+        destinationVC.product = ProductItem(id: storingPlaceFilterHandler()[indexPath.row].id, name: storingPlaceFilterHandler()[indexPath.row].name, storingPlace: storingPlaceFilterHandler()[indexPath.row].storingPlace, weight: storingPlaceFilterHandler()[indexPath.row].weight, unit: storingPlaceFilterHandler()[indexPath.row].unit, expiryDate: storingPlaceFilterHandler()[indexPath.row].expiryDate)
         navigationController?.showDetailViewController(destinationVC, sender: self)
     }
     
@@ -141,12 +141,6 @@ class MyFoodViewController: UIViewController, UITableViewDataSource, UITableView
         action.backgroundColor = .systemRed
         return UISwipeActionsConfiguration(actions: [action])
     }
-    
-    
-    //MARK: Spinner
-//    func spinnerIsAnimating(value: Bool) {
-//
-//    }
     
     
     //MARK: Displaying Expiry Date

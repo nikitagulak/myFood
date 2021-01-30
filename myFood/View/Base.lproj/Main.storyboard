@@ -1250,8 +1250,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="sdd-SG-b2T"/>
                     <connections>
+                        <outlet property="dateOfExpirySwitcher" destination="9gQ-rR-HG0" id="1iO-ga-4Yi"/>
                         <outlet property="datePicker" destination="JWS-Pj-DMP" id="Eqb-8H-7dR"/>
                         <outlet property="nameField" destination="9rm-Rf-DVV" id="Zf0-Xn-9hf"/>
+                        <outlet property="navigationBar" destination="SNG-sU-bSj" id="nZt-8v-y3l"/>
                         <outlet property="storingPlaceSwitcher" destination="6ga-qk-3ci" id="FOX-6c-ZCs"/>
                         <outlet property="weightField" destination="IgW-cC-Kop" id="GkH-Zf-fPf"/>
                         <outlet property="weightTypeSwitcher" destination="JwN-q8-Hq5" id="wc4-LY-bDa"/>
@@ -1281,6 +1283,9 @@
                                     <navigationItem id="tNo-2z-iJC">
                                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="HFX-Dq-BS3">
                                             <color key="tintColor" systemColor="systemGreenColor"/>
+                                            <connections>
+                                                <action selector="editButtonPressed:" destination="Phg-P7-yK8" id="VBM-H2-3US"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Close" style="done" id="AcS-6E-xaG">
                                             <color key="tintColor" systemColor="systemGreenColor"/>
@@ -1421,6 +1426,7 @@
                     <connections>
                         <outlet property="productName" destination="kA3-g2-0B9" id="3Cs-3s-Vjk"/>
                         <outlet property="tableView" destination="TPE-39-m4G" id="Nok-uO-UFA"/>
+                        <segue destination="HJ2-fF-0yr" kind="showDetail" identifier="editProductDetails" id="S9b-HN-TeZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SH2-Zi-2SP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1959,13 +1965,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lOX-HK-JDC">
                                                     <rect key="frame" x="142" y="44.5" width="216" height="45.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pou-zI-es4">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pou-zI-es4">
                                                             <rect key="frame" x="0.0" y="0.0" width="216" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXn-vA-PY8">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXn-vA-PY8">
                                                             <rect key="frame" x="0.0" y="28.5" width="216" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2110,6 +2116,9 @@
             <point key="canvasLocation" x="4296" y="475"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="S9b-HN-TeZ"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="MealPlan" width="30" height="30"/>
         <image name="Recipe" width="33" height="32"/>

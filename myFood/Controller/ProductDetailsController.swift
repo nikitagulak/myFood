@@ -8,16 +8,24 @@
 
 import UIKit
 
+var productDetailsControllerVC: ProductDetailsController?
+
 class ProductDetailsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        productDetailsControllerVC = self
+        updateDetails()
+    }
+    
+    func updateDetails() {
         productName.text = product?.name
         
         productValues.append(["Weight", String(product!.weight) + " " + product!.unit])
         productValues.append(["Place of storing", product?.storingPlace ?? ""])
-        productValues.append(["Date of expiry", product?.expiryDate ?? ""])
+        productValues.append(["Date of expiry", product!.expiryDate])
+    
+        tableView.reloadData()
     }
     
     //MARK: Instance variables
@@ -31,6 +39,20 @@ class ProductDetailsController: UIViewController, UITableViewDataSource, UITable
     //MARK: Actions
     @IBAction func closeView(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "editProductDetails", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editProductDetails" {
+            let displayVC = segue.destination as! ReaderViewController
+            displayVC.isProductEditing = true
+            displayVC.productForEditing = product
+            
+        }
     }
     
     

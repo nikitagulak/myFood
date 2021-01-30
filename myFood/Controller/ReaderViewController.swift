@@ -27,7 +27,45 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         datePicker.preferredDatePickerStyle = .compact
         datePicker.minimumDate = Date()
         myFoodVC?.myFoodTableView.reloadData()
+        
+        if isProductEditing == true {
+            navigationBar.title = "Editing details"
+            nameField.text = productForEditing?.name
+            weightField.text = "\(productForEditing!.weight)"
+            
+            switch productForEditing?.unit {
+            case "grams":
+                weightTypeSwitcher.selectedSegmentIndex = 0
+            case "ml":
+                weightTypeSwitcher.selectedSegmentIndex = 1
+            case "peaces":
+                weightTypeSwitcher.selectedSegmentIndex = 2
+            default:
+                weightTypeSwitcher.selectedSegmentIndex = 0
+            }
+            
+            switch productForEditing?.storingPlace {
+            case "Fridge":
+                storingPlaceSwitcher.selectedSegmentIndex = 0
+            case "Freezer":
+                storingPlaceSwitcher.selectedSegmentIndex = 1
+            case "Pantry":
+                storingPlaceSwitcher.selectedSegmentIndex = 2
+            default:
+                storingPlaceSwitcher.selectedSegmentIndex = 0
+            }
+            
+            if productForEditing?.expiryDate != "" {
+                datePicker.isHidden = false
+                dateOfExpirySwitcher.isOn = true
+                
+                let formatter = DateFormatter()
+                formatter.dateFormat = "YYYY-MM-dd"
+                datePicker.date = formatter.date(from: productForEditing!.expiryDate) ?? Date()
+            }
+        }
     }
+    
     
     //MARK: Istance variables
     @IBOutlet weak var nameField: UITextField!
@@ -35,6 +73,11 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
     @IBOutlet weak var weightTypeSwitcher: UISegmentedControl!
     @IBOutlet weak var storingPlaceSwitcher: UISegmentedControl!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var dateOfExpirySwitcher: UISwitch!
+    @IBOutlet weak var navigationBar: UINavigationItem!
+    
+    var isProductEditing: Bool = false
+    var productForEditing: ProductItem?
     
     @IBAction func datePickerDateChanged(_ sender: Any) {
         let formatter = DateFormatter()
@@ -108,12 +151,23 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
             expiryDate = formatter.string(from: datePicker.date)
         }
         
-        saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, unit: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: expiryDate )
+        if isProductEditing == true {
+            updateDataInFireBase(id: productForEditing!.id, name: nameField.text!, weight: Int(weightField.text!)!, unit: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: expiryDate)
+            
+            productDetailsControllerVC?.product = ProductItem(id: productForEditing!.id, name: nameField.text!, storingPlace: storingPlaceSwitcherValue, weight: Int(weightField.text!)!, unit: weightMesureTypeSwitcherValue, expiryDate: expiryDate)
+            productDetailsControllerVC?.updateDetails()
+            productDetailsControllerVC?.tableView.reloadData()
+            
+        } else {
+            saveDataToFireBase(name: nameField.text!, weight: Int(weightField.text!)!, unit: weightMesureTypeSwitcherValue, storingPlace: storingPlaceSwitcherValue, expiryDate: expiryDate)
+        }
+        
         myFoodVC?.myProducts = []
         myFoodVC?.fetchDataFromFireBase()
         self.dismiss(animated: true, completion: nil)
-        
+        productDetailsControllerVC?.dismiss(animated: true, completion: nil)
     }
+    
     
     //MARK: Barcode Scanner
     @IBAction func openBarcodeScanner(_ sender: UIButton) {
@@ -140,12 +194,20 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    
     //MARK: Firebase Saving
     func saveDataToFireBase(name: String, weight: Int, unit: String, storingPlace: String, expiryDate: String) {
         let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MyFood"
         let ref = Database.database().reference().child(databasePath)
         ref.childByAutoId().setValue(["name":name,"storingPlace":storingPlace, "weight":weight, "unit":unit, "expiryDate":expiryDate])
     }
+    
+    func updateDataInFireBase(id: String, name: String, weight: Int, unit: String, storingPlace: String, expiryDate: String) {
+        let databasePath: String = "Users/" + "\(String(describing: UserDefaults.standard.string(forKey: "userID")!))/" + "MyFood"
+        let ref = Database.database().reference().child(databasePath).child(id)
+        ref.updateChildValues(["name":name,"storingPlace":storingPlace, "weight":weight, "unit":unit, "expiryDate":expiryDate])
+    }
+    
     
     // MARK: Get data from OpenFoodFacts API
     func getDataFromBarcode(barcode: String) {
@@ -169,6 +231,7 @@ class ReaderViewController: UIViewController, ScanBarcodeDelegate {
           }.resume()
         }
     }
+    
         
 }
 
